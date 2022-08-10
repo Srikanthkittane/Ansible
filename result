@@ -1,0 +1,965 @@
+ansible-playbook 2.9.6
+  config file = /etc/ansible/ansible.cfg
+  configured module search path = ['/root/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python3/dist-packages/ansible
+  executable location = /usr/bin/ansible-playbook
+  python version = 3.8.10 (default, Jun 22 2022, 20:18:18) [GCC 9.4.0]
+Using /etc/ansible/ansible.cfg as config file
+host_list declined parsing /etc/ansible/hosts as it did not pass its verify_file() method
+script declined parsing /etc/ansible/hosts as it did not pass its verify_file() method
+auto declined parsing /etc/ansible/hosts as it did not pass its verify_file() method
+Parsed /etc/ansible/hosts inventory source with ini plugin
+
+PLAYBOOK: jenk1.yaml *********************************************************************************************************************************
+1 plays in jenk1.yaml
+
+PLAY [installing-jenkins] ****************************************************************************************************************************
+
+TASK [Gathering Facts] *******************************************************************************************************************************
+task path: /root/jenk1.yaml:3
+<172.31.24.164> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.24.164> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 172.31.24.164 '/bin/sh -c '"'"'echo ~ && sleep 0'"'"''
+<172.31.18.80> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.18.80> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 172.31.18.80 '/bin/sh -c '"'"'echo ~ && sleep 0'"'"''
+<172.31.24.164> (0, b'/root\n', b'')
+<172.31.24.164> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.24.164> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 172.31.24.164 '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-tmp-1658480593.7333674-104504166116927 `" && echo ansible-tmp-1658480593.7333674-104504166116927="` echo /root/.ansible/tmp/ansible-tmp-1658480593.7333674-104504166116927 `" ) && sleep 0'"'"''
+<172.31.18.80> (0, b'/root\n', b'')
+<172.31.18.80> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.18.80> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 172.31.18.80 '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-tmp-1658480593.743818-168841474111016 `" && echo ansible-tmp-1658480593.743818-168841474111016="` echo /root/.ansible/tmp/ansible-tmp-1658480593.743818-168841474111016 `" ) && sleep 0'"'"''
+<172.31.24.164> (0, b'ansible-tmp-1658480593.7333674-104504166116927=/root/.ansible/tmp/ansible-tmp-1658480593.7333674-104504166116927\n', b'')
+<172.31.18.80> (0, b'ansible-tmp-1658480593.743818-168841474111016=/root/.ansible/tmp/ansible-tmp-1658480593.743818-168841474111016\n', b'')
+<ip-172-31-18-80> Attempting python interpreter discovery
+<172.31.18.80> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.18.80> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 172.31.18.80 '/bin/sh -c '"'"'echo PLATFORM; uname; echo FOUND; command -v '"'"'"'"'"'"'"'"'/usr/bin/python'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3.7'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3.6'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3.5'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python2.7'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python2.6'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'/usr/libexec/platform-python'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'/usr/bin/python3'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python'"'"'"'"'"'"'"'"'; echo ENDFOUND && sleep 0'"'"''
+<ip-172-31-24-164> Attempting python interpreter discovery
+<172.31.24.164> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.24.164> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 172.31.24.164 '/bin/sh -c '"'"'echo PLATFORM; uname; echo FOUND; command -v '"'"'"'"'"'"'"'"'/usr/bin/python'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3.7'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3.6'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3.5'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python2.7'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python2.6'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'/usr/libexec/platform-python'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'/usr/bin/python3'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python'"'"'"'"'"'"'"'"'; echo ENDFOUND && sleep 0'"'"''
+<172.31.18.80> (0, b'PLATFORM\nLinux\nFOUND\n/usr/bin/python3\nENDFOUND\n', b'')
+<172.31.18.80> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.18.80> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 172.31.18.80 '/bin/sh -c '"'"'/usr/bin/python3 && sleep 0'"'"''
+<172.31.24.164> (0, b'PLATFORM\nLinux\nFOUND\n/usr/bin/python3\nENDFOUND\n', b'')
+<172.31.24.164> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.24.164> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 172.31.24.164 '/bin/sh -c '"'"'/usr/bin/python3 && sleep 0'"'"''
+<172.31.18.80> (0, b'{"platform_dist_result": [], "osrelease_content": "NAME=\\"Ubuntu\\"\\nVERSION=\\"20.04.4 LTS (Focal Fossa)\\"\\nID=ubuntu\\nID_LIKE=debian\\nPRETTY_NAME=\\"Ubuntu 20.04.4 LTS\\"\\nVERSION_ID=\\"20.04\\"\\nHOME_URL=\\"https://www.ubuntu.com/\\"\\nSUPPORT_URL=\\"https://help.ubuntu.com/\\"\\nBUG_REPORT_URL=\\"https://bugs.launchpad.net/ubuntu/\\"\\nPRIVACY_POLICY_URL=\\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\\"\\nVERSION_CODENAME=focal\\nUBUNTU_CODENAME=focal\\n"}\n', b'')
+Using module file /usr/lib/python3/dist-packages/ansible/modules/system/setup.py
+<172.31.18.80> PUT /root/.ansible/tmp/ansible-local-327785nr6v3tr/tmp01w6df_g TO /root/.ansible/tmp/ansible-tmp-1658480593.743818-168841474111016/AnsiballZ_setup.py
+<172.31.18.80> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 '[172.31.18.80]'
+<172.31.24.164> (0, b'{"platform_dist_result": [], "osrelease_content": "NAME=\\"Ubuntu\\"\\nVERSION=\\"20.04.4 LTS (Focal Fossa)\\"\\nID=ubuntu\\nID_LIKE=debian\\nPRETTY_NAME=\\"Ubuntu 20.04.4 LTS\\"\\nVERSION_ID=\\"20.04\\"\\nHOME_URL=\\"https://www.ubuntu.com/\\"\\nSUPPORT_URL=\\"https://help.ubuntu.com/\\"\\nBUG_REPORT_URL=\\"https://bugs.launchpad.net/ubuntu/\\"\\nPRIVACY_POLICY_URL=\\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\\"\\nVERSION_CODENAME=focal\\nUBUNTU_CODENAME=focal\\n"}\n', b'')
+Using module file /usr/lib/python3/dist-packages/ansible/modules/system/setup.py
+<172.31.24.164> PUT /root/.ansible/tmp/ansible-local-327785nr6v3tr/tmpeo69_dgv TO /root/.ansible/tmp/ansible-tmp-1658480593.7333674-104504166116927/AnsiballZ_setup.py
+<172.31.24.164> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 '[172.31.24.164]'
+<172.31.18.80> (0, b'sftp> put /root/.ansible/tmp/ansible-local-327785nr6v3tr/tmp01w6df_g /root/.ansible/tmp/ansible-tmp-1658480593.743818-168841474111016/AnsiballZ_setup.py\n', b'')
+<172.31.18.80> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.18.80> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 172.31.18.80 '/bin/sh -c '"'"'chmod u+x /root/.ansible/tmp/ansible-tmp-1658480593.743818-168841474111016/ /root/.ansible/tmp/ansible-tmp-1658480593.743818-168841474111016/AnsiballZ_setup.py && sleep 0'"'"''
+<172.31.24.164> (0, b'sftp> put /root/.ansible/tmp/ansible-local-327785nr6v3tr/tmpeo69_dgv /root/.ansible/tmp/ansible-tmp-1658480593.7333674-104504166116927/AnsiballZ_setup.py\n', b'')
+<172.31.24.164> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.24.164> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 172.31.24.164 '/bin/sh -c '"'"'chmod u+x /root/.ansible/tmp/ansible-tmp-1658480593.7333674-104504166116927/ /root/.ansible/tmp/ansible-tmp-1658480593.7333674-104504166116927/AnsiballZ_setup.py && sleep 0'"'"''
+<172.31.24.164> (0, b'', b'')
+<172.31.24.164> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.24.164> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 -tt 172.31.24.164 '/bin/sh -c '"'"'sudo -H -S -n  -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-qrnswqfpmsghkevxmmvgihynbpnzafnm ; /usr/bin/python3 /root/.ansible/tmp/ansible-tmp-1658480593.7333674-104504166116927/AnsiballZ_setup.py'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+<172.31.18.80> (0, b'', b'')
+<172.31.18.80> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.18.80> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 -tt 172.31.18.80 '/bin/sh -c '"'"'sudo -H -S -n  -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-ojhirbfhfrclrcrdgzmkeuuvspwiwctq ; /usr/bin/python3 /root/.ansible/tmp/ansible-tmp-1658480593.743818-168841474111016/AnsiballZ_setup.py'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+Escalation succeeded
+Escalation succeeded
+<172.31.24.164> (0, b'\r\n\r\n{"ansible_facts": {"ansible_user_id": "root", "ansible_user_uid": 0, "ansible_user_gid": 0, "ansible_user_gecos": "root", "ansible_user_dir": "/root", "ansible_user_shell": "/bin/bash", "ansible_real_user_id": 0, "ansible_effective_user_id": 0, "ansible_real_group_id": 0, "ansible_effective_group_id": 0, "ansible_system": "Linux", "ansible_kernel": "5.15.0-1015-aws", "ansible_kernel_version": "#19~20.04.1-Ubuntu SMP Wed Jun 22 19:07:51 UTC 2022", "ansible_machine": "x86_64", "ansible_python_version": "3.8.10", "ansible_fqdn": "ip-172-31-24-164.ec2.internal", "ansible_hostname": "ip-172-31-24-164", "ansible_nodename": "ip-172-31-24-164", "ansible_domain": "ec2.internal", "ansible_userspace_bits": "64", "ansible_architecture": "x86_64", "ansible_userspace_architecture": "x86_64", "ansible_machine_id": "efc82e94e7f940cb9f3edddaff50cf8b", "ansible_distribution": "Ubuntu", "ansible_distribution_release": "focal", "ansible_distribution_version": "20.04", "ansible_distribution_major_version": "20", "ansible_distribution_file_path": "/etc/os-release", "ansible_distribution_file_variety": "Debian", "ansible_distribution_file_parsed": true, "ansible_os_family": "Debian", "ansible_virtualization_type": "xen", "ansible_virtualization_role": "guest", "ansible_ssh_host_key_dsa_public": "AAAAB3NzaC1kc3MAAACBALqnoFmichntqVIj0LzcUb954ETLADD6DmbU97fimgBpj2QgYgYO8tyHlMr41p4AiLsyrPsHLhYfM8LuBmiNte8awnsWKO+R/gPI5CaD1k0uzTbvgWIXewk0hjE0HsbkYeUSrJt/DNsc6mlD/Zdta4ldegojUq/Z55x/c/NdWkObAAAAFQDWaUN7WbzMy4K4VMciKkXEhSNyFQAAAIEAmx2eyNFZx9OdxFxQq5kI+y41eDxG2dz9KY2xrEUQvh+O6O6h2Ek0tl1TaNQzDr30iHL2Z6O9vvNw5HRf8bBbXfCHKTSrYmwUoBAETThEHu98WqdRhXkhqKP0DqtCjm+2ZbE4Chl0cCTnqAF46gzCG3d2yqqzMonbj0346Pa/8lkAAACAFbgT8VTfM3K0Zh5cteXhUCS2m0opm3YVP1M7uKYUY/qYpbJcOZ5cuhxv67G7BNFQdDfkzdHxmtwnKC7mLIxv2SpslXO2uc/v6BVHQgNqAkgUA+8zT42It1v81HXWMHsxRQQ4+dEkr0x7GoRLgmgHCc/sJ/yixrmlBLSZggMvK8s=", "ansible_ssh_host_key_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABgQDK8xTKeOQ7dobIFmKt4Zkwhh6ZVg7+qp4I38LfxDZ1ftgk16B8+wWgtZJZghPrx+hOtgiPMYP1UFdM0BGOWilsAEE5OHQiy9r4wAYZAghs5m8qSXY+RHy0K64lzWqhnLPSRjocnPUe9uqkEKnkvG5lf/1Wic4ELOaAcNL3NR03ggTZxRfFN9nD18Dye/g3PwqcSjZBwSEW/2tWo59WS+uN3tFmaNN0C6XcSgydqu1gJ2Abtv8OjSZHEmtBxMNP24AdcOHQ78CXH2qrnKwFhV45KbQmDyf322y60+2gO0NDbd8CVVfLtXOQ14Z+2wfzNV+inZID5ateCqgsJ0bZsI1RODhdJkVdEfCdyRJgzYbj2OgTtVTRng2tLnhSjIXX1L3Rm8iuEtobI0RSeL7wgznxK5rL425YGb6Zxo3rDt7Zt3zydY+ed+8HQ5TYy0uTDHzZh5Ko1zCvxXYZpR6xjj9Whqmqm+JRsirLqNYj9XMKxamQpNJzEQm1V2PYjOeZ7a0=", "ansible_ssh_host_key_ecdsa_public": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBG2q0YgIf0abtoPzRFgK3c9oFvsgAsdhwvCfU7NhR7FSfsb7kkw6kM/W9fpsMCbR3rjDdoNjsD+c92jFyktG/kk=", "ansible_ssh_host_key_ed25519_public": "AAAAC3NzaC1lZDI1NTE5AAAAIESAWMPcQY6ghUKfPtOajVUu3rClBBLt0WrG4RKXY+zX", "ansible_date_time": {"year": "2022", "month": "07", "weekday": "Friday", "weekday_number": "5", "weeknumber": "29", "day": "22", "hour": "09", "minute": "03", "second": "14", "epoch": "1658480594", "date": "2022-07-22", "time": "09:03:14", "iso8601_micro": "2022-07-22T09:03:14.580639Z", "iso8601": "2022-07-22T09:03:14Z", "iso8601_basic": "20220722T090314580549", "iso8601_basic_short": "20220722T090314", "tz": "UTC", "tz_offset": "+0000"}, "ansible_python": {"version": {"major": 3, "minor": 8, "micro": 10, "releaselevel": "final", "serial": 0}, "version_info": [3, 8, 10, "final", 0], "executable": "/usr/bin/python3", "has_sslcontext": true, "type": "cpython"}, "ansible_env": {"SUDO_GID": "0", "MAIL": "/var/mail/root", "USER": "root", "HOME": "/root", "SUDO_UID": "0", "LOGNAME": "root", "TERM": "xterm", "PATH": "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin", "LANG": "C.UTF-8", "SUDO_COMMAND": "/bin/sh -c echo BECOME-SUCCESS-qrnswqfpmsghkevxmmvgihynbpnzafnm ; /usr/bin/python3 /root/.ansible/tmp/ansible-tmp-1658480593.7333674-104504166116927/AnsiballZ_setup.py", "SHELL": "/bin/bash", "SUDO_USER": "root", "PWD": "/root"}, "ansible_fibre_channel_wwn": [], "ansible_dns": {"nameservers": ["127.0.0.53"], "options": {"edns0": true, "trust-ad": true}, "search": ["ec2.internal"]}, "ansible_is_chroot": false, "ansible_local": {}, "ansible_processor": ["0", "GenuineIntel", "Intel(R) Xeon(R) CPU E5-2676 v3 @ 2.40GHz"], "ansible_processor_count": 1, "ansible_processor_cores": 1, "ansible_processor_threads_per_core": 1, "ansible_processor_vcpus": 1, "ansible_memtotal_mb": 967, "ansible_memfree_mb": 126, "ansible_swaptotal_mb": 0, "ansible_swapfree_mb": 0, "ansible_memory_mb": {"real": {"total": 967, "used": 841, "free": 126}, "nocache": {"free": 330, "used": 637}, "swap": {"total": 0, "free": 0, "used": 0, "cached": 0}}, "ansible_bios_date": "08/24/2006", "ansible_bios_version": "4.11.amazon", "ansible_form_factor": "Other", "ansible_product_name": "HVM domU", "ansible_product_serial": "ec2f5586-61be-d027-8f39-22e31731f94b", "ansible_product_uuid": "ec2f5586-61be-d027-8f39-22e31731f94b", "ansible_product_version": "4.11.amazon", "ansible_system_vendor": "Xen", "ansible_devices": {"loop1": {"virtual": 1, "links": {"ids": [], "uuids": [], "labels": [], "masters": []}, "vendor": null, "model": null, "sas_address": null, "sas_device_handle": null, "removable": "0", "support_discard": "4096", "partitions": {}, "rotational": "0", "scheduler_mode": "none", "sectors": "113736", "sectorsize": "512", "size": "55.54 MB", "host": "", "holders": []}, "xvda": {"virtual": 1, "links": {"ids": [], "uuids": [], "labels": [], "masters": []}, "vendor": null, "model": null, "sas_address": null, "sas_device_handle": null, "removable": "0", "support_discard": "0", "partitions": {"xvda14": {"links": {"ids": [], "uuids": [], "labels": [], "masters": []}, "start": "2048", "sectors": "8192", "sectorsize": 512, "size": "4.00 MB", "uuid": null, "holders": []}, "xvda1": {"links": {"ids": [], "uuids": ["f145a462-f5b9-42f9-ac24-ea8a59facc58"], "labels": ["cloudimg-rootfs"], "masters": []}, "start": "227328", "sectors": "16549855", "sectorsize": 512, "size": "7.89 GB", "uuid": "f145a462-f5b9-42f9-ac24-ea8a59facc58", "holders": []}, "xvda15": {"links": {"ids": [], "uuids": ["15CB-2892"], "labels": ["UEFI"], "masters": []}, "start": "10240", "sectors": "217088", "sectorsize": 512, "size": "106.00 MB", "uuid": "15CB-2892", "holders": []}}, "rotational": "0", "scheduler_mode": "mq-deadline", "sectors": "16777216", "sectorsize": "512", "size": "8.00 GB", "host": "", "holders": []}, "loop6": {"virtual": 1, "links": {"ids": [], "uuids": [], "labels": [], "masters": []}, "vendor": null, "model": null, "sas_address": null, "sas_device_handle": null, "removable": "0", "support_discard": "4096", "partitions": {}, "rotational": "0", "scheduler_mode": "none", "sectors": "96176", "sectorsize": "512", "size": "46.96 MB", "host": "", "holders": []}, "loop4": {"virtual": 1, "links": {"ids": [], "uuids": [], "labels": [], "masters": []}, "vendor": null, "model": null, "sas_address": null, "sas_device_handle": null, "removable": "0", "support_discard": "4096", "partitions": {}, "rotational": "0", "scheduler_mode": "none", "sectors": "138880", "sectorsize": "512", "size": "67.81 MB", "host": "", "holders": []}, "loop2": {"virtual": 1, "links": {"ids": [], "uuids": [], "labels": [], "masters": []}, "vendor": null, "model": null, "sas_address": null, "sas_device_handle": null, "removable": "0", "support_discard": "4096", "partitions": {}, "rotational": "0", "scheduler_mode": "none", "sectors": "113792", "sectorsize": "512", "size": "55.56 MB", "host": "", "holders": []}, "loop0": {"virtual": 1, "links": {"ids": [], "uuids": [], "labels": [], "masters": []}, "vendor": null, "model": null, "sas_address": null, "sas_device_handle": null, "removable": "0", "support_discard": "4096", "partitions": {}, "rotational": "0", "scheduler_mode": "none", "sectors": "51416", "sectorsize": "512", "size": "25.11 MB", "host": "", "holders": []}, "loop7": {"virtual": 1, "links": {"ids": [], "uuids": [], "labels": [], "masters": []}, "vendor": null, "model": null, "sas_address": null, "sas_device_handle": null, "removable": "0", "support_discard": "4096", "partitions": {}, "rotational": "0", "scheduler_mode": "none", "sectors": "0", "sectorsize": "512", "size": "0.00 Bytes", "host": "", "holders": []}, "loop5": {"virtual": 1, "links": {"ids": [], "uuids": [], "labels": [], "masters": []}, "vendor": null, "model": null, "sas_address": null, "sas_device_handle": null, "removable": "0", "support_discard": "4096", "partitions": {}, "rotational": "0", "scheduler_mode": "none", "sectors": "96160", "sectorsize": "512", "size": "46.95 MB", "host": "", "holders": []}, "loop3": {"virtual": 1, "links": {"ids": [], "uuids": [], "labels": [], "masters": []}, "vendor": null, "model": null, "sas_address": null, "sas_device_handle": null, "removable": "0", "support_discard": "4096", "partitions": {}, "rotational": "0", "scheduler_mode": "none", "sectors": "126824", "sectorsize": "512", "size": "61.93 MB", "host": "", "holders": []}}, "ansible_device_links": {"ids": {}, "uuids": {"xvda15": ["15CB-2892"], "xvda1": ["f145a462-f5b9-42f9-ac24-ea8a59facc58"]}, "labels": {"xvda15": ["UEFI"], "xvda1": ["cloudimg-rootfs"]}, "masters": {}}, "ansible_uptime_seconds": 188657, "ansible_lvm": {"lvs": {}, "vgs": {}, "pvs": {}}, "ansible_mounts": [{"mount": "/", "device": "/dev/root", "fstype": "ext4", "options": "rw,relatime,discard", "size_total": 8132173824, "size_available": 5002936320, "block_size": 4096, "block_total": 1985394, "block_available": 1221420, "block_used": 763974, "inode_total": 1032192, "inode_available": 927887, "inode_used": 104305, "uuid": "f145a462-f5b9-42f9-ac24-ea8a59facc58"}, {"mount": "/snap/amazon-ssm-agent/5656", "device": "/dev/loop0", "fstype": "squashfs", "options": "ro,nodev,relatime,errors=continue", "size_total": 26345472, "size_available": 0, "block_size": 131072, "block_total": 201, "block_available": 0, "block_used": 201, "inode_total": 16, "inode_available": 0, "inode_used": 16, "uuid": "N/A"}, {"mount": "/snap/core18/2538", "device": "/dev/loop2", "fstype": "squashfs", "options": "ro,nodev,relatime,errors=continue", "size_total": 58327040, "size_available": 0, "block_size": 131072, "block_total": 445, "block_available": 0, "block_used": 445, "inode_total": 10858, "inode_available": 0, "inode_used": 10858, "uuid": "N/A"}, {"mount": "/snap/core18/2409", "device": "/dev/loop1", "fstype": "squashfs", "options": "ro,nodev,relatime,errors=continue", "size_total": 58327040, "size_available": 0, "block_size": 131072, "block_total": 445, "block_available": 0, "block_used": 445, "inode_total": 10857, "inode_available": 0, "inode_used": 10857, "uuid": "N/A"}, {"mount": "/snap/lxd/22753", "device": "/dev/loop4", "fstype": "squashfs", "options": "ro,nodev,relatime,errors=continue", "size_total": 71172096, "size_available": 0, "block_size": 131072, "block_total": 543, "block_available": 0, "block_used": 543, "inode_total": 802, "inode_available": 0, "inode_used": 802, "uuid": "N/A"}, {"mount": "/snap/core20/1518", "device": "/dev/loop3", "fstype": "squashfs", "options": "ro,nodev,relatime,errors=continue", "size_total": 65011712, "size_available": 0, "block_size": 131072, "block_total": 496, "block_available": 0, "block_used": 496, "inode_total": 11789, "inode_available": 0, "inode_used": 11789, "uuid": "N/A"}, {"mount": "/snap/snapd/16010", "device": "/dev/loop5", "fstype": "squashfs", "options": "ro,nodev,relatime,errors=continue", "size_total": 49283072, "size_available": 0, "block_size": 131072, "block_total": 376, "block_available": 0, "block_used": 376, "inode_total": 486, "inode_available": 0, "inode_used": 486, "uuid": "N/A"}, {"mount": "/snap/snapd/16292", "device": "/dev/loop6", "fstype": "squashfs", "options": "ro,nodev,relatime,errors=continue", "size_total": 49283072, "size_available": 0, "block_size": 131072, "block_total": 376, "block_available": 0, "block_used": 376, "inode_total": 486, "inode_available": 0, "inode_used": 486, "uuid": "N/A"}, {"mount": "/boot/efi", "device": "/dev/xvda15", "fstype": "vfat", "options": "rw,relatime,fmask=0077,dmask=0077,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro", "size_total": 109422592, "size_available": 103973888, "block_size": 512, "block_total": 213716, "block_available": 203074, "block_used": 10642, "inode_total": 0, "inode_available": 0, "inode_used": 0, "uuid": "15CB-2892"}], "ansible_service_mgr": "systemd", "ansible_selinux": {"status": "Missing selinux Python library"}, "ansible_selinux_python_present": false, "ansible_cmdline": {"BOOT_IMAGE": "/boot/vmlinuz-5.15.0-1015-aws", "root": "PARTUUID=4986e35b-1bd5-45d3-b528-fa2edb861a38", "ro": true, "console": "ttyS0", "nvme_core.io_timeout": "4294967295", "panic": "-1"}, "ansible_proc_cmdline": {"BOOT_IMAGE": "/boot/vmlinuz-5.15.0-1015-aws", "root": "PARTUUID=4986e35b-1bd5-45d3-b528-fa2edb861a38", "ro": true, "console": ["tty1", "ttyS0"], "nvme_core.io_timeout": "4294967295", "panic": "-1"}, "ansible_interfaces": ["eth0", "lo"], "ansible_lo": {"device": "lo", "mtu": 65536, "active": true, "type": "loopback", "promisc": false, "ipv4": {"address": "127.0.0.1", "broadcast": "host", "netmask": "255.0.0.0", "network": "127.0.0.0"}, "ipv6": [{"address": "::1", "prefix": "128", "scope": "host"}], "features": {"rx_checksumming": "on [fixed]", "tx_checksumming": "on", "tx_checksum_ipv4": "off [fixed]", "tx_checksum_ip_generic": "on [fixed]", "tx_checksum_ipv6": "off [fixed]", "tx_checksum_fcoe_crc": "off [fixed]", "tx_checksum_sctp": "on [fixed]", "scatter_gather": "on", "tx_scatter_gather": "on [fixed]", "tx_scatter_gather_fraglist": "on [fixed]", "tcp_segmentation_offload": "on", "tx_tcp_segmentation": "on", "tx_tcp_ecn_segmentation": "on", "tx_tcp_mangleid_segmentation": "on", "tx_tcp6_segmentation": "on", "generic_segmentation_offload": "on", "generic_receive_offload": "on", "large_receive_offload": "off [fixed]", "rx_vlan_offload": "off [fixed]", "tx_vlan_offload": "off [fixed]", "ntuple_filters": "off [fixed]", "receive_hashing": "off [fixed]", "highdma": "on [fixed]", "rx_vlan_filter": "off [fixed]", "vlan_challenged": "on [fixed]", "tx_lockless": "on [fixed]", "netns_local": "on [fixed]", "tx_gso_robust": "off [fixed]", "tx_fcoe_segmentation": "off [fixed]", "tx_gre_segmentation": "off [fixed]", "tx_gre_csum_segmentation": "off [fixed]", "tx_ipxip4_segmentation": "off [fixed]", "tx_ipxip6_segmentation": "off [fixed]", "tx_udp_tnl_segmentation": "off [fixed]", "tx_udp_tnl_csum_segmentation": "off [fixed]", "tx_gso_partial": "off [fixed]", "tx_tunnel_remcsum_segmentation": "off [fixed]", "tx_sctp_segmentation": "on", "tx_esp_segmentation": "off [fixed]", "tx_udp_segmentation": "on", "tx_gso_list": "on", "fcoe_mtu": "off [fixed]", "tx_nocache_copy": "off [fixed]", "loopback": "on [fixed]", "rx_fcs": "off [fixed]", "rx_all": "off [fixed]", "tx_vlan_stag_hw_insert": "off [fixed]", "rx_vlan_stag_hw_parse": "off [fixed]", "rx_vlan_stag_filter": "off [fixed]", "l2_fwd_offload": "off [fixed]", "hw_tc_offload": "off [fixed]", "esp_hw_offload": "off [fixed]", "esp_tx_csum_hw_offload": "off [fixed]", "rx_udp_tunnel_port_offload": "off [fixed]", "tls_hw_tx_offload": "off [fixed]", "tls_hw_rx_offload": "off [fixed]", "rx_gro_hw": "off [fixed]", "tls_hw_record": "off [fixed]", "rx_gro_list": "off", "macsec_hw_offload": "off [fixed]", "rx_udp_gro_forwarding": "off", "hsr_tag_ins_offload": "off [fixed]", "hsr_tag_rm_offload": "off [fixed]", "hsr_fwd_offload": "off [fixed]", "hsr_dup_offload": "off [fixed]"}, "timestamping": ["tx_software", "rx_software", "software"], "hw_timestamp_filters": []}, "ansible_eth0": {"device": "eth0", "macaddress": "0a:77:a8:1f:bd:6d", "mtu": 9001, "active": true, "module": "xen_netfront", "type": "ether", "pciid": "vif-0", "promisc": false, "ipv4": {"address": "172.31.24.164", "broadcast": "172.31.31.255", "netmask": "255.255.240.0", "network": "172.31.16.0"}, "ipv6": [{"address": "fe80::877:a8ff:fe1f:bd6d", "prefix": "64", "scope": "link"}], "features": {"rx_checksumming": "on [fixed]", "tx_checksumming": "on", "tx_checksum_ipv4": "on [fixed]", "tx_checksum_ip_generic": "off [fixed]", "tx_checksum_ipv6": "on", "tx_checksum_fcoe_crc": "off [fixed]", "tx_checksum_sctp": "off [fixed]", "scatter_gather": "on", "tx_scatter_gather": "on", "tx_scatter_gather_fraglist": "off [fixed]", "tcp_segmentation_offload": "on", "tx_tcp_segmentation": "on", "tx_tcp_ecn_segmentation": "off [fixed]", "tx_tcp_mangleid_segmentation": "off", "tx_tcp6_segmentation": "on", "generic_segmentation_offload": "on", "generic_receive_offload": "on", "large_receive_offload": "off [fixed]", "rx_vlan_offload": "off [fixed]", "tx_vlan_offload": "off [fixed]", "ntuple_filters": "off [fixed]", "receive_hashing": "off [fixed]", "highdma": "off [fixed]", "rx_vlan_filter": "off [fixed]", "vlan_challenged": "off [fixed]", "tx_lockless": "off [fixed]", "netns_local": "off [fixed]", "tx_gso_robust": "on [fixed]", "tx_fcoe_segmentation": "off [fixed]", "tx_gre_segmentation": "off [fixed]", "tx_gre_csum_segmentation": "off [fixed]", "tx_ipxip4_segmentation": "off [fixed]", "tx_ipxip6_segmentation": "off [fixed]", "tx_udp_tnl_segmentation": "off [fixed]", "tx_udp_tnl_csum_segmentation": "off [fixed]", "tx_gso_partial": "off [fixed]", "tx_tunnel_remcsum_segmentation": "off [fixed]", "tx_sctp_segmentation": "off [fixed]", "tx_esp_segmentation": "off [fixed]", "tx_udp_segmentation": "off [fixed]", "tx_gso_list": "off [fixed]", "fcoe_mtu": "off [fixed]", "tx_nocache_copy": "off", "loopback": "off [fixed]", "rx_fcs": "off [fixed]", "rx_all": "off [fixed]", "tx_vlan_stag_hw_insert": "off [fixed]", "rx_vlan_stag_hw_parse": "off [fixed]", "rx_vlan_stag_filter": "off [fixed]", "l2_fwd_offload": "off [fixed]", "hw_tc_offload": "off [fixed]", "esp_hw_offload": "off [fixed]", "esp_tx_csum_hw_offload": "off [fixed]", "rx_udp_tunnel_port_offload": "off [fixed]", "tls_hw_tx_offload": "off [fixed]", "tls_hw_rx_offload": "off [fixed]", "rx_gro_hw": "off [fixed]", "tls_hw_record": "off [fixed]", "rx_gro_list": "off", "macsec_hw_offload": "off [fixed]", "rx_udp_gro_forwarding": "off", "hsr_tag_ins_offload": "off [fixed]", "hsr_tag_rm_offload": "off [fixed]", "hsr_fwd_offload": "off [fixed]", "hsr_dup_offload": "off [fixed]"}, "timestamping": ["tx_software", "rx_software", "software"], "hw_timestamp_filters": []}, "ansible_default_ipv4": {"gateway": "172.31.16.1", "interface": "eth0", "address": "172.31.24.164", "broadcast": "172.31.31.255", "netmask": "255.255.240.0", "network": "172.31.16.0", "macaddress": "0a:77:a8:1f:bd:6d", "mtu": 9001, "type": "ether", "alias": "eth0"}, "ansible_default_ipv6": {}, "ansible_all_ipv4_addresses": ["172.31.24.164"], "ansible_all_ipv6_addresses": ["fe80::877:a8ff:fe1f:bd6d"], "ansible_iscsi_iqn": "", "ansible_system_capabilities_enforced": "False", "ansible_system_capabilities": [], "ansible_pkg_mgr": "apt", "ansible_hostnqn": "", "ansible_lsb": {"id": "Ubuntu", "description": "Ubuntu 20.04.4 LTS", "release": "20.04", "codename": "focal", "major_release": "20"}, "ansible_fips": false, "ansible_apparmor": {"status": "enabled"}, "gather_subset": ["all"], "module_setup": true}, "invocation": {"module_args": {"gather_subset": ["all"], "gather_timeout": 10, "filter": "*", "fact_path": "/etc/ansible/facts.d"}}}\r\n', b'Shared connection to 172.31.24.164 closed.\r\n')
+<172.31.24.164> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.24.164> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 172.31.24.164 '/bin/sh -c '"'"'rm -f -r /root/.ansible/tmp/ansible-tmp-1658480593.7333674-104504166116927/ > /dev/null 2>&1 && sleep 0'"'"''
+<172.31.24.164> (0, b'', b'')
+ok: [ip-172-31-24-164]
+<172.31.18.80> (0, b'\r\n{"ansible_facts": {"ansible_is_chroot": false, "ansible_python": {"version": {"major": 3, "minor": 8, "micro": 10, "releaselevel": "final", "serial": 0}, "version_info": [3, 8, 10, "final", 0], "executable": "/usr/bin/python3", "has_sslcontext": true, "type": "cpython"}, "ansible_fibre_channel_wwn": [], "ansible_system": "Linux", "ansible_kernel": "5.15.0-1015-aws", "ansible_kernel_version": "#19~20.04.1-Ubuntu SMP Wed Jun 22 19:07:51 UTC 2022", "ansible_machine": "x86_64", "ansible_python_version": "3.8.10", "ansible_fqdn": "ip-172-31-18-80.ec2.internal", "ansible_hostname": "ip-172-31-18-80", "ansible_nodename": "ip-172-31-18-80", "ansible_domain": "ec2.internal", "ansible_userspace_bits": "64", "ansible_architecture": "x86_64", "ansible_userspace_architecture": "x86_64", "ansible_machine_id": "d9ab63ba7eba428fa0495285f80cdcf5", "ansible_system_capabilities_enforced": "False", "ansible_system_capabilities": [], "ansible_user_id": "root", "ansible_user_uid": 0, "ansible_user_gid": 0, "ansible_user_gecos": "root", "ansible_user_dir": "/root", "ansible_user_shell": "/bin/bash", "ansible_real_user_id": 0, "ansible_effective_user_id": 0, "ansible_real_group_id": 0, "ansible_effective_group_id": 0, "ansible_ssh_host_key_dsa_public": "AAAAB3NzaC1kc3MAAACBANkHninxDj04Z7zBT6gsoxEqQehcFJ5umiQ0Q5t3zLnAehKqYfITBhSw0zQSzNpLEdd2uCs4GtBqWPDMkZqiOVgf+CD3l9BYK6OHqe1OhmZmSvJrMh23upcRxHAc8ywmyREHj0DlxDGtIGvlXwfrxBO9lmWl7se+bfQIoISQ54CDAAAAFQCIYaNiAaEhRN5wDx1fESGBOwlcnQAAAIBqGz3GHCe120I3AZrObxEYtWH+asT0hGEo/FhoRrlP4VBlHWmznAxXys42pXgvrzrg51UbR8DvKVlPcIf6nP1X735rr5b1ND9llkAu+SMRYuMvGWeaXJTOKiyvEL0XfsuLd7pBbnj10R2Hvnw084X8kqSzcSSyYiHR8DMbejXQaQAAAIEAjF9PKaJMS90xDjmJI0DjIDrvG/Cg7Bf0pZAwsbVJx9vnlF/ua1RzLyxtBLHL+qO26E5uagaqZRJK1rxE63XBMkIMTbsfyW1Zccg3hDcyzqGQDRdj8Da8Ah26n4s/XRgk6Kvkg0De/rmKDQizW5TCblpmZUDLSovPYjn3Fsirxz4=", "ansible_ssh_host_key_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABgQCnKX8DUudj4iZE+Q5zLnDef8aGGE0KTjKOtPC1LelTkUHTrbxv/F4Jp4L6f0hkofrj5AJGlnnJ3QUyKcUS/o6zVsaV3OPA95CvRUZnLwEPFIdX/18V0TZqeyPJQvnr9r0uGHfR3aD2kClvOynSgMDNmwaK16Y9/J15ocqJ9OfxKKAjEecf0OkdcshdhiddtEhrmVbkZxbk6X4wN4v+Lcwt/bP4deJfxNj8wiCfBdu0NdZiWPCMzw5HsWLBGkpPOiQ8WUx5WkSULN+Z/3EY1xSmdXOyzLQICZzCeQjUJZFsuktDyllWGazpHvAJTxG5rz60xCMDNXFT6yFGBWXpt+YwmZYKo2oHMIocN7vWqWDu9u4seXEfEd/kRAcLIyHYax71h2+OItIcF/QwJNIFWgpN4ACa/3h0AGOTEWxEyjEtYI5VoN0bNgS9FVU3jeG9up7EykJPj93wDcxv4O6jliuG124JFXRdVUPdce2nFqbfuoNyeJuRSbGGrrSCcVw5cSM=", "ansible_ssh_host_key_ecdsa_public": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBKu9zqdW4N/G6gXCDwqLwc6vvh0CPWhn5+VRT4HcLfVh4so3tKDfNnVOp8I+ICAJ9ZguTiyg46qiiZadLP0Ium8=", "ansible_ssh_host_key_ed25519_public": "AAAAC3NzaC1lZDI1NTE5AAAAIM0A7YVO7zftRbtob4BN1RJAft4SBFKgojL8xL116WK+", "ansible_fips": false, "ansible_virtualization_type": "xen", "ansible_virtualization_role": "guest", "ansible_iscsi_iqn": "", "ansible_selinux": {"status": "Missing selinux Python library"}, "ansible_selinux_python_present": false, "ansible_distribution": "Ubuntu", "ansible_distribution_release": "focal", "ansible_distribution_version": "20.04", "ansible_distribution_major_version": "20", "ansible_distribution_file_path": "/etc/os-release", "ansible_distribution_file_variety": "Debian", "ansible_distribution_file_parsed": true, "ansible_os_family": "Debian", "ansible_pkg_mgr": "apt", "ansible_apparmor": {"status": "enabled"}, "ansible_hostnqn": "", "ansible_interfaces": ["lo", "eth0"], "ansible_eth0": {"device": "eth0", "macaddress": "0a:42:d6:42:40:2b", "mtu": 9001, "active": true, "module": "xen_netfront", "type": "ether", "pciid": "vif-0", "promisc": false, "ipv4": {"address": "172.31.18.80", "broadcast": "172.31.31.255", "netmask": "255.255.240.0", "network": "172.31.16.0"}, "ipv6": [{"address": "fe80::842:d6ff:fe42:402b", "prefix": "64", "scope": "link"}], "features": {"rx_checksumming": "on [fixed]", "tx_checksumming": "on", "tx_checksum_ipv4": "on [fixed]", "tx_checksum_ip_generic": "off [fixed]", "tx_checksum_ipv6": "on", "tx_checksum_fcoe_crc": "off [fixed]", "tx_checksum_sctp": "off [fixed]", "scatter_gather": "on", "tx_scatter_gather": "on", "tx_scatter_gather_fraglist": "off [fixed]", "tcp_segmentation_offload": "on", "tx_tcp_segmentation": "on", "tx_tcp_ecn_segmentation": "off [fixed]", "tx_tcp_mangleid_segmentation": "off", "tx_tcp6_segmentation": "on", "generic_segmentation_offload": "on", "generic_receive_offload": "on", "large_receive_offload": "off [fixed]", "rx_vlan_offload": "off [fixed]", "tx_vlan_offload": "off [fixed]", "ntuple_filters": "off [fixed]", "receive_hashing": "off [fixed]", "highdma": "off [fixed]", "rx_vlan_filter": "off [fixed]", "vlan_challenged": "off [fixed]", "tx_lockless": "off [fixed]", "netns_local": "off [fixed]", "tx_gso_robust": "on [fixed]", "tx_fcoe_segmentation": "off [fixed]", "tx_gre_segmentation": "off [fixed]", "tx_gre_csum_segmentation": "off [fixed]", "tx_ipxip4_segmentation": "off [fixed]", "tx_ipxip6_segmentation": "off [fixed]", "tx_udp_tnl_segmentation": "off [fixed]", "tx_udp_tnl_csum_segmentation": "off [fixed]", "tx_gso_partial": "off [fixed]", "tx_tunnel_remcsum_segmentation": "off [fixed]", "tx_sctp_segmentation": "off [fixed]", "tx_esp_segmentation": "off [fixed]", "tx_udp_segmentation": "off [fixed]", "tx_gso_list": "off [fixed]", "fcoe_mtu": "off [fixed]", "tx_nocache_copy": "off", "loopback": "off [fixed]", "rx_fcs": "off [fixed]", "rx_all": "off [fixed]", "tx_vlan_stag_hw_insert": "off [fixed]", "rx_vlan_stag_hw_parse": "off [fixed]", "rx_vlan_stag_filter": "off [fixed]", "l2_fwd_offload": "off [fixed]", "hw_tc_offload": "off [fixed]", "esp_hw_offload": "off [fixed]", "esp_tx_csum_hw_offload": "off [fixed]", "rx_udp_tunnel_port_offload": "off [fixed]", "tls_hw_tx_offload": "off [fixed]", "tls_hw_rx_offload": "off [fixed]", "rx_gro_hw": "off [fixed]", "tls_hw_record": "off [fixed]", "rx_gro_list": "off", "macsec_hw_offload": "off [fixed]", "rx_udp_gro_forwarding": "off", "hsr_tag_ins_offload": "off [fixed]", "hsr_tag_rm_offload": "off [fixed]", "hsr_fwd_offload": "off [fixed]", "hsr_dup_offload": "off [fixed]"}, "timestamping": ["tx_software", "rx_software", "software"], "hw_timestamp_filters": []}, "ansible_lo": {"device": "lo", "mtu": 65536, "active": true, "type": "loopback", "promisc": false, "ipv4": {"address": "127.0.0.1", "broadcast": "host", "netmask": "255.0.0.0", "network": "127.0.0.0"}, "ipv6": [{"address": "::1", "prefix": "128", "scope": "host"}], "features": {"rx_checksumming": "on [fixed]", "tx_checksumming": "on", "tx_checksum_ipv4": "off [fixed]", "tx_checksum_ip_generic": "on [fixed]", "tx_checksum_ipv6": "off [fixed]", "tx_checksum_fcoe_crc": "off [fixed]", "tx_checksum_sctp": "on [fixed]", "scatter_gather": "on", "tx_scatter_gather": "on [fixed]", "tx_scatter_gather_fraglist": "on [fixed]", "tcp_segmentation_offload": "on", "tx_tcp_segmentation": "on", "tx_tcp_ecn_segmentation": "on", "tx_tcp_mangleid_segmentation": "on", "tx_tcp6_segmentation": "on", "generic_segmentation_offload": "on", "generic_receive_offload": "on", "large_receive_offload": "off [fixed]", "rx_vlan_offload": "off [fixed]", "tx_vlan_offload": "off [fixed]", "ntuple_filters": "off [fixed]", "receive_hashing": "off [fixed]", "highdma": "on [fixed]", "rx_vlan_filter": "off [fixed]", "vlan_challenged": "on [fixed]", "tx_lockless": "on [fixed]", "netns_local": "on [fixed]", "tx_gso_robust": "off [fixed]", "tx_fcoe_segmentation": "off [fixed]", "tx_gre_segmentation": "off [fixed]", "tx_gre_csum_segmentation": "off [fixed]", "tx_ipxip4_segmentation": "off [fixed]", "tx_ipxip6_segmentation": "off [fixed]", "tx_udp_tnl_segmentation": "off [fixed]", "tx_udp_tnl_csum_segmentation": "off [fixed]", "tx_gso_partial": "off [fixed]", "tx_tunnel_remcsum_segmentation": "off [fixed]", "tx_sctp_segmentation": "on", "tx_esp_segmentation": "off [fixed]", "tx_udp_segmentation": "on", "tx_gso_list": "on", "fcoe_mtu": "off [fixed]", "tx_nocache_copy": "off [fixed]", "loopback": "on [fixed]", "rx_fcs": "off [fixed]", "rx_all": "off [fixed]", "tx_vlan_stag_hw_insert": "off [fixed]", "rx_vlan_stag_hw_parse": "off [fixed]", "rx_vlan_stag_filter": "off [fixed]", "l2_fwd_offload": "off [fixed]", "hw_tc_offload": "off [fixed]", "esp_hw_offload": "off [fixed]", "esp_tx_csum_hw_offload": "off [fixed]", "rx_udp_tunnel_port_offload": "off [fixed]", "tls_hw_tx_offload": "off [fixed]", "tls_hw_rx_offload": "off [fixed]", "rx_gro_hw": "off [fixed]", "tls_hw_record": "off [fixed]", "rx_gro_list": "off", "macsec_hw_offload": "off [fixed]", "rx_udp_gro_forwarding": "off", "hsr_tag_ins_offload": "off [fixed]", "hsr_tag_rm_offload": "off [fixed]", "hsr_fwd_offload": "off [fixed]", "hsr_dup_offload": "off [fixed]"}, "timestamping": ["tx_software", "rx_software", "software"], "hw_timestamp_filters": []}, "ansible_default_ipv4": {"gateway": "172.31.16.1", "interface": "eth0", "address": "172.31.18.80", "broadcast": "172.31.31.255", "netmask": "255.255.240.0", "network": "172.31.16.0", "macaddress": "0a:42:d6:42:40:2b", "mtu": 9001, "type": "ether", "alias": "eth0"}, "ansible_default_ipv6": {}, "ansible_all_ipv4_addresses": ["172.31.18.80"], "ansible_all_ipv6_addresses": ["fe80::842:d6ff:fe42:402b"], "ansible_lsb": {"id": "Ubuntu", "description": "Ubuntu 20.04.4 LTS", "release": "20.04", "codename": "focal", "major_release": "20"}, "ansible_cmdline": {"BOOT_IMAGE": "/boot/vmlinuz-5.15.0-1015-aws", "root": "PARTUUID=4986e35b-1bd5-45d3-b528-fa2edb861a38", "ro": true, "console": "ttyS0", "nvme_core.io_timeout": "4294967295", "panic": "-1"}, "ansible_proc_cmdline": {"BOOT_IMAGE": "/boot/vmlinuz-5.15.0-1015-aws", "root": "PARTUUID=4986e35b-1bd5-45d3-b528-fa2edb861a38", "ro": true, "console": ["tty1", "ttyS0"], "nvme_core.io_timeout": "4294967295", "panic": "-1"}, "ansible_date_time": {"year": "2022", "month": "07", "weekday": "Friday", "weekday_number": "5", "weeknumber": "29", "day": "22", "hour": "09", "minute": "03", "second": "14", "epoch": "1658480594", "date": "2022-07-22", "time": "09:03:14", "iso8601_micro": "2022-07-22T09:03:14.713559Z", "iso8601": "2022-07-22T09:03:14Z", "iso8601_basic": "20220722T090314713467", "iso8601_basic_short": "20220722T090314", "tz": "UTC", "tz_offset": "+0000"}, "ansible_service_mgr": "systemd", "ansible_dns": {"nameservers": ["127.0.0.53"], "options": {"edns0": true, "trust-ad": true}, "search": ["ec2.internal"]}, "ansible_processor": ["0", "GenuineIntel", "Intel(R) Xeon(R) CPU E5-2676 v3 @ 2.40GHz"], "ansible_processor_count": 1, "ansible_processor_cores": 1, "ansible_processor_threads_per_core": 1, "ansible_processor_vcpus": 1, "ansible_memtotal_mb": 967, "ansible_memfree_mb": 117, "ansible_swaptotal_mb": 0, "ansible_swapfree_mb": 0, "ansible_memory_mb": {"real": {"total": 967, "used": 850, "free": 117}, "nocache": {"free": 327, "used": 640}, "swap": {"total": 0, "free": 0, "used": 0, "cached": 0}}, "ansible_bios_date": "08/24/2006", "ansible_bios_version": "4.11.amazon", "ansible_form_factor": "Other", "ansible_product_name": "HVM domU", "ansible_product_serial": "ec26fcc7-8f97-cc02-a07f-c13b2ddb0330", "ansible_product_uuid": "ec26fcc7-8f97-cc02-a07f-c13b2ddb0330", "ansible_product_version": "4.11.amazon", "ansible_system_vendor": "Xen", "ansible_devices": {"loop1": {"virtual": 1, "links": {"ids": [], "uuids": [], "labels": [], "masters": []}, "vendor": null, "model": null, "sas_address": null, "sas_device_handle": null, "removable": "0", "support_discard": "4096", "partitions": {}, "rotational": "0", "scheduler_mode": "none", "sectors": "113736", "sectorsize": "512", "size": "55.54 MB", "host": "", "holders": []}, "xvda": {"virtual": 1, "links": {"ids": [], "uuids": [], "labels": [], "masters": []}, "vendor": null, "model": null, "sas_address": null, "sas_device_handle": null, "removable": "0", "support_discard": "0", "partitions": {"xvda14": {"links": {"ids": [], "uuids": [], "labels": [], "masters": []}, "start": "2048", "sectors": "8192", "sectorsize": 512, "size": "4.00 MB", "uuid": null, "holders": []}, "xvda1": {"links": {"ids": [], "uuids": ["f145a462-f5b9-42f9-ac24-ea8a59facc58"], "labels": ["cloudimg-rootfs"], "masters": []}, "start": "227328", "sectors": "16549855", "sectorsize": 512, "size": "7.89 GB", "uuid": "f145a462-f5b9-42f9-ac24-ea8a59facc58", "holders": []}, "xvda15": {"links": {"ids": [], "uuids": ["15CB-2892"], "labels": ["UEFI"], "masters": []}, "start": "10240", "sectors": "217088", "sectorsize": 512, "size": "106.00 MB", "uuid": "15CB-2892", "holders": []}}, "rotational": "0", "scheduler_mode": "mq-deadline", "sectors": "16777216", "sectorsize": "512", "size": "8.00 GB", "host": "", "holders": []}, "loop6": {"virtual": 1, "links": {"ids": [], "uuids": [], "labels": [], "masters": []}, "vendor": null, "model": null, "sas_address": null, "sas_device_handle": null, "removable": "0", "support_discard": "4096", "partitions": {}, "rotational": "0", "scheduler_mode": "none", "sectors": "96176", "sectorsize": "512", "size": "46.96 MB", "host": "", "holders": []}, "loop4": {"virtual": 1, "links": {"ids": [], "uuids": [], "labels": [], "masters": []}, "vendor": null, "model": null, "sas_address": null, "sas_device_handle": null, "removable": "0", "support_discard": "4096", "partitions": {}, "rotational": "0", "scheduler_mode": "none", "sectors": "138880", "sectorsize": "512", "size": "67.81 MB", "host": "", "holders": []}, "loop2": {"virtual": 1, "links": {"ids": [], "uuids": [], "labels": [], "masters": []}, "vendor": null, "model": null, "sas_address": null, "sas_device_handle": null, "removable": "0", "support_discard": "4096", "partitions": {}, "rotational": "0", "scheduler_mode": "none", "sectors": "113792", "sectorsize": "512", "size": "55.56 MB", "host": "", "holders": []}, "loop0": {"virtual": 1, "links": {"ids": [], "uuids": [], "labels": [], "masters": []}, "vendor": null, "model": null, "sas_address": null, "sas_device_handle": null, "removable": "0", "support_discard": "4096", "partitions": {}, "rotational": "0", "scheduler_mode": "none", "sectors": "51416", "sectorsize": "512", "size": "25.11 MB", "host": "", "holders": []}, "loop7": {"virtual": 1, "links": {"ids": [], "uuids": [], "labels": [], "masters": []}, "vendor": null, "model": null, "sas_address": null, "sas_device_handle": null, "removable": "0", "support_discard": "4096", "partitions": {}, "rotational": "0", "scheduler_mode": "none", "sectors": "126888", "sectorsize": "512", "size": "61.96 MB", "host": "", "holders": []}, "loop5": {"virtual": 1, "links": {"ids": [], "uuids": [], "labels": [], "masters": []}, "vendor": null, "model": null, "sas_address": null, "sas_device_handle": null, "removable": "0", "support_discard": "4096", "partitions": {}, "rotational": "0", "scheduler_mode": "none", "sectors": "96160", "sectorsize": "512", "size": "46.95 MB", "host": "", "holders": []}, "loop3": {"virtual": 1, "links": {"ids": [], "uuids": [], "labels": [], "masters": []}, "vendor": null, "model": null, "sas_address": null, "sas_device_handle": null, "removable": "0", "support_discard": "4096", "partitions": {}, "rotational": "0", "scheduler_mode": "none", "sectors": "126824", "sectorsize": "512", "size": "61.93 MB", "host": "", "holders": []}}, "ansible_device_links": {"ids": {}, "uuids": {"xvda15": ["15CB-2892"], "xvda1": ["f145a462-f5b9-42f9-ac24-ea8a59facc58"]}, "labels": {"xvda15": ["UEFI"], "xvda1": ["cloudimg-rootfs"]}, "masters": {}}, "ansible_uptime_seconds": 188657, "ansible_lvm": {"lvs": {}, "vgs": {}, "pvs": {}}, "ansible_mounts": [{"mount": "/", "device": "/dev/root", "fstype": "ext4", "options": "rw,relatime,discard", "size_total": 8132173824, "size_available": 4937781248, "block_size": 4096, "block_total": 1985394, "block_available": 1205513, "block_used": 779881, "inode_total": 1032192, "inode_available": 927879, "inode_used": 104313, "uuid": "f145a462-f5b9-42f9-ac24-ea8a59facc58"}, {"mount": "/snap/amazon-ssm-agent/5656", "device": "/dev/loop0", "fstype": "squashfs", "options": "ro,nodev,relatime,errors=continue", "size_total": 26345472, "size_available": 0, "block_size": 131072, "block_total": 201, "block_available": 0, "block_used": 201, "inode_total": 16, "inode_available": 0, "inode_used": 16, "uuid": "N/A"}, {"mount": "/snap/core18/2409", "device": "/dev/loop1", "fstype": "squashfs", "options": "ro,nodev,relatime,errors=continue", "size_total": 58327040, "size_available": 0, "block_size": 131072, "block_total": 445, "block_available": 0, "block_used": 445, "inode_total": 10857, "inode_available": 0, "inode_used": 10857, "uuid": "N/A"}, {"mount": "/snap/core18/2538", "device": "/dev/loop2", "fstype": "squashfs", "options": "ro,nodev,relatime,errors=continue", "size_total": 58327040, "size_available": 0, "block_size": 131072, "block_total": 445, "block_available": 0, "block_used": 445, "inode_total": 10858, "inode_available": 0, "inode_used": 10858, "uuid": "N/A"}, {"mount": "/snap/core20/1518", "device": "/dev/loop3", "fstype": "squashfs", "options": "ro,nodev,relatime,errors=continue", "size_total": 65011712, "size_available": 0, "block_size": 131072, "block_total": 496, "block_available": 0, "block_used": 496, "inode_total": 11789, "inode_available": 0, "inode_used": 11789, "uuid": "N/A"}, {"mount": "/snap/lxd/22753", "device": "/dev/loop4", "fstype": "squashfs", "options": "ro,nodev,relatime,errors=continue", "size_total": 71172096, "size_available": 0, "block_size": 131072, "block_total": 543, "block_available": 0, "block_used": 543, "inode_total": 802, "inode_available": 0, "inode_used": 802, "uuid": "N/A"}, {"mount": "/snap/snapd/16010", "device": "/dev/loop5", "fstype": "squashfs", "options": "ro,nodev,relatime,errors=continue", "size_total": 49283072, "size_available": 0, "block_size": 131072, "block_total": 376, "block_available": 0, "block_used": 376, "inode_total": 486, "inode_available": 0, "inode_used": 486, "uuid": "N/A"}, {"mount": "/snap/snapd/16292", "device": "/dev/loop6", "fstype": "squashfs", "options": "ro,nodev,relatime,errors=continue", "size_total": 49283072, "size_available": 0, "block_size": 131072, "block_total": 376, "block_available": 0, "block_used": 376, "inode_total": 486, "inode_available": 0, "inode_used": 486, "uuid": "N/A"}, {"mount": "/boot/efi", "device": "/dev/xvda15", "fstype": "vfat", "options": "rw,relatime,fmask=0077,dmask=0077,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro", "size_total": 109422592, "size_available": 103973888, "block_size": 512, "block_total": 213716, "block_available": 203074, "block_used": 10642, "inode_total": 0, "inode_available": 0, "inode_used": 0, "uuid": "15CB-2892"}, {"mount": "/snap/core20/1581", "device": "/dev/loop7", "fstype": "squashfs", "options": "ro,nodev,relatime,errors=continue", "size_total": 65011712, "size_available": 0, "block_size": 131072, "block_total": 496, "block_available": 0, "block_used": 496, "inode_total": 11790, "inode_available": 0, "inode_used": 11790, "uuid": "N/A"}], "ansible_env": {"SUDO_GID": "0", "MAIL": "/var/mail/root", "USER": "root", "HOME": "/root", "SUDO_UID": "0", "LOGNAME": "root", "TERM": "xterm", "PATH": "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin", "LANG": "C.UTF-8", "SUDO_COMMAND": "/bin/sh -c echo BECOME-SUCCESS-ojhirbfhfrclrcrdgzmkeuuvspwiwctq ; /usr/bin/python3 /root/.ansible/tmp/ansible-tmp-1658480593.743818-168841474111016/AnsiballZ_setup.py", "SHELL": "/bin/bash", "SUDO_USER": "root", "PWD": "/root"}, "ansible_local": {}, "gather_subset": ["all"], "module_setup": true}, "invocation": {"module_args": {"gather_subset": ["all"], "gather_timeout": 10, "filter": "*", "fact_path": "/etc/ansible/facts.d"}}}\r\n', b'Shared connection to 172.31.18.80 closed.\r\n')
+<172.31.18.80> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.18.80> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 172.31.18.80 '/bin/sh -c '"'"'rm -f -r /root/.ansible/tmp/ansible-tmp-1658480593.743818-168841474111016/ > /dev/null 2>&1 && sleep 0'"'"''
+<172.31.18.80> (0, b'', b'')
+ok: [ip-172-31-18-80]
+META: ran handlers
+
+TASK [get the file from server] **********************************************************************************************************************
+task path: /root/jenk1.yaml:8
+<172.31.24.164> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.24.164> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 172.31.24.164 '/bin/sh -c '"'"'echo ~ && sleep 0'"'"''
+<172.31.18.80> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.18.80> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 172.31.18.80 '/bin/sh -c '"'"'echo ~ && sleep 0'"'"''
+<172.31.24.164> (0, b'/root\n', b'')
+<172.31.24.164> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.24.164> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 172.31.24.164 '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-tmp-1658480595.1744695-189702014284133 `" && echo ansible-tmp-1658480595.1744695-189702014284133="` echo /root/.ansible/tmp/ansible-tmp-1658480595.1744695-189702014284133 `" ) && sleep 0'"'"''
+<172.31.18.80> (0, b'/root\n', b'')
+<172.31.18.80> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.18.80> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 172.31.18.80 '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-tmp-1658480595.193017-99994769169527 `" && echo ansible-tmp-1658480595.193017-99994769169527="` echo /root/.ansible/tmp/ansible-tmp-1658480595.193017-99994769169527 `" ) && sleep 0'"'"''
+<172.31.24.164> (0, b'ansible-tmp-1658480595.1744695-189702014284133=/root/.ansible/tmp/ansible-tmp-1658480595.1744695-189702014284133\n', b'')
+<172.31.18.80> (0, b'ansible-tmp-1658480595.193017-99994769169527=/root/.ansible/tmp/ansible-tmp-1658480595.193017-99994769169527\n', b'')
+Using module file /usr/lib/python3/dist-packages/ansible/modules/commands/command.py
+<172.31.18.80> PUT /root/.ansible/tmp/ansible-local-327785nr6v3tr/tmpjkkc7wzy TO /root/.ansible/tmp/ansible-tmp-1658480595.193017-99994769169527/AnsiballZ_command.py
+<172.31.18.80> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 '[172.31.18.80]'
+Using module file /usr/lib/python3/dist-packages/ansible/modules/commands/command.py
+<172.31.24.164> PUT /root/.ansible/tmp/ansible-local-327785nr6v3tr/tmpce_smclr TO /root/.ansible/tmp/ansible-tmp-1658480595.1744695-189702014284133/AnsiballZ_command.py
+<172.31.24.164> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 '[172.31.24.164]'
+<172.31.24.164> (0, b'sftp> put /root/.ansible/tmp/ansible-local-327785nr6v3tr/tmpce_smclr /root/.ansible/tmp/ansible-tmp-1658480595.1744695-189702014284133/AnsiballZ_command.py\n', b'')
+<172.31.24.164> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.24.164> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 172.31.24.164 '/bin/sh -c '"'"'chmod u+x /root/.ansible/tmp/ansible-tmp-1658480595.1744695-189702014284133/ /root/.ansible/tmp/ansible-tmp-1658480595.1744695-189702014284133/AnsiballZ_command.py && sleep 0'"'"''
+<172.31.18.80> (0, b'sftp> put /root/.ansible/tmp/ansible-local-327785nr6v3tr/tmpjkkc7wzy /root/.ansible/tmp/ansible-tmp-1658480595.193017-99994769169527/AnsiballZ_command.py\n', b'')
+<172.31.18.80> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.18.80> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 172.31.18.80 '/bin/sh -c '"'"'chmod u+x /root/.ansible/tmp/ansible-tmp-1658480595.193017-99994769169527/ /root/.ansible/tmp/ansible-tmp-1658480595.193017-99994769169527/AnsiballZ_command.py && sleep 0'"'"''
+<172.31.24.164> (0, b'', b'')
+<172.31.24.164> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.24.164> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 -tt 172.31.24.164 '/bin/sh -c '"'"'sudo -H -S -n  -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-aihomdrnruoytkotyqzqvolfmlhegcmn ; /usr/bin/python3 /root/.ansible/tmp/ansible-tmp-1658480595.1744695-189702014284133/AnsiballZ_command.py'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+<172.31.18.80> (0, b'', b'')
+<172.31.18.80> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.18.80> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 -tt 172.31.18.80 '/bin/sh -c '"'"'sudo -H -S -n  -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-xkayzthvqhtbkhbfjzwxtpbqiyqftjup ; /usr/bin/python3 /root/.ansible/tmp/ansible-tmp-1658480595.193017-99994769169527/AnsiballZ_command.py'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+Escalation succeeded
+Escalation succeeded
+<172.31.24.164> (0, b'\r\n{"cmd": "wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key |sudo apt-key add -\\nsh -c \'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list\'     \\n", "stdout": "OK", "stderr": "Warning: apt-key output should not be parsed (stdout is not a terminal)", "rc": 0, "start": "2022-07-22 09:03:15.554732", "end": "2022-07-22 09:03:15.759659", "delta": "0:00:00.204927", "changed": true, "invocation": {"module_args": {"_raw_params": "wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key |sudo apt-key add -\\nsh -c \'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list\'     \\n", "_uses_shell": true, "warn": true, "stdin_add_newline": true, "strip_empty_ends": true, "argv": null, "chdir": null, "executable": null, "creates": null, "removes": null, "stdin": null}}, "warnings": ["Consider using the get_url or uri module rather than running \'wget\'.  If you need to use command because get_url or uri is insufficient you can add \'warn: false\' to this command task or set \'command_warnings=False\' in ansible.cfg to get rid of this message."]}\r\n', b'Shared connection to 172.31.24.164 closed.\r\n')
+<172.31.24.164> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.24.164> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 172.31.24.164 '/bin/sh -c '"'"'rm -f -r /root/.ansible/tmp/ansible-tmp-1658480595.1744695-189702014284133/ > /dev/null 2>&1 && sleep 0'"'"''
+<172.31.18.80> (0, b'\r\n\r\n{"cmd": "wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key |sudo apt-key add -\\nsh -c \'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list\'     \\n", "stdout": "OK", "stderr": "Warning: apt-key output should not be parsed (stdout is not a terminal)", "rc": 0, "start": "2022-07-22 09:03:15.555774", "end": "2022-07-22 09:03:15.768298", "delta": "0:00:00.212524", "changed": true, "invocation": {"module_args": {"_raw_params": "wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key |sudo apt-key add -\\nsh -c \'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list\'     \\n", "_uses_shell": true, "warn": true, "stdin_add_newline": true, "strip_empty_ends": true, "argv": null, "chdir": null, "executable": null, "creates": null, "removes": null, "stdin": null}}, "warnings": ["Consider using the get_url or uri module rather than running \'wget\'.  If you need to use command because get_url or uri is insufficient you can add \'warn: false\' to this command task or set \'command_warnings=False\' in ansible.cfg to get rid of this message."]}\r\n', b'Shared connection to 172.31.18.80 closed.\r\n')
+<172.31.18.80> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.18.80> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 172.31.18.80 '/bin/sh -c '"'"'rm -f -r /root/.ansible/tmp/ansible-tmp-1658480595.193017-99994769169527/ > /dev/null 2>&1 && sleep 0'"'"''
+<172.31.24.164> (0, b'', b'')
+changed: [ip-172-31-24-164] => {
+    "changed": true,
+    "cmd": "wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key |sudo apt-key add -\nsh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'     \n",
+    "delta": "0:00:00.204927",
+    "end": "2022-07-22 09:03:15.759659",
+    "invocation": {
+        "module_args": {
+            "_raw_params": "wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key |sudo apt-key add -\nsh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'     \n",
+            "_uses_shell": true,
+            "argv": null,
+            "chdir": null,
+            "creates": null,
+            "executable": null,
+            "removes": null,
+            "stdin": null,
+            "stdin_add_newline": true,
+            "strip_empty_ends": true,
+            "warn": true
+        }
+    },
+    "rc": 0,
+    "start": "2022-07-22 09:03:15.554732",
+    "stderr": "Warning: apt-key output should not be parsed (stdout is not a terminal)",
+    "stderr_lines": [
+        "Warning: apt-key output should not be parsed (stdout is not a terminal)"
+    ],
+    "stdout": "OK",
+    "stdout_lines": [
+        "OK"
+    ]
+}
+<172.31.18.80> (0, b'', b'')
+changed: [ip-172-31-18-80] => {
+    "changed": true,
+    "cmd": "wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key |sudo apt-key add -\nsh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'     \n",
+    "delta": "0:00:00.212524",
+    "end": "2022-07-22 09:03:15.768298",
+    "invocation": {
+        "module_args": {
+            "_raw_params": "wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key |sudo apt-key add -\nsh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'     \n",
+            "_uses_shell": true,
+            "argv": null,
+            "chdir": null,
+            "creates": null,
+            "executable": null,
+            "removes": null,
+            "stdin": null,
+            "stdin_add_newline": true,
+            "strip_empty_ends": true,
+            "warn": true
+        }
+    },
+    "rc": 0,
+    "start": "2022-07-22 09:03:15.555774",
+    "stderr": "Warning: apt-key output should not be parsed (stdout is not a terminal)",
+    "stderr_lines": [
+        "Warning: apt-key output should not be parsed (stdout is not a terminal)"
+    ],
+    "stdout": "OK",
+    "stdout_lines": [
+        "OK"
+    ]
+}
+
+TASK [update package] ********************************************************************************************************************************
+task path: /root/jenk1.yaml:13
+<172.31.24.164> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.24.164> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 172.31.24.164 '/bin/sh -c '"'"'echo ~ && sleep 0'"'"''
+<172.31.18.80> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.18.80> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 172.31.18.80 '/bin/sh -c '"'"'echo ~ && sleep 0'"'"''
+<172.31.24.164> (0, b'/root\n', b'')
+<172.31.24.164> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.24.164> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 172.31.24.164 '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-tmp-1658480595.8310816-109375470676830 `" && echo ansible-tmp-1658480595.8310816-109375470676830="` echo /root/.ansible/tmp/ansible-tmp-1658480595.8310816-109375470676830 `" ) && sleep 0'"'"''
+<172.31.18.80> (0, b'/root\n', b'')
+<172.31.18.80> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.18.80> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 172.31.18.80 '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-tmp-1658480595.8499508-265319784919237 `" && echo ansible-tmp-1658480595.8499508-265319784919237="` echo /root/.ansible/tmp/ansible-tmp-1658480595.8499508-265319784919237 `" ) && sleep 0'"'"''
+<172.31.24.164> (0, b'ansible-tmp-1658480595.8310816-109375470676830=/root/.ansible/tmp/ansible-tmp-1658480595.8310816-109375470676830\n', b'')
+<172.31.18.80> (0, b'ansible-tmp-1658480595.8499508-265319784919237=/root/.ansible/tmp/ansible-tmp-1658480595.8499508-265319784919237\n', b'')
+Using module file /usr/lib/python3/dist-packages/ansible/modules/packaging/os/apt.py
+<172.31.18.80> PUT /root/.ansible/tmp/ansible-local-327785nr6v3tr/tmp07ppdtp9 TO /root/.ansible/tmp/ansible-tmp-1658480595.8499508-265319784919237/AnsiballZ_apt.py
+<172.31.18.80> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 '[172.31.18.80]'
+Using module file /usr/lib/python3/dist-packages/ansible/modules/packaging/os/apt.py
+<172.31.24.164> PUT /root/.ansible/tmp/ansible-local-327785nr6v3tr/tmpxnqb4x6o TO /root/.ansible/tmp/ansible-tmp-1658480595.8310816-109375470676830/AnsiballZ_apt.py
+<172.31.24.164> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 '[172.31.24.164]'
+<172.31.18.80> (0, b'sftp> put /root/.ansible/tmp/ansible-local-327785nr6v3tr/tmp07ppdtp9 /root/.ansible/tmp/ansible-tmp-1658480595.8499508-265319784919237/AnsiballZ_apt.py\n', b'')
+<172.31.18.80> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.18.80> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 172.31.18.80 '/bin/sh -c '"'"'chmod u+x /root/.ansible/tmp/ansible-tmp-1658480595.8499508-265319784919237/ /root/.ansible/tmp/ansible-tmp-1658480595.8499508-265319784919237/AnsiballZ_apt.py && sleep 0'"'"''
+<172.31.24.164> (0, b'sftp> put /root/.ansible/tmp/ansible-local-327785nr6v3tr/tmpxnqb4x6o /root/.ansible/tmp/ansible-tmp-1658480595.8310816-109375470676830/AnsiballZ_apt.py\n', b'')
+<172.31.24.164> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.24.164> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 172.31.24.164 '/bin/sh -c '"'"'chmod u+x /root/.ansible/tmp/ansible-tmp-1658480595.8310816-109375470676830/ /root/.ansible/tmp/ansible-tmp-1658480595.8310816-109375470676830/AnsiballZ_apt.py && sleep 0'"'"''
+<172.31.18.80> (0, b'', b'')
+<172.31.18.80> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.18.80> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 -tt 172.31.18.80 '/bin/sh -c '"'"'sudo -H -S -n  -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-xjlsuomofdwrvmwfaauroibrlxcgntcl ; /usr/bin/python3 /root/.ansible/tmp/ansible-tmp-1658480595.8499508-265319784919237/AnsiballZ_apt.py'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+<172.31.24.164> (0, b'', b'')
+<172.31.24.164> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.24.164> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 -tt 172.31.24.164 '/bin/sh -c '"'"'sudo -H -S -n  -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-tjijcgmmyyxgtjfghsxtwcylmsncyltf ; /usr/bin/python3 /root/.ansible/tmp/ansible-tmp-1658480595.8310816-109375470676830/AnsiballZ_apt.py'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+Escalation succeeded
+Escalation succeeded
+<172.31.24.164> (0, b'\r\n\r\n{"changed": false, "msg": "Reading package lists...\\nBuilding dependency tree...\\nReading state information...\\nCalculating upgrade...\\n0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.\\n", "stdout": "Reading package lists...\\nBuilding dependency tree...\\nReading state information...\\nCalculating upgrade...\\n0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.\\n", "stderr": "", "invocation": {"module_args": {"upgrade": "yes", "update_cache": true, "state": "present", "cache_valid_time": 0, "purge": false, "force": false, "dpkg_options": "force-confdef,force-confold", "autoremove": false, "autoclean": false, "only_upgrade": false, "force_apt_get": false, "allow_unauthenticated": false, "package": null, "deb": null, "default_release": null, "install_recommends": null, "policy_rc_d": null}}, "warnings": ["The value True (type bool) in a string field was converted to \'True\' (type string). If this does not look like what you expect, quote the entire value to ensure it does not change."]}\r\n', b'Shared connection to 172.31.24.164 closed.\r\n')
+<172.31.24.164> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.24.164> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 172.31.24.164 '/bin/sh -c '"'"'rm -f -r /root/.ansible/tmp/ansible-tmp-1658480595.8310816-109375470676830/ > /dev/null 2>&1 && sleep 0'"'"''
+<172.31.24.164> (0, b'', b'')
+ok: [ip-172-31-24-164] => {
+    "changed": false,
+    "invocation": {
+        "module_args": {
+            "allow_unauthenticated": false,
+            "autoclean": false,
+            "autoremove": false,
+            "cache_valid_time": 0,
+            "deb": null,
+            "default_release": null,
+            "dpkg_options": "force-confdef,force-confold",
+            "force": false,
+            "force_apt_get": false,
+            "install_recommends": null,
+            "only_upgrade": false,
+            "package": null,
+            "policy_rc_d": null,
+            "purge": false,
+            "state": "present",
+            "update_cache": true,
+            "upgrade": "yes"
+        }
+    },
+    "msg": "Reading package lists...\nBuilding dependency tree...\nReading state information...\nCalculating upgrade...\n0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.\n",
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "Reading package lists...\nBuilding dependency tree...\nReading state information...\nCalculating upgrade...\n0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.\n",
+    "stdout_lines": [
+        "Reading package lists...",
+        "Building dependency tree...",
+        "Reading state information...",
+        "Calculating upgrade...",
+        "0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded."
+    ]
+}
+<172.31.18.80> (0, b'\r\n\r\n{"changed": false, "msg": "Reading package lists...\\nBuilding dependency tree...\\nReading state information...\\nCalculating upgrade...\\n0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.\\n", "stdout": "Reading package lists...\\nBuilding dependency tree...\\nReading state information...\\nCalculating upgrade...\\n0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.\\n", "stderr": "", "invocation": {"module_args": {"upgrade": "yes", "update_cache": true, "state": "present", "cache_valid_time": 0, "purge": false, "force": false, "dpkg_options": "force-confdef,force-confold", "autoremove": false, "autoclean": false, "only_upgrade": false, "force_apt_get": false, "allow_unauthenticated": false, "package": null, "deb": null, "default_release": null, "install_recommends": null, "policy_rc_d": null}}, "warnings": ["The value True (type bool) in a string field was converted to \'True\' (type string). If this does not look like what you expect, quote the entire value to ensure it does not change."]}\r\n', b'Shared connection to 172.31.18.80 closed.\r\n')
+<172.31.18.80> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.18.80> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 172.31.18.80 '/bin/sh -c '"'"'rm -f -r /root/.ansible/tmp/ansible-tmp-1658480595.8499508-265319784919237/ > /dev/null 2>&1 && sleep 0'"'"''
+<172.31.18.80> (0, b'', b'')
+ok: [ip-172-31-18-80] => {
+    "changed": false,
+    "invocation": {
+        "module_args": {
+            "allow_unauthenticated": false,
+            "autoclean": false,
+            "autoremove": false,
+            "cache_valid_time": 0,
+            "deb": null,
+            "default_release": null,
+            "dpkg_options": "force-confdef,force-confold",
+            "force": false,
+            "force_apt_get": false,
+            "install_recommends": null,
+            "only_upgrade": false,
+            "package": null,
+            "policy_rc_d": null,
+            "purge": false,
+            "state": "present",
+            "update_cache": true,
+            "upgrade": "yes"
+        }
+    },
+    "msg": "Reading package lists...\nBuilding dependency tree...\nReading state information...\nCalculating upgrade...\n0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.\n",
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "Reading package lists...\nBuilding dependency tree...\nReading state information...\nCalculating upgrade...\n0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.\n",
+    "stdout_lines": [
+        "Reading package lists...",
+        "Building dependency tree...",
+        "Reading state information...",
+        "Calculating upgrade...",
+        "0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded."
+    ]
+}
+
+TASK [installing jenkins] ****************************************************************************************************************************
+task path: /root/jenk1.yaml:18
+<172.31.24.164> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.24.164> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 172.31.24.164 '/bin/sh -c '"'"'echo ~ && sleep 0'"'"''
+<172.31.18.80> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.18.80> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 172.31.18.80 '/bin/sh -c '"'"'echo ~ && sleep 0'"'"''
+<172.31.24.164> (0, b'/root\n', b'')
+<172.31.24.164> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.24.164> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 172.31.24.164 '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-tmp-1658480600.9905045-108036706867513 `" && echo ansible-tmp-1658480600.9905045-108036706867513="` echo /root/.ansible/tmp/ansible-tmp-1658480600.9905045-108036706867513 `" ) && sleep 0'"'"''
+<172.31.18.80> (0, b'/root\n', b'')
+<172.31.18.80> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.18.80> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 172.31.18.80 '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-tmp-1658480601.0108266-69260466631412 `" && echo ansible-tmp-1658480601.0108266-69260466631412="` echo /root/.ansible/tmp/ansible-tmp-1658480601.0108266-69260466631412 `" ) && sleep 0'"'"''
+<172.31.24.164> (0, b'ansible-tmp-1658480600.9905045-108036706867513=/root/.ansible/tmp/ansible-tmp-1658480600.9905045-108036706867513\n', b'')
+Using module file /usr/lib/python3/dist-packages/ansible/modules/packaging/os/apt.py
+<172.31.24.164> PUT /root/.ansible/tmp/ansible-local-327785nr6v3tr/tmp8jvoscaa TO /root/.ansible/tmp/ansible-tmp-1658480600.9905045-108036706867513/AnsiballZ_apt.py
+<172.31.24.164> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 '[172.31.24.164]'
+<172.31.18.80> (0, b'ansible-tmp-1658480601.0108266-69260466631412=/root/.ansible/tmp/ansible-tmp-1658480601.0108266-69260466631412\n', b'')
+Using module file /usr/lib/python3/dist-packages/ansible/modules/packaging/os/apt.py
+<172.31.18.80> PUT /root/.ansible/tmp/ansible-local-327785nr6v3tr/tmpnc41tvir TO /root/.ansible/tmp/ansible-tmp-1658480601.0108266-69260466631412/AnsiballZ_apt.py
+<172.31.18.80> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 '[172.31.18.80]'
+<172.31.24.164> (0, b'sftp> put /root/.ansible/tmp/ansible-local-327785nr6v3tr/tmp8jvoscaa /root/.ansible/tmp/ansible-tmp-1658480600.9905045-108036706867513/AnsiballZ_apt.py\n', b'')
+<172.31.24.164> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.24.164> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 172.31.24.164 '/bin/sh -c '"'"'chmod u+x /root/.ansible/tmp/ansible-tmp-1658480600.9905045-108036706867513/ /root/.ansible/tmp/ansible-tmp-1658480600.9905045-108036706867513/AnsiballZ_apt.py && sleep 0'"'"''
+<172.31.18.80> (0, b'sftp> put /root/.ansible/tmp/ansible-local-327785nr6v3tr/tmpnc41tvir /root/.ansible/tmp/ansible-tmp-1658480601.0108266-69260466631412/AnsiballZ_apt.py\n', b'')
+<172.31.18.80> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.18.80> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 172.31.18.80 '/bin/sh -c '"'"'chmod u+x /root/.ansible/tmp/ansible-tmp-1658480601.0108266-69260466631412/ /root/.ansible/tmp/ansible-tmp-1658480601.0108266-69260466631412/AnsiballZ_apt.py && sleep 0'"'"''
+<172.31.24.164> (0, b'', b'')
+<172.31.24.164> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.24.164> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 -tt 172.31.24.164 '/bin/sh -c '"'"'sudo -H -S -n  -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-fmphnahsbcjkcjitlcfbzfhomdsffvyv ; /usr/bin/python3 /root/.ansible/tmp/ansible-tmp-1658480600.9905045-108036706867513/AnsiballZ_apt.py'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+<172.31.18.80> (0, b'', b'')
+<172.31.18.80> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.18.80> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 -tt 172.31.18.80 '/bin/sh -c '"'"'sudo -H -S -n  -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-oqcicsdmypiqnoyrwbwsopxzkoqisifh ; /usr/bin/python3 /root/.ansible/tmp/ansible-tmp-1658480601.0108266-69260466631412/AnsiballZ_apt.py'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+Escalation succeeded
+Escalation succeeded
+<172.31.24.164> (0, b'\r\n{"changed": false, "cache_updated": false, "cache_update_time": 1658480598, "invocation": {"module_args": {"name": "jenkins", "state": "present", "package": ["jenkins"], "cache_valid_time": 0, "purge": false, "force": false, "dpkg_options": "force-confdef,force-confold", "autoremove": false, "autoclean": false, "only_upgrade": false, "force_apt_get": false, "allow_unauthenticated": false, "update_cache": null, "deb": null, "default_release": null, "install_recommends": null, "upgrade": null, "policy_rc_d": null}}}\r\n', b'Shared connection to 172.31.24.164 closed.\r\n')
+<172.31.24.164> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.24.164> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 172.31.24.164 '/bin/sh -c '"'"'rm -f -r /root/.ansible/tmp/ansible-tmp-1658480600.9905045-108036706867513/ > /dev/null 2>&1 && sleep 0'"'"''
+<172.31.24.164> (0, b'', b'')
+<172.31.18.80> (0, b'\r\n\r\n{"changed": false, "cache_updated": false, "cache_update_time": 1658480599, "invocation": {"module_args": {"name": "jenkins", "state": "present", "package": ["jenkins"], "cache_valid_time": 0, "purge": false, "force": false, "dpkg_options": "force-confdef,force-confold", "autoremove": false, "autoclean": false, "only_upgrade": false, "force_apt_get": false, "allow_unauthenticated": false, "update_cache": null, "deb": null, "default_release": null, "install_recommends": null, "upgrade": null, "policy_rc_d": null}}}\r\n', b'Shared connection to 172.31.18.80 closed.\r\n')
+<172.31.18.80> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.18.80> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 172.31.18.80 '/bin/sh -c '"'"'rm -f -r /root/.ansible/tmp/ansible-tmp-1658480601.0108266-69260466631412/ > /dev/null 2>&1 && sleep 0'"'"''
+ok: [ip-172-31-24-164] => {
+    "cache_update_time": 1658480598,
+    "cache_updated": false,
+    "changed": false,
+    "invocation": {
+        "module_args": {
+            "allow_unauthenticated": false,
+            "autoclean": false,
+            "autoremove": false,
+            "cache_valid_time": 0,
+            "deb": null,
+            "default_release": null,
+            "dpkg_options": "force-confdef,force-confold",
+            "force": false,
+            "force_apt_get": false,
+            "install_recommends": null,
+            "name": "jenkins",
+            "only_upgrade": false,
+            "package": [
+                "jenkins"
+            ],
+            "policy_rc_d": null,
+            "purge": false,
+            "state": "present",
+            "update_cache": null,
+            "upgrade": null
+        }
+    }
+}
+<172.31.18.80> (0, b'', b'')
+ok: [ip-172-31-18-80] => {
+    "cache_update_time": 1658480599,
+    "cache_updated": false,
+    "changed": false,
+    "invocation": {
+        "module_args": {
+            "allow_unauthenticated": false,
+            "autoclean": false,
+            "autoremove": false,
+            "cache_valid_time": 0,
+            "deb": null,
+            "default_release": null,
+            "dpkg_options": "force-confdef,force-confold",
+            "force": false,
+            "force_apt_get": false,
+            "install_recommends": null,
+            "name": "jenkins",
+            "only_upgrade": false,
+            "package": [
+                "jenkins"
+            ],
+            "policy_rc_d": null,
+            "purge": false,
+            "state": "present",
+            "update_cache": null,
+            "upgrade": null
+        }
+    }
+}
+
+TASK [starting jenkins] ******************************************************************************************************************************
+task path: /root/jenk1.yaml:23
+<172.31.24.164> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.24.164> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 172.31.24.164 '/bin/sh -c '"'"'echo ~ && sleep 0'"'"''
+<172.31.18.80> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.18.80> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 172.31.18.80 '/bin/sh -c '"'"'echo ~ && sleep 0'"'"''
+<172.31.24.164> (0, b'/root\n', b'')
+<172.31.24.164> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.24.164> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 172.31.24.164 '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-tmp-1658480602.3479698-72964055341488 `" && echo ansible-tmp-1658480602.3479698-72964055341488="` echo /root/.ansible/tmp/ansible-tmp-1658480602.3479698-72964055341488 `" ) && sleep 0'"'"''
+<172.31.18.80> (0, b'/root\n', b'')
+<172.31.18.80> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.18.80> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 172.31.18.80 '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-tmp-1658480602.3639572-238550660729752 `" && echo ansible-tmp-1658480602.3639572-238550660729752="` echo /root/.ansible/tmp/ansible-tmp-1658480602.3639572-238550660729752 `" ) && sleep 0'"'"''
+<172.31.24.164> (0, b'ansible-tmp-1658480602.3479698-72964055341488=/root/.ansible/tmp/ansible-tmp-1658480602.3479698-72964055341488\n', b'')
+<172.31.18.80> (0, b'ansible-tmp-1658480602.3639572-238550660729752=/root/.ansible/tmp/ansible-tmp-1658480602.3639572-238550660729752\n', b'')
+Using module file /usr/lib/python3/dist-packages/ansible/modules/system/systemd.py
+<172.31.18.80> PUT /root/.ansible/tmp/ansible-local-327785nr6v3tr/tmp3nz8xki8 TO /root/.ansible/tmp/ansible-tmp-1658480602.3639572-238550660729752/AnsiballZ_systemd.py
+<172.31.18.80> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 '[172.31.18.80]'
+Using module file /usr/lib/python3/dist-packages/ansible/modules/system/systemd.py
+<172.31.24.164> PUT /root/.ansible/tmp/ansible-local-327785nr6v3tr/tmp8zqkgab6 TO /root/.ansible/tmp/ansible-tmp-1658480602.3479698-72964055341488/AnsiballZ_systemd.py
+<172.31.24.164> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 '[172.31.24.164]'
+<172.31.18.80> (0, b'sftp> put /root/.ansible/tmp/ansible-local-327785nr6v3tr/tmp3nz8xki8 /root/.ansible/tmp/ansible-tmp-1658480602.3639572-238550660729752/AnsiballZ_systemd.py\n', b'')
+<172.31.18.80> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.18.80> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 172.31.18.80 '/bin/sh -c '"'"'chmod u+x /root/.ansible/tmp/ansible-tmp-1658480602.3639572-238550660729752/ /root/.ansible/tmp/ansible-tmp-1658480602.3639572-238550660729752/AnsiballZ_systemd.py && sleep 0'"'"''
+<172.31.24.164> (0, b'sftp> put /root/.ansible/tmp/ansible-local-327785nr6v3tr/tmp8zqkgab6 /root/.ansible/tmp/ansible-tmp-1658480602.3479698-72964055341488/AnsiballZ_systemd.py\n', b'')
+<172.31.24.164> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.24.164> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 172.31.24.164 '/bin/sh -c '"'"'chmod u+x /root/.ansible/tmp/ansible-tmp-1658480602.3479698-72964055341488/ /root/.ansible/tmp/ansible-tmp-1658480602.3479698-72964055341488/AnsiballZ_systemd.py && sleep 0'"'"''
+<172.31.18.80> (0, b'', b'')
+<172.31.18.80> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.18.80> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 -tt 172.31.18.80 '/bin/sh -c '"'"'sudo -H -S -n  -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-dhllhiotoutofbevjspwuaywbzwuvdrk ; /usr/bin/python3 /root/.ansible/tmp/ansible-tmp-1658480602.3639572-238550660729752/AnsiballZ_systemd.py'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+<172.31.24.164> (0, b'', b'')
+<172.31.24.164> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.24.164> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 -tt 172.31.24.164 '/bin/sh -c '"'"'sudo -H -S -n  -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-byuhxnkzuytohsdeacjrwkjvnxbkfdhq ; /usr/bin/python3 /root/.ansible/tmp/ansible-tmp-1658480602.3479698-72964055341488/AnsiballZ_systemd.py'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+Escalation succeeded
+Escalation succeeded
+<172.31.18.80> (0, b'\r\n\r\n{"name": "jenkins", "changed": false, "status": {"Type": "notify", "Restart": "on-failure", "NotifyAccess": "main", "RestartUSec": "100ms", "TimeoutStartUSec": "1min 30s", "TimeoutStopUSec": "1min 30s", "TimeoutAbortUSec": "1min 30s", "RuntimeMaxUSec": "infinity", "WatchdogUSec": "0", "WatchdogTimestampMonotonic": "0", "RootDirectoryStartOnly": "no", "RemainAfterExit": "no", "GuessMainPID": "yes", "SuccessExitStatus": "143", "MainPID": "14470", "ControlPID": "0", "FileDescriptorStoreMax": "0", "NFileDescriptorStore": "0", "StatusErrno": "0", "Result": "success", "ReloadResult": "success", "CleanResult": "success", "UID": "113", "GID": "119", "NRestarts": "0", "OOMPolicy": "stop", "ExecMainStartTimestamp": "Wed 2022-07-20 07:36:50 UTC", "ExecMainStartTimestampMonotonic": "10673289611", "ExecMainExitTimestampMonotonic": "0", "ExecMainPID": "14470", "ExecMainCode": "0", "ExecMainStatus": "0", "ExecStart": "{ path=/usr/bin/jenkins ; argv[]=/usr/bin/jenkins ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }", "ExecStartEx": "{ path=/usr/bin/jenkins ; argv[]=/usr/bin/jenkins ; flags= ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }", "Slice": "system.slice", "ControlGroup": "/system.slice/jenkins.service", "MemoryCurrent": "330350592", "CPUUsageNSec": "[not set]", "EffectiveCPUs": "", "EffectiveMemoryNodes": "", "TasksCurrent": "37", "IPIngressBytes": "[no data]", "IPIngressPackets": "[no data]", "IPEgressBytes": "[no data]", "IPEgressPackets": "[no data]", "IOReadBytes": "18446744073709551615", "IOReadOperations": "18446744073709551615", "IOWriteBytes": "18446744073709551615", "IOWriteOperations": "18446744073709551615", "Delegate": "no", "CPUAccounting": "no", "CPUWeight": "[not set]", "StartupCPUWeight": "[not set]", "CPUShares": "[not set]", "StartupCPUShares": "[not set]", "CPUQuotaPerSecUSec": "infinity", "CPUQuotaPeriodUSec": "infinity", "AllowedCPUs": "", "AllowedMemoryNodes": "", "IOAccounting": "no", "IOWeight": "[not set]", "StartupIOWeight": "[not set]", "BlockIOAccounting": "no", "BlockIOWeight": "[not set]", "StartupBlockIOWeight": "[not set]", "MemoryAccounting": "yes", "DefaultMemoryLow": "0", "DefaultMemoryMin": "0", "MemoryMin": "0", "MemoryLow": "0", "MemoryHigh": "infinity", "MemoryMax": "infinity", "MemorySwapMax": "infinity", "MemoryLimit": "infinity", "DevicePolicy": "auto", "TasksAccounting": "yes", "TasksMax": "1145", "IPAccounting": "no", "Environment": "JENKINS_HOME=/var/lib/jenkins JENKINS_WEBROOT=/var/cache/jenkins/war JAVA_OPTS=-Djava.awt.headless=true JENKINS_PORT=8080", "UMask": "0022", "LimitCPU": "infinity", "LimitCPUSoft": "infinity", "LimitFSIZE": "infinity", "LimitFSIZESoft": "infinity", "LimitDATA": "infinity", "LimitDATASoft": "infinity", "LimitSTACK": "infinity", "LimitSTACKSoft": "8388608", "LimitCORE": "infinity", "LimitCORESoft": "0", "LimitRSS": "infinity", "LimitRSSSoft": "infinity", "LimitNOFILE": "524288", "LimitNOFILESoft": "1024", "LimitAS": "infinity", "LimitASSoft": "infinity", "LimitNPROC": "3819", "LimitNPROCSoft": "3819", "LimitMEMLOCK": "65536", "LimitMEMLOCKSoft": "65536", "LimitLOCKS": "infinity", "LimitLOCKSSoft": "infinity", "LimitSIGPENDING": "3819", "LimitSIGPENDINGSoft": "3819", "LimitMSGQUEUE": "819200", "LimitMSGQUEUESoft": "819200", "LimitNICE": "0", "LimitNICESoft": "0", "LimitRTPRIO": "0", "LimitRTPRIOSoft": "0", "LimitRTTIME": "infinity", "LimitRTTIMESoft": "infinity", "WorkingDirectory": "/var/lib/jenkins", "OOMScoreAdjust": "0", "Nice": "0", "IOSchedulingClass": "0", "IOSchedulingPriority": "0", "CPUSchedulingPolicy": "0", "CPUSchedulingPriority": "0", "CPUAffinity": "", "CPUAffinityFromNUMA": "no", "NUMAPolicy": "n/a", "NUMAMask": "", "TimerSlackNSec": "50000", "CPUSchedulingResetOnFork": "no", "NonBlocking": "no", "StandardInput": "null", "StandardInputData": "", "StandardOutput": "journal", "StandardError": "inherit", "TTYReset": "no", "TTYVHangup": "no", "TTYVTDisallocate": "no", "SyslogPriority": "30", "SyslogLevelPrefix": "yes", "SyslogLevel": "6", "SyslogFacility": "3", "LogLevelMax": "-1", "LogRateLimitIntervalUSec": "0", "LogRateLimitBurst": "0", "SecureBits": "0", "CapabilityBoundingSet": "cap_chown cap_dac_override cap_dac_read_search cap_fowner cap_fsetid cap_kill cap_setgid cap_setuid cap_setpcap cap_linux_immutable cap_net_bind_service cap_net_broadcast cap_net_admin cap_net_raw cap_ipc_lock cap_ipc_owner cap_sys_module cap_sys_rawio cap_sys_chroot cap_sys_ptrace cap_sys_pacct cap_sys_admin cap_sys_boot cap_sys_nice cap_sys_resource cap_sys_time cap_sys_tty_config cap_mknod cap_lease cap_audit_write cap_audit_control cap_setfcap cap_mac_override cap_mac_admin cap_syslog cap_wake_alarm cap_block_suspend cap_audit_read 0x26 0x27 0x28", "AmbientCapabilities": "", "User": "jenkins", "Group": "jenkins", "DynamicUser": "no", "RemoveIPC": "no", "MountFlags": "", "PrivateTmp": "no", "PrivateDevices": "no", "ProtectKernelTunables": "no", "ProtectKernelModules": "no", "ProtectKernelLogs": "no", "ProtectControlGroups": "no", "PrivateNetwork": "no", "PrivateUsers": "no", "PrivateMounts": "no", "ProtectHome": "no", "ProtectSystem": "no", "SameProcessGroup": "no", "UtmpMode": "init", "IgnoreSIGPIPE": "yes", "NoNewPrivileges": "no", "SystemCallErrorNumber": "0", "LockPersonality": "no", "RuntimeDirectoryPreserve": "no", "RuntimeDirectoryMode": "0755", "StateDirectoryMode": "0755", "CacheDirectoryMode": "0755", "LogsDirectoryMode": "0755", "ConfigurationDirectoryMode": "0755", "TimeoutCleanUSec": "infinity", "MemoryDenyWriteExecute": "no", "RestrictRealtime": "no", "RestrictSUIDSGID": "no", "RestrictNamespaces": "no", "MountAPIVFS": "no", "KeyringMode": "private", "ProtectHostname": "no", "KillMode": "control-group", "KillSignal": "15", "RestartKillSignal": "15", "FinalKillSignal": "9", "SendSIGKILL": "yes", "SendSIGHUP": "no", "WatchdogSignal": "6", "Id": "jenkins.service", "Names": "jenkins.service", "Requires": "network.target -.mount sysinit.target system.slice", "WantedBy": "multi-user.target", "Conflicts": "shutdown.target", "Before": "multi-user.target shutdown.target", "After": "basic.target network.target -.mount sysinit.target systemd-journald.socket system.slice", "RequiresMountsFor": "/var/lib/jenkins", "Description": "Jenkins Continuous Integration Server", "LoadState": "loaded", "ActiveState": "active", "SubState": "running", "FragmentPath": "/lib/systemd/system/jenkins.service", "UnitFileState": "enabled", "UnitFilePreset": "enabled", "StateChangeTimestamp": "Wed 2022-07-20 07:37:32 UTC", "StateChangeTimestampMonotonic": "10715746336", "InactiveExitTimestamp": "Wed 2022-07-20 07:36:50 UTC", "InactiveExitTimestampMonotonic": "10673291512", "ActiveEnterTimestamp": "Wed 2022-07-20 07:37:32 UTC", "ActiveEnterTimestampMonotonic": "10715746336", "ActiveExitTimestampMonotonic": "0", "InactiveEnterTimestampMonotonic": "0", "CanStart": "yes", "CanStop": "yes", "CanReload": "no", "CanIsolate": "no", "StopWhenUnneeded": "no", "RefuseManualStart": "no", "RefuseManualStop": "no", "AllowIsolate": "no", "DefaultDependencies": "yes", "OnFailureJobMode": "replace", "IgnoreOnIsolate": "no", "NeedDaemonReload": "no", "JobTimeoutUSec": "infinity", "JobRunningTimeoutUSec": "infinity", "JobTimeoutAction": "none", "ConditionResult": "yes", "AssertResult": "yes", "ConditionTimestamp": "Wed 2022-07-20 07:36:50 UTC", "ConditionTimestampMonotonic": "10673287877", "AssertTimestamp": "Wed 2022-07-20 07:36:50 UTC", "AssertTimestampMonotonic": "10673287878", "Transient": "no", "Perpetual": "no", "StartLimitIntervalUSec": "10s", "StartLimitBurst": "5", "StartLimitAction": "none", "FailureAction": "none", "SuccessAction": "none", "InvocationID": "ec03c51ba775461b866a92ff0804d13b", "CollectMode": "inactive"}, "state": "started", "invocation": {"module_args": {"name": "jenkins", "state": "started", "daemon_reload": false, "daemon_reexec": false, "no_block": false, "enabled": null, "force": null, "masked": null, "user": null, "scope": null}}}\r\n', b'Shared connection to 172.31.18.80 closed.\r\n')
+<172.31.18.80> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.18.80> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 172.31.18.80 '/bin/sh -c '"'"'rm -f -r /root/.ansible/tmp/ansible-tmp-1658480602.3639572-238550660729752/ > /dev/null 2>&1 && sleep 0'"'"''
+<172.31.24.164> (0, b'\r\n{"name": "jenkins", "changed": false, "status": {"Type": "notify", "Restart": "on-failure", "NotifyAccess": "main", "RestartUSec": "100ms", "TimeoutStartUSec": "1min 30s", "TimeoutStopUSec": "1min 30s", "TimeoutAbortUSec": "1min 30s", "RuntimeMaxUSec": "infinity", "WatchdogUSec": "0", "WatchdogTimestampMonotonic": "0", "RootDirectoryStartOnly": "no", "RemainAfterExit": "no", "GuessMainPID": "yes", "SuccessExitStatus": "143", "MainPID": "14499", "ControlPID": "0", "FileDescriptorStoreMax": "0", "NFileDescriptorStore": "0", "StatusErrno": "0", "Result": "success", "ReloadResult": "success", "CleanResult": "success", "UID": "113", "GID": "119", "NRestarts": "0", "OOMPolicy": "stop", "ExecMainStartTimestamp": "Wed 2022-07-20 07:36:46 UTC", "ExecMainStartTimestampMonotonic": "10668924770", "ExecMainExitTimestampMonotonic": "0", "ExecMainPID": "14499", "ExecMainCode": "0", "ExecMainStatus": "0", "ExecStart": "{ path=/usr/bin/jenkins ; argv[]=/usr/bin/jenkins ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }", "ExecStartEx": "{ path=/usr/bin/jenkins ; argv[]=/usr/bin/jenkins ; flags= ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }", "Slice": "system.slice", "ControlGroup": "/system.slice/jenkins.service", "MemoryCurrent": "332410880", "CPUUsageNSec": "[not set]", "EffectiveCPUs": "", "EffectiveMemoryNodes": "", "TasksCurrent": "37", "IPIngressBytes": "[no data]", "IPIngressPackets": "[no data]", "IPEgressBytes": "[no data]", "IPEgressPackets": "[no data]", "IOReadBytes": "18446744073709551615", "IOReadOperations": "18446744073709551615", "IOWriteBytes": "18446744073709551615", "IOWriteOperations": "18446744073709551615", "Delegate": "no", "CPUAccounting": "no", "CPUWeight": "[not set]", "StartupCPUWeight": "[not set]", "CPUShares": "[not set]", "StartupCPUShares": "[not set]", "CPUQuotaPerSecUSec": "infinity", "CPUQuotaPeriodUSec": "infinity", "AllowedCPUs": "", "AllowedMemoryNodes": "", "IOAccounting": "no", "IOWeight": "[not set]", "StartupIOWeight": "[not set]", "BlockIOAccounting": "no", "BlockIOWeight": "[not set]", "StartupBlockIOWeight": "[not set]", "MemoryAccounting": "yes", "DefaultMemoryLow": "0", "DefaultMemoryMin": "0", "MemoryMin": "0", "MemoryLow": "0", "MemoryHigh": "infinity", "MemoryMax": "infinity", "MemorySwapMax": "infinity", "MemoryLimit": "infinity", "DevicePolicy": "auto", "TasksAccounting": "yes", "TasksMax": "1145", "IPAccounting": "no", "Environment": "JENKINS_HOME=/var/lib/jenkins JENKINS_WEBROOT=/var/cache/jenkins/war JAVA_OPTS=-Djava.awt.headless=true JENKINS_PORT=8080", "UMask": "0022", "LimitCPU": "infinity", "LimitCPUSoft": "infinity", "LimitFSIZE": "infinity", "LimitFSIZESoft": "infinity", "LimitDATA": "infinity", "LimitDATASoft": "infinity", "LimitSTACK": "infinity", "LimitSTACKSoft": "8388608", "LimitCORE": "infinity", "LimitCORESoft": "0", "LimitRSS": "infinity", "LimitRSSSoft": "infinity", "LimitNOFILE": "524288", "LimitNOFILESoft": "1024", "LimitAS": "infinity", "LimitASSoft": "infinity", "LimitNPROC": "3819", "LimitNPROCSoft": "3819", "LimitMEMLOCK": "65536", "LimitMEMLOCKSoft": "65536", "LimitLOCKS": "infinity", "LimitLOCKSSoft": "infinity", "LimitSIGPENDING": "3819", "LimitSIGPENDINGSoft": "3819", "LimitMSGQUEUE": "819200", "LimitMSGQUEUESoft": "819200", "LimitNICE": "0", "LimitNICESoft": "0", "LimitRTPRIO": "0", "LimitRTPRIOSoft": "0", "LimitRTTIME": "infinity", "LimitRTTIMESoft": "infinity", "WorkingDirectory": "/var/lib/jenkins", "OOMScoreAdjust": "0", "Nice": "0", "IOSchedulingClass": "0", "IOSchedulingPriority": "0", "CPUSchedulingPolicy": "0", "CPUSchedulingPriority": "0", "CPUAffinity": "", "CPUAffinityFromNUMA": "no", "NUMAPolicy": "n/a", "NUMAMask": "", "TimerSlackNSec": "50000", "CPUSchedulingResetOnFork": "no", "NonBlocking": "no", "StandardInput": "null", "StandardInputData": "", "StandardOutput": "journal", "StandardError": "inherit", "TTYReset": "no", "TTYVHangup": "no", "TTYVTDisallocate": "no", "SyslogPriority": "30", "SyslogLevelPrefix": "yes", "SyslogLevel": "6", "SyslogFacility": "3", "LogLevelMax": "-1", "LogRateLimitIntervalUSec": "0", "LogRateLimitBurst": "0", "SecureBits": "0", "CapabilityBoundingSet": "cap_chown cap_dac_override cap_dac_read_search cap_fowner cap_fsetid cap_kill cap_setgid cap_setuid cap_setpcap cap_linux_immutable cap_net_bind_service cap_net_broadcast cap_net_admin cap_net_raw cap_ipc_lock cap_ipc_owner cap_sys_module cap_sys_rawio cap_sys_chroot cap_sys_ptrace cap_sys_pacct cap_sys_admin cap_sys_boot cap_sys_nice cap_sys_resource cap_sys_time cap_sys_tty_config cap_mknod cap_lease cap_audit_write cap_audit_control cap_setfcap cap_mac_override cap_mac_admin cap_syslog cap_wake_alarm cap_block_suspend cap_audit_read 0x26 0x27 0x28", "AmbientCapabilities": "", "User": "jenkins", "Group": "jenkins", "DynamicUser": "no", "RemoveIPC": "no", "MountFlags": "", "PrivateTmp": "no", "PrivateDevices": "no", "ProtectKernelTunables": "no", "ProtectKernelModules": "no", "ProtectKernelLogs": "no", "ProtectControlGroups": "no", "PrivateNetwork": "no", "PrivateUsers": "no", "PrivateMounts": "no", "ProtectHome": "no", "ProtectSystem": "no", "SameProcessGroup": "no", "UtmpMode": "init", "IgnoreSIGPIPE": "yes", "NoNewPrivileges": "no", "SystemCallErrorNumber": "0", "LockPersonality": "no", "RuntimeDirectoryPreserve": "no", "RuntimeDirectoryMode": "0755", "StateDirectoryMode": "0755", "CacheDirectoryMode": "0755", "LogsDirectoryMode": "0755", "ConfigurationDirectoryMode": "0755", "TimeoutCleanUSec": "infinity", "MemoryDenyWriteExecute": "no", "RestrictRealtime": "no", "RestrictSUIDSGID": "no", "RestrictNamespaces": "no", "MountAPIVFS": "no", "KeyringMode": "private", "ProtectHostname": "no", "KillMode": "control-group", "KillSignal": "15", "RestartKillSignal": "15", "FinalKillSignal": "9", "SendSIGKILL": "yes", "SendSIGHUP": "no", "WatchdogSignal": "6", "Id": "jenkins.service", "Names": "jenkins.service", "Requires": "system.slice sysinit.target network.target -.mount", "WantedBy": "multi-user.target", "Conflicts": "shutdown.target", "Before": "shutdown.target multi-user.target", "After": "systemd-journald.socket basic.target system.slice sysinit.target network.target -.mount", "RequiresMountsFor": "/var/lib/jenkins", "Description": "Jenkins Continuous Integration Server", "LoadState": "loaded", "ActiveState": "active", "SubState": "running", "FragmentPath": "/lib/systemd/system/jenkins.service", "UnitFileState": "enabled", "UnitFilePreset": "enabled", "StateChangeTimestamp": "Wed 2022-07-20 07:37:29 UTC", "StateChangeTimestampMonotonic": "10712016457", "InactiveExitTimestamp": "Wed 2022-07-20 07:36:46 UTC", "InactiveExitTimestampMonotonic": "10668925317", "ActiveEnterTimestamp": "Wed 2022-07-20 07:37:29 UTC", "ActiveEnterTimestampMonotonic": "10712016457", "ActiveExitTimestampMonotonic": "0", "InactiveEnterTimestampMonotonic": "0", "CanStart": "yes", "CanStop": "yes", "CanReload": "no", "CanIsolate": "no", "StopWhenUnneeded": "no", "RefuseManualStart": "no", "RefuseManualStop": "no", "AllowIsolate": "no", "DefaultDependencies": "yes", "OnFailureJobMode": "replace", "IgnoreOnIsolate": "no", "NeedDaemonReload": "no", "JobTimeoutUSec": "infinity", "JobRunningTimeoutUSec": "infinity", "JobTimeoutAction": "none", "ConditionResult": "yes", "AssertResult": "yes", "ConditionTimestamp": "Wed 2022-07-20 07:36:46 UTC", "ConditionTimestampMonotonic": "10668923619", "AssertTimestamp": "Wed 2022-07-20 07:36:46 UTC", "AssertTimestampMonotonic": "10668923621", "Transient": "no", "Perpetual": "no", "StartLimitIntervalUSec": "10s", "StartLimitBurst": "5", "StartLimitAction": "none", "FailureAction": "none", "SuccessAction": "none", "InvocationID": "595ea440d01b4da2b011a4fc9a0bd67d", "CollectMode": "inactive"}, "state": "started", "invocation": {"module_args": {"name": "jenkins", "state": "started", "daemon_reload": false, "daemon_reexec": false, "no_block": false, "enabled": null, "force": null, "masked": null, "user": null, "scope": null}}}\r\n', b'Shared connection to 172.31.24.164 closed.\r\n')
+<172.31.24.164> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.24.164> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 172.31.24.164 '/bin/sh -c '"'"'rm -f -r /root/.ansible/tmp/ansible-tmp-1658480602.3479698-72964055341488/ > /dev/null 2>&1 && sleep 0'"'"''
+<172.31.18.80> (0, b'', b'')
+<172.31.24.164> (0, b'', b'')
+ok: [ip-172-31-18-80] => {
+    "changed": false,
+    "invocation": {
+        "module_args": {
+            "daemon_reexec": false,
+            "daemon_reload": false,
+            "enabled": null,
+            "force": null,
+            "masked": null,
+            "name": "jenkins",
+            "no_block": false,
+            "scope": null,
+            "state": "started",
+            "user": null
+        }
+    },
+    "name": "jenkins",
+    "state": "started",
+    "status": {
+        "ActiveEnterTimestamp": "Wed 2022-07-20 07:37:32 UTC",
+        "ActiveEnterTimestampMonotonic": "10715746336",
+        "ActiveExitTimestampMonotonic": "0",
+        "ActiveState": "active",
+        "After": "basic.target network.target -.mount sysinit.target systemd-journald.socket system.slice",
+        "AllowIsolate": "no",
+        "AllowedCPUs": "",
+        "AllowedMemoryNodes": "",
+        "AmbientCapabilities": "",
+        "AssertResult": "yes",
+        "AssertTimestamp": "Wed 2022-07-20 07:36:50 UTC",
+        "AssertTimestampMonotonic": "10673287878",
+        "Before": "multi-user.target shutdown.target",
+        "BlockIOAccounting": "no",
+        "BlockIOWeight": "[not set]",
+        "CPUAccounting": "no",
+        "CPUAffinity": "",
+        "CPUAffinityFromNUMA": "no",
+        "CPUQuotaPerSecUSec": "infinity",
+        "CPUQuotaPeriodUSec": "infinity",
+        "CPUSchedulingPolicy": "0",
+        "CPUSchedulingPriority": "0",
+        "CPUSchedulingResetOnFork": "no",
+        "CPUShares": "[not set]",
+        "CPUUsageNSec": "[not set]",
+        "CPUWeight": "[not set]",
+        "CacheDirectoryMode": "0755",
+        "CanIsolate": "no",
+        "CanReload": "no",
+        "CanStart": "yes",
+        "CanStop": "yes",
+        "CapabilityBoundingSet": "cap_chown cap_dac_override cap_dac_read_search cap_fowner cap_fsetid cap_kill cap_setgid cap_setuid cap_setpcap cap_linux_immutable cap_net_bind_service cap_net_broadcast cap_net_admin cap_net_raw cap_ipc_lock cap_ipc_owner cap_sys_module cap_sys_rawio cap_sys_chroot cap_sys_ptrace cap_sys_pacct cap_sys_admin cap_sys_boot cap_sys_nice cap_sys_resource cap_sys_time cap_sys_tty_config cap_mknod cap_lease cap_audit_write cap_audit_control cap_setfcap cap_mac_override cap_mac_admin cap_syslog cap_wake_alarm cap_block_suspend cap_audit_read 0x26 0x27 0x28",
+        "CleanResult": "success",
+        "CollectMode": "inactive",
+        "ConditionResult": "yes",
+        "ConditionTimestamp": "Wed 2022-07-20 07:36:50 UTC",
+        "ConditionTimestampMonotonic": "10673287877",
+        "ConfigurationDirectoryMode": "0755",
+        "Conflicts": "shutdown.target",
+        "ControlGroup": "/system.slice/jenkins.service",
+        "ControlPID": "0",
+        "DefaultDependencies": "yes",
+        "DefaultMemoryLow": "0",
+        "DefaultMemoryMin": "0",
+        "Delegate": "no",
+        "Description": "Jenkins Continuous Integration Server",
+        "DevicePolicy": "auto",
+        "DynamicUser": "no",
+        "EffectiveCPUs": "",
+        "EffectiveMemoryNodes": "",
+        "Environment": "JENKINS_HOME=/var/lib/jenkins JENKINS_WEBROOT=/var/cache/jenkins/war JAVA_OPTS=-Djava.awt.headless=true JENKINS_PORT=8080",
+        "ExecMainCode": "0",
+        "ExecMainExitTimestampMonotonic": "0",
+        "ExecMainPID": "14470",
+        "ExecMainStartTimestamp": "Wed 2022-07-20 07:36:50 UTC",
+        "ExecMainStartTimestampMonotonic": "10673289611",
+        "ExecMainStatus": "0",
+        "ExecStart": "{ path=/usr/bin/jenkins ; argv[]=/usr/bin/jenkins ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }",
+        "ExecStartEx": "{ path=/usr/bin/jenkins ; argv[]=/usr/bin/jenkins ; flags= ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }",
+        "FailureAction": "none",
+        "FileDescriptorStoreMax": "0",
+        "FinalKillSignal": "9",
+        "FragmentPath": "/lib/systemd/system/jenkins.service",
+        "GID": "119",
+        "Group": "jenkins",
+        "GuessMainPID": "yes",
+        "IOAccounting": "no",
+        "IOReadBytes": "18446744073709551615",
+        "IOReadOperations": "18446744073709551615",
+        "IOSchedulingClass": "0",
+        "IOSchedulingPriority": "0",
+        "IOWeight": "[not set]",
+        "IOWriteBytes": "18446744073709551615",
+        "IOWriteOperations": "18446744073709551615",
+        "IPAccounting": "no",
+        "IPEgressBytes": "[no data]",
+        "IPEgressPackets": "[no data]",
+        "IPIngressBytes": "[no data]",
+        "IPIngressPackets": "[no data]",
+        "Id": "jenkins.service",
+        "IgnoreOnIsolate": "no",
+        "IgnoreSIGPIPE": "yes",
+        "InactiveEnterTimestampMonotonic": "0",
+        "InactiveExitTimestamp": "Wed 2022-07-20 07:36:50 UTC",
+        "InactiveExitTimestampMonotonic": "10673291512",
+        "InvocationID": "ec03c51ba775461b866a92ff0804d13b",
+        "JobRunningTimeoutUSec": "infinity",
+        "JobTimeoutAction": "none",
+        "JobTimeoutUSec": "infinity",
+        "KeyringMode": "private",
+        "KillMode": "control-group",
+        "KillSignal": "15",
+        "LimitAS": "infinity",
+        "LimitASSoft": "infinity",
+        "LimitCORE": "infinity",
+        "LimitCORESoft": "0",
+        "LimitCPU": "infinity",
+        "LimitCPUSoft": "infinity",
+        "LimitDATA": "infinity",
+        "LimitDATASoft": "infinity",
+        "LimitFSIZE": "infinity",
+        "LimitFSIZESoft": "infinity",
+        "LimitLOCKS": "infinity",
+        "LimitLOCKSSoft": "infinity",
+        "LimitMEMLOCK": "65536",
+        "LimitMEMLOCKSoft": "65536",
+        "LimitMSGQUEUE": "819200",
+        "LimitMSGQUEUESoft": "819200",
+        "LimitNICE": "0",
+        "LimitNICESoft": "0",
+        "LimitNOFILE": "524288",
+        "LimitNOFILESoft": "1024",
+        "LimitNPROC": "3819",
+        "LimitNPROCSoft": "3819",
+        "LimitRSS": "infinity",
+        "LimitRSSSoft": "infinity",
+        "LimitRTPRIO": "0",
+        "LimitRTPRIOSoft": "0",
+        "LimitRTTIME": "infinity",
+        "LimitRTTIMESoft": "infinity",
+        "LimitSIGPENDING": "3819",
+        "LimitSIGPENDINGSoft": "3819",
+        "LimitSTACK": "infinity",
+        "LimitSTACKSoft": "8388608",
+        "LoadState": "loaded",
+        "LockPersonality": "no",
+        "LogLevelMax": "-1",
+        "LogRateLimitBurst": "0",
+        "LogRateLimitIntervalUSec": "0",
+        "LogsDirectoryMode": "0755",
+        "MainPID": "14470",
+        "MemoryAccounting": "yes",
+        "MemoryCurrent": "330350592",
+        "MemoryDenyWriteExecute": "no",
+        "MemoryHigh": "infinity",
+        "MemoryLimit": "infinity",
+        "MemoryLow": "0",
+        "MemoryMax": "infinity",
+        "MemoryMin": "0",
+        "MemorySwapMax": "infinity",
+        "MountAPIVFS": "no",
+        "MountFlags": "",
+        "NFileDescriptorStore": "0",
+        "NRestarts": "0",
+        "NUMAMask": "",
+        "NUMAPolicy": "n/a",
+        "Names": "jenkins.service",
+        "NeedDaemonReload": "no",
+        "Nice": "0",
+        "NoNewPrivileges": "no",
+        "NonBlocking": "no",
+        "NotifyAccess": "main",
+        "OOMPolicy": "stop",
+        "OOMScoreAdjust": "0",
+        "OnFailureJobMode": "replace",
+        "Perpetual": "no",
+        "PrivateDevices": "no",
+        "PrivateMounts": "no",
+        "PrivateNetwork": "no",
+        "PrivateTmp": "no",
+        "PrivateUsers": "no",
+        "ProtectControlGroups": "no",
+        "ProtectHome": "no",
+        "ProtectHostname": "no",
+        "ProtectKernelLogs": "no",
+        "ProtectKernelModules": "no",
+        "ProtectKernelTunables": "no",
+        "ProtectSystem": "no",
+        "RefuseManualStart": "no",
+        "RefuseManualStop": "no",
+        "ReloadResult": "success",
+        "RemainAfterExit": "no",
+        "RemoveIPC": "no",
+        "Requires": "network.target -.mount sysinit.target system.slice",
+        "RequiresMountsFor": "/var/lib/jenkins",
+        "Restart": "on-failure",
+        "RestartKillSignal": "15",
+        "RestartUSec": "100ms",
+        "RestrictNamespaces": "no",
+        "RestrictRealtime": "no",
+        "RestrictSUIDSGID": "no",
+        "Result": "success",
+        "RootDirectoryStartOnly": "no",
+        "RuntimeDirectoryMode": "0755",
+        "RuntimeDirectoryPreserve": "no",
+        "RuntimeMaxUSec": "infinity",
+        "SameProcessGroup": "no",
+        "SecureBits": "0",
+        "SendSIGHUP": "no",
+        "SendSIGKILL": "yes",
+        "Slice": "system.slice",
+        "StandardError": "inherit",
+        "StandardInput": "null",
+        "StandardInputData": "",
+        "StandardOutput": "journal",
+        "StartLimitAction": "none",
+        "StartLimitBurst": "5",
+        "StartLimitIntervalUSec": "10s",
+        "StartupBlockIOWeight": "[not set]",
+        "StartupCPUShares": "[not set]",
+        "StartupCPUWeight": "[not set]",
+        "StartupIOWeight": "[not set]",
+        "StateChangeTimestamp": "Wed 2022-07-20 07:37:32 UTC",
+        "StateChangeTimestampMonotonic": "10715746336",
+        "StateDirectoryMode": "0755",
+        "StatusErrno": "0",
+        "StopWhenUnneeded": "no",
+        "SubState": "running",
+        "SuccessAction": "none",
+        "SuccessExitStatus": "143",
+        "SyslogFacility": "3",
+        "SyslogLevel": "6",
+        "SyslogLevelPrefix": "yes",
+        "SyslogPriority": "30",
+        "SystemCallErrorNumber": "0",
+        "TTYReset": "no",
+        "TTYVHangup": "no",
+        "TTYVTDisallocate": "no",
+        "TasksAccounting": "yes",
+        "TasksCurrent": "37",
+        "TasksMax": "1145",
+        "TimeoutAbortUSec": "1min 30s",
+        "TimeoutCleanUSec": "infinity",
+        "TimeoutStartUSec": "1min 30s",
+        "TimeoutStopUSec": "1min 30s",
+        "TimerSlackNSec": "50000",
+        "Transient": "no",
+        "Type": "notify",
+        "UID": "113",
+        "UMask": "0022",
+        "UnitFilePreset": "enabled",
+        "UnitFileState": "enabled",
+        "User": "jenkins",
+        "UtmpMode": "init",
+        "WantedBy": "multi-user.target",
+        "WatchdogSignal": "6",
+        "WatchdogTimestampMonotonic": "0",
+        "WatchdogUSec": "0",
+        "WorkingDirectory": "/var/lib/jenkins"
+    }
+}
+ok: [ip-172-31-24-164] => {
+    "changed": false,
+    "invocation": {
+        "module_args": {
+            "daemon_reexec": false,
+            "daemon_reload": false,
+            "enabled": null,
+            "force": null,
+            "masked": null,
+            "name": "jenkins",
+            "no_block": false,
+            "scope": null,
+            "state": "started",
+            "user": null
+        }
+    },
+    "name": "jenkins",
+    "state": "started",
+    "status": {
+        "ActiveEnterTimestamp": "Wed 2022-07-20 07:37:29 UTC",
+        "ActiveEnterTimestampMonotonic": "10712016457",
+        "ActiveExitTimestampMonotonic": "0",
+        "ActiveState": "active",
+        "After": "systemd-journald.socket basic.target system.slice sysinit.target network.target -.mount",
+        "AllowIsolate": "no",
+        "AllowedCPUs": "",
+        "AllowedMemoryNodes": "",
+        "AmbientCapabilities": "",
+        "AssertResult": "yes",
+        "AssertTimestamp": "Wed 2022-07-20 07:36:46 UTC",
+        "AssertTimestampMonotonic": "10668923621",
+        "Before": "shutdown.target multi-user.target",
+        "BlockIOAccounting": "no",
+        "BlockIOWeight": "[not set]",
+        "CPUAccounting": "no",
+        "CPUAffinity": "",
+        "CPUAffinityFromNUMA": "no",
+        "CPUQuotaPerSecUSec": "infinity",
+        "CPUQuotaPeriodUSec": "infinity",
+        "CPUSchedulingPolicy": "0",
+        "CPUSchedulingPriority": "0",
+        "CPUSchedulingResetOnFork": "no",
+        "CPUShares": "[not set]",
+        "CPUUsageNSec": "[not set]",
+        "CPUWeight": "[not set]",
+        "CacheDirectoryMode": "0755",
+        "CanIsolate": "no",
+        "CanReload": "no",
+        "CanStart": "yes",
+        "CanStop": "yes",
+        "CapabilityBoundingSet": "cap_chown cap_dac_override cap_dac_read_search cap_fowner cap_fsetid cap_kill cap_setgid cap_setuid cap_setpcap cap_linux_immutable cap_net_bind_service cap_net_broadcast cap_net_admin cap_net_raw cap_ipc_lock cap_ipc_owner cap_sys_module cap_sys_rawio cap_sys_chroot cap_sys_ptrace cap_sys_pacct cap_sys_admin cap_sys_boot cap_sys_nice cap_sys_resource cap_sys_time cap_sys_tty_config cap_mknod cap_lease cap_audit_write cap_audit_control cap_setfcap cap_mac_override cap_mac_admin cap_syslog cap_wake_alarm cap_block_suspend cap_audit_read 0x26 0x27 0x28",
+        "CleanResult": "success",
+        "CollectMode": "inactive",
+        "ConditionResult": "yes",
+        "ConditionTimestamp": "Wed 2022-07-20 07:36:46 UTC",
+        "ConditionTimestampMonotonic": "10668923619",
+        "ConfigurationDirectoryMode": "0755",
+        "Conflicts": "shutdown.target",
+        "ControlGroup": "/system.slice/jenkins.service",
+        "ControlPID": "0",
+        "DefaultDependencies": "yes",
+        "DefaultMemoryLow": "0",
+        "DefaultMemoryMin": "0",
+        "Delegate": "no",
+        "Description": "Jenkins Continuous Integration Server",
+        "DevicePolicy": "auto",
+        "DynamicUser": "no",
+        "EffectiveCPUs": "",
+        "EffectiveMemoryNodes": "",
+        "Environment": "JENKINS_HOME=/var/lib/jenkins JENKINS_WEBROOT=/var/cache/jenkins/war JAVA_OPTS=-Djava.awt.headless=true JENKINS_PORT=8080",
+        "ExecMainCode": "0",
+        "ExecMainExitTimestampMonotonic": "0",
+        "ExecMainPID": "14499",
+        "ExecMainStartTimestamp": "Wed 2022-07-20 07:36:46 UTC",
+        "ExecMainStartTimestampMonotonic": "10668924770",
+        "ExecMainStatus": "0",
+        "ExecStart": "{ path=/usr/bin/jenkins ; argv[]=/usr/bin/jenkins ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }",
+        "ExecStartEx": "{ path=/usr/bin/jenkins ; argv[]=/usr/bin/jenkins ; flags= ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }",
+        "FailureAction": "none",
+        "FileDescriptorStoreMax": "0",
+        "FinalKillSignal": "9",
+        "FragmentPath": "/lib/systemd/system/jenkins.service",
+        "GID": "119",
+        "Group": "jenkins",
+        "GuessMainPID": "yes",
+        "IOAccounting": "no",
+        "IOReadBytes": "18446744073709551615",
+        "IOReadOperations": "18446744073709551615",
+        "IOSchedulingClass": "0",
+        "IOSchedulingPriority": "0",
+        "IOWeight": "[not set]",
+        "IOWriteBytes": "18446744073709551615",
+        "IOWriteOperations": "18446744073709551615",
+        "IPAccounting": "no",
+        "IPEgressBytes": "[no data]",
+        "IPEgressPackets": "[no data]",
+        "IPIngressBytes": "[no data]",
+        "IPIngressPackets": "[no data]",
+        "Id": "jenkins.service",
+        "IgnoreOnIsolate": "no",
+        "IgnoreSIGPIPE": "yes",
+        "InactiveEnterTimestampMonotonic": "0",
+        "InactiveExitTimestamp": "Wed 2022-07-20 07:36:46 UTC",
+        "InactiveExitTimestampMonotonic": "10668925317",
+        "InvocationID": "595ea440d01b4da2b011a4fc9a0bd67d",
+        "JobRunningTimeoutUSec": "infinity",
+        "JobTimeoutAction": "none",
+        "JobTimeoutUSec": "infinity",
+        "KeyringMode": "private",
+        "KillMode": "control-group",
+        "KillSignal": "15",
+        "LimitAS": "infinity",
+        "LimitASSoft": "infinity",
+        "LimitCORE": "infinity",
+        "LimitCORESoft": "0",
+        "LimitCPU": "infinity",
+        "LimitCPUSoft": "infinity",
+        "LimitDATA": "infinity",
+        "LimitDATASoft": "infinity",
+        "LimitFSIZE": "infinity",
+        "LimitFSIZESoft": "infinity",
+        "LimitLOCKS": "infinity",
+        "LimitLOCKSSoft": "infinity",
+        "LimitMEMLOCK": "65536",
+        "LimitMEMLOCKSoft": "65536",
+        "LimitMSGQUEUE": "819200",
+        "LimitMSGQUEUESoft": "819200",
+        "LimitNICE": "0",
+        "LimitNICESoft": "0",
+        "LimitNOFILE": "524288",
+        "LimitNOFILESoft": "1024",
+        "LimitNPROC": "3819",
+        "LimitNPROCSoft": "3819",
+        "LimitRSS": "infinity",
+        "LimitRSSSoft": "infinity",
+        "LimitRTPRIO": "0",
+        "LimitRTPRIOSoft": "0",
+        "LimitRTTIME": "infinity",
+        "LimitRTTIMESoft": "infinity",
+        "LimitSIGPENDING": "3819",
+        "LimitSIGPENDINGSoft": "3819",
+        "LimitSTACK": "infinity",
+        "LimitSTACKSoft": "8388608",
+        "LoadState": "loaded",
+        "LockPersonality": "no",
+        "LogLevelMax": "-1",
+        "LogRateLimitBurst": "0",
+        "LogRateLimitIntervalUSec": "0",
+        "LogsDirectoryMode": "0755",
+        "MainPID": "14499",
+        "MemoryAccounting": "yes",
+        "MemoryCurrent": "332410880",
+        "MemoryDenyWriteExecute": "no",
+        "MemoryHigh": "infinity",
+        "MemoryLimit": "infinity",
+        "MemoryLow": "0",
+        "MemoryMax": "infinity",
+        "MemoryMin": "0",
+        "MemorySwapMax": "infinity",
+        "MountAPIVFS": "no",
+        "MountFlags": "",
+        "NFileDescriptorStore": "0",
+        "NRestarts": "0",
+        "NUMAMask": "",
+        "NUMAPolicy": "n/a",
+        "Names": "jenkins.service",
+        "NeedDaemonReload": "no",
+        "Nice": "0",
+        "NoNewPrivileges": "no",
+        "NonBlocking": "no",
+        "NotifyAccess": "main",
+        "OOMPolicy": "stop",
+        "OOMScoreAdjust": "0",
+        "OnFailureJobMode": "replace",
+        "Perpetual": "no",
+        "PrivateDevices": "no",
+        "PrivateMounts": "no",
+        "PrivateNetwork": "no",
+        "PrivateTmp": "no",
+        "PrivateUsers": "no",
+        "ProtectControlGroups": "no",
+        "ProtectHome": "no",
+        "ProtectHostname": "no",
+        "ProtectKernelLogs": "no",
+        "ProtectKernelModules": "no",
+        "ProtectKernelTunables": "no",
+        "ProtectSystem": "no",
+        "RefuseManualStart": "no",
+        "RefuseManualStop": "no",
+        "ReloadResult": "success",
+        "RemainAfterExit": "no",
+        "RemoveIPC": "no",
+        "Requires": "system.slice sysinit.target network.target -.mount",
+        "RequiresMountsFor": "/var/lib/jenkins",
+        "Restart": "on-failure",
+        "RestartKillSignal": "15",
+        "RestartUSec": "100ms",
+        "RestrictNamespaces": "no",
+        "RestrictRealtime": "no",
+        "RestrictSUIDSGID": "no",
+        "Result": "success",
+        "RootDirectoryStartOnly": "no",
+        "RuntimeDirectoryMode": "0755",
+        "RuntimeDirectoryPreserve": "no",
+        "RuntimeMaxUSec": "infinity",
+        "SameProcessGroup": "no",
+        "SecureBits": "0",
+        "SendSIGHUP": "no",
+        "SendSIGKILL": "yes",
+        "Slice": "system.slice",
+        "StandardError": "inherit",
+        "StandardInput": "null",
+        "StandardInputData": "",
+        "StandardOutput": "journal",
+        "StartLimitAction": "none",
+        "StartLimitBurst": "5",
+        "StartLimitIntervalUSec": "10s",
+        "StartupBlockIOWeight": "[not set]",
+        "StartupCPUShares": "[not set]",
+        "StartupCPUWeight": "[not set]",
+        "StartupIOWeight": "[not set]",
+        "StateChangeTimestamp": "Wed 2022-07-20 07:37:29 UTC",
+        "StateChangeTimestampMonotonic": "10712016457",
+        "StateDirectoryMode": "0755",
+        "StatusErrno": "0",
+        "StopWhenUnneeded": "no",
+        "SubState": "running",
+        "SuccessAction": "none",
+        "SuccessExitStatus": "143",
+        "SyslogFacility": "3",
+        "SyslogLevel": "6",
+        "SyslogLevelPrefix": "yes",
+        "SyslogPriority": "30",
+        "SystemCallErrorNumber": "0",
+        "TTYReset": "no",
+        "TTYVHangup": "no",
+        "TTYVTDisallocate": "no",
+        "TasksAccounting": "yes",
+        "TasksCurrent": "37",
+        "TasksMax": "1145",
+        "TimeoutAbortUSec": "1min 30s",
+        "TimeoutCleanUSec": "infinity",
+        "TimeoutStartUSec": "1min 30s",
+        "TimeoutStopUSec": "1min 30s",
+        "TimerSlackNSec": "50000",
+        "Transient": "no",
+        "Type": "notify",
+        "UID": "113",
+        "UMask": "0022",
+        "UnitFilePreset": "enabled",
+        "UnitFileState": "enabled",
+        "User": "jenkins",
+        "UtmpMode": "init",
+        "WantedBy": "multi-user.target",
+        "WatchdogSignal": "6",
+        "WatchdogTimestampMonotonic": "0",
+        "WatchdogUSec": "0",
+        "WorkingDirectory": "/var/lib/jenkins"
+    }
+}
+META: ran handlers
+META: ran handlers
+
+PLAY RECAP *******************************************************************************************************************************************
+ip-172-31-18-80            : ok=5    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+ip-172-31-24-164           : ok=5    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+

@@ -1,0 +1,84 @@
+---
+
+- name: practicing modules
+  hosts: web_server
+  become: true
+  vars:
+    server: 'ubuntu'
+    version_number: '2.8.16'    
+  tasks:
+    - action: ping
+
+    - name: creating a folder
+      file:
+        name: ansitest
+        path: /root/
+        state: directory
+        mode: '0777' 
+
+    - name: creating a file 
+      file:
+        path: /root/ansitest/kavanasexperiment
+        state: touch
+        mode: '0777'
+
+    - name: adding content to file
+      copy: 
+        dest: /root/sample1
+        content: |
+          this is to test modules
+          this is done by us
+
+    - name: copy file to folder
+      copy:
+        remote_src: yes      
+        src: sample1
+        dest: /root/ansitest
+        owner: root
+        group: root
+        mode: '0777'
+
+    - name: replacing a line in a file
+      lineinfile:
+        path: /root/ansitest/sample1
+        regexp: 'modules!'
+        line: this is a teamwork 
+    
+    - name: adding a new line 
+      lineinfile:
+        path: /root/ansitest/sample1
+        line: hi everybody
+        create: yes
+
+    - name: replacing a line
+      lineinfile:
+        path: /root/ansitest/sample1
+        regexp: '^hi'
+        line: hey man
+    
+
+    - name: template module example
+      template:
+        src: template.j2
+        dest: /root/ansitest/sample3 
+    
+    - name: to test git module
+      git:
+        repo: https://github.com/Srikanthkittane/Srikanthkittane.git
+        dest: /root/Srikanthkittane
+
+    - name: to archive files
+      archive:
+        path: /root/Srikanthkittane
+        dest: /root/Srikanthkittane.zip
+
+    - name: to check get_url module
+      get_url:
+        url: https://www.bseindia.com/markets/MarketInfo/DispNewNoticesCirculars.aspx?page=20121022-22
+        dest: /root/ansitest/hosa      
+
+    - name: to achieve unarchive the files
+      unarchive:
+        src: /root/Srikanthkittane.zip
+        dest: /root/ansitest/    
+        remote_src: yes

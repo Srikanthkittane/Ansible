@@ -1,0 +1,29 @@
+---
+    - name: git module
+      git:
+        repo: https://github.com/Srikanthkittane/hello-world-war.git
+        dest: /home/ubuntu/project
+
+    - name: get the file from server
+      become: true
+      get_url:
+        url: https://downloads.apache.org/tomcat/tomcat-9/v9.0.65/bin/apache-tomcat-9.0.65.tar.gz
+        dest: /opt/
+
+    - name: extract tomcat packages
+      become: true
+      unarchive:
+        src: /opt/apache-tomcat-9.0.65.tar.gz
+        dest: /opt/
+        remote_src: yes
+    
+    - name: removing the tar file
+      become: true
+      shell: rm -rf root/opt/apache-tomcat-9.0.65.tar.gz
+    
+    - name: starting the tomcat
+      become: true  
+      shell: chdir=/opt/apache-tomcat-9.0.65/bin/ nohup ./startup.sh &  
+
+
+

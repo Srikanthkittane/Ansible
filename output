@@ -1,0 +1,1100 @@
+ansible-playbook 2.9.6
+  config file = /etc/ansible/ansible.cfg
+  configured module search path = ['/root/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python3/dist-packages/ansible
+  executable location = /usr/bin/ansible-playbook
+  python version = 3.8.10 (default, Jun 22 2022, 20:18:18) [GCC 9.4.0]
+Using /etc/ansible/ansible.cfg as config file
+host_list declined parsing /etc/ansible/hosts as it did not pass its verify_file() method
+script declined parsing /etc/ansible/hosts as it did not pass its verify_file() method
+auto declined parsing /etc/ansible/hosts as it did not pass its verify_file() method
+Parsed /etc/ansible/hosts inventory source with ini plugin
+
+PLAYBOOK: moduletest.yaml ************************************************************************************************
+1 plays in moduletest.yaml
+
+PLAY [practicing modules] ************************************************************************************************
+
+TASK [Gathering Facts] ***************************************************************************************************
+task path: /root/moduletest.yaml:3
+<172.31.24.164> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.24.164> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 172.31.24.164 '/bin/sh -c '"'"'echo ~ && sleep 0'"'"''
+<172.31.18.80> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.18.80> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 172.31.18.80 '/bin/sh -c '"'"'echo ~ && sleep 0'"'"''
+<172.31.24.164> (0, b'/root\n', b'')
+<172.31.24.164> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.24.164> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 172.31.24.164 '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-tmp-1658367221.5088975-1772594028475 `" && echo ansible-tmp-1658367221.5088975-1772594028475="` echo /root/.ansible/tmp/ansible-tmp-1658367221.5088975-1772594028475 `" ) && sleep 0'"'"''
+<172.31.18.80> (0, b'/root\n', b'')
+<172.31.18.80> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.18.80> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 172.31.18.80 '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-tmp-1658367221.5165973-242100259394084 `" && echo ansible-tmp-1658367221.5165973-242100259394084="` echo /root/.ansible/tmp/ansible-tmp-1658367221.5165973-242100259394084 `" ) && sleep 0'"'"''
+<172.31.24.164> (0, b'ansible-tmp-1658367221.5088975-1772594028475=/root/.ansible/tmp/ansible-tmp-1658367221.5088975-1772594028475\n', b'')
+<172.31.18.80> (0, b'ansible-tmp-1658367221.5165973-242100259394084=/root/.ansible/tmp/ansible-tmp-1658367221.5165973-242100259394084\n', b'')
+<ip-172-31-18-80> Attempting python interpreter discovery
+<172.31.18.80> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.18.80> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 172.31.18.80 '/bin/sh -c '"'"'echo PLATFORM; uname; echo FOUND; command -v '"'"'"'"'"'"'"'"'/usr/bin/python'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3.7'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3.6'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3.5'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python2.7'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python2.6'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'/usr/libexec/platform-python'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'/usr/bin/python3'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python'"'"'"'"'"'"'"'"'; echo ENDFOUND && sleep 0'"'"''
+<ip-172-31-24-164> Attempting python interpreter discovery
+<172.31.24.164> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.24.164> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 172.31.24.164 '/bin/sh -c '"'"'echo PLATFORM; uname; echo FOUND; command -v '"'"'"'"'"'"'"'"'/usr/bin/python'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3.7'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3.6'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3.5'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python2.7'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python2.6'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'/usr/libexec/platform-python'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'/usr/bin/python3'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python'"'"'"'"'"'"'"'"'; echo ENDFOUND && sleep 0'"'"''
+<172.31.18.80> (0, b'PLATFORM\nLinux\nFOUND\n/usr/bin/python3\nENDFOUND\n', b'')
+<172.31.18.80> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.18.80> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 172.31.18.80 '/bin/sh -c '"'"'/usr/bin/python3 && sleep 0'"'"''
+<172.31.24.164> (0, b'PLATFORM\nLinux\nFOUND\n/usr/bin/python3\nENDFOUND\n', b'')
+<172.31.24.164> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.24.164> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 172.31.24.164 '/bin/sh -c '"'"'/usr/bin/python3 && sleep 0'"'"''
+<172.31.18.80> (0, b'{"platform_dist_result": [], "osrelease_content": "NAME=\\"Ubuntu\\"\\nVERSION=\\"20.04.4 LTS (Focal Fossa)\\"\\nID=ubuntu\\nID_LIKE=debian\\nPRETTY_NAME=\\"Ubuntu 20.04.4 LTS\\"\\nVERSION_ID=\\"20.04\\"\\nHOME_URL=\\"https://www.ubuntu.com/\\"\\nSUPPORT_URL=\\"https://help.ubuntu.com/\\"\\nBUG_REPORT_URL=\\"https://bugs.launchpad.net/ubuntu/\\"\\nPRIVACY_POLICY_URL=\\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\\"\\nVERSION_CODENAME=focal\\nUBUNTU_CODENAME=focal\\n"}\n', b'')
+Using module file /usr/lib/python3/dist-packages/ansible/modules/system/setup.py
+<172.31.18.80> PUT /root/.ansible/tmp/ansible-local-178993leeng6n/tmpngyfjtk4 TO /root/.ansible/tmp/ansible-tmp-1658367221.5165973-242100259394084/AnsiballZ_setup.py
+<172.31.18.80> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 '[172.31.18.80]'
+<172.31.24.164> (0, b'{"platform_dist_result": [], "osrelease_content": "NAME=\\"Ubuntu\\"\\nVERSION=\\"20.04.4 LTS (Focal Fossa)\\"\\nID=ubuntu\\nID_LIKE=debian\\nPRETTY_NAME=\\"Ubuntu 20.04.4 LTS\\"\\nVERSION_ID=\\"20.04\\"\\nHOME_URL=\\"https://www.ubuntu.com/\\"\\nSUPPORT_URL=\\"https://help.ubuntu.com/\\"\\nBUG_REPORT_URL=\\"https://bugs.launchpad.net/ubuntu/\\"\\nPRIVACY_POLICY_URL=\\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\\"\\nVERSION_CODENAME=focal\\nUBUNTU_CODENAME=focal\\n"}\n', b'')
+Using module file /usr/lib/python3/dist-packages/ansible/modules/system/setup.py
+<172.31.24.164> PUT /root/.ansible/tmp/ansible-local-178993leeng6n/tmpych7ubv6 TO /root/.ansible/tmp/ansible-tmp-1658367221.5088975-1772594028475/AnsiballZ_setup.py
+<172.31.24.164> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 '[172.31.24.164]'
+<172.31.18.80> (0, b'sftp> put /root/.ansible/tmp/ansible-local-178993leeng6n/tmpngyfjtk4 /root/.ansible/tmp/ansible-tmp-1658367221.5165973-242100259394084/AnsiballZ_setup.py\n', b'')
+<172.31.18.80> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.18.80> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 172.31.18.80 '/bin/sh -c '"'"'chmod u+x /root/.ansible/tmp/ansible-tmp-1658367221.5165973-242100259394084/ /root/.ansible/tmp/ansible-tmp-1658367221.5165973-242100259394084/AnsiballZ_setup.py && sleep 0'"'"''
+<172.31.24.164> (0, b'sftp> put /root/.ansible/tmp/ansible-local-178993leeng6n/tmpych7ubv6 /root/.ansible/tmp/ansible-tmp-1658367221.5088975-1772594028475/AnsiballZ_setup.py\n', b'')
+<172.31.24.164> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.24.164> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 172.31.24.164 '/bin/sh -c '"'"'chmod u+x /root/.ansible/tmp/ansible-tmp-1658367221.5088975-1772594028475/ /root/.ansible/tmp/ansible-tmp-1658367221.5088975-1772594028475/AnsiballZ_setup.py && sleep 0'"'"''
+<172.31.18.80> (0, b'', b'')
+<172.31.18.80> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.18.80> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 -tt 172.31.18.80 '/bin/sh -c '"'"'sudo -H -S -n  -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-bexkmnofotsosgdytkoqeaecfuonblzr ; /usr/bin/python3 /root/.ansible/tmp/ansible-tmp-1658367221.5165973-242100259394084/AnsiballZ_setup.py'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+<172.31.24.164> (0, b'', b'')
+<172.31.24.164> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.24.164> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 -tt 172.31.24.164 '/bin/sh -c '"'"'sudo -H -S -n  -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-oweyjwnicjxfrzzsbbxprogkwxhzjcsa ; /usr/bin/python3 /root/.ansible/tmp/ansible-tmp-1658367221.5088975-1772594028475/AnsiballZ_setup.py'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+Escalation succeeded
+Escalation succeeded
+<172.31.18.80> (0, b'\r\n{"ansible_facts": {"ansible_user_id": "root", "ansible_user_uid": 0, "ansible_user_gid": 0, "ansible_user_gecos": "root", "ansible_user_dir": "/root", "ansible_user_shell": "/bin/bash", "ansible_real_user_id": 0, "ansible_effective_user_id": 0, "ansible_real_group_id": 0, "ansible_effective_group_id": 0, "ansible_fibre_channel_wwn": [], "ansible_distribution": "Ubuntu", "ansible_distribution_release": "focal", "ansible_distribution_version": "20.04", "ansible_distribution_major_version": "20", "ansible_distribution_file_path": "/etc/os-release", "ansible_distribution_file_variety": "Debian", "ansible_distribution_file_parsed": true, "ansible_os_family": "Debian", "ansible_system": "Linux", "ansible_kernel": "5.15.0-1015-aws", "ansible_kernel_version": "#19~20.04.1-Ubuntu SMP Wed Jun 22 19:07:51 UTC 2022", "ansible_machine": "x86_64", "ansible_python_version": "3.8.10", "ansible_fqdn": "ip-172-31-18-80.ec2.internal", "ansible_hostname": "ip-172-31-18-80", "ansible_nodename": "ip-172-31-18-80", "ansible_domain": "ec2.internal", "ansible_userspace_bits": "64", "ansible_architecture": "x86_64", "ansible_userspace_architecture": "x86_64", "ansible_machine_id": "d9ab63ba7eba428fa0495285f80cdcf5", "ansible_ssh_host_key_dsa_public": "AAAAB3NzaC1kc3MAAACBANkHninxDj04Z7zBT6gsoxEqQehcFJ5umiQ0Q5t3zLnAehKqYfITBhSw0zQSzNpLEdd2uCs4GtBqWPDMkZqiOVgf+CD3l9BYK6OHqe1OhmZmSvJrMh23upcRxHAc8ywmyREHj0DlxDGtIGvlXwfrxBO9lmWl7se+bfQIoISQ54CDAAAAFQCIYaNiAaEhRN5wDx1fESGBOwlcnQAAAIBqGz3GHCe120I3AZrObxEYtWH+asT0hGEo/FhoRrlP4VBlHWmznAxXys42pXgvrzrg51UbR8DvKVlPcIf6nP1X735rr5b1ND9llkAu+SMRYuMvGWeaXJTOKiyvEL0XfsuLd7pBbnj10R2Hvnw084X8kqSzcSSyYiHR8DMbejXQaQAAAIEAjF9PKaJMS90xDjmJI0DjIDrvG/Cg7Bf0pZAwsbVJx9vnlF/ua1RzLyxtBLHL+qO26E5uagaqZRJK1rxE63XBMkIMTbsfyW1Zccg3hDcyzqGQDRdj8Da8Ah26n4s/XRgk6Kvkg0De/rmKDQizW5TCblpmZUDLSovPYjn3Fsirxz4=", "ansible_ssh_host_key_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABgQCnKX8DUudj4iZE+Q5zLnDef8aGGE0KTjKOtPC1LelTkUHTrbxv/F4Jp4L6f0hkofrj5AJGlnnJ3QUyKcUS/o6zVsaV3OPA95CvRUZnLwEPFIdX/18V0TZqeyPJQvnr9r0uGHfR3aD2kClvOynSgMDNmwaK16Y9/J15ocqJ9OfxKKAjEecf0OkdcshdhiddtEhrmVbkZxbk6X4wN4v+Lcwt/bP4deJfxNj8wiCfBdu0NdZiWPCMzw5HsWLBGkpPOiQ8WUx5WkSULN+Z/3EY1xSmdXOyzLQICZzCeQjUJZFsuktDyllWGazpHvAJTxG5rz60xCMDNXFT6yFGBWXpt+YwmZYKo2oHMIocN7vWqWDu9u4seXEfEd/kRAcLIyHYax71h2+OItIcF/QwJNIFWgpN4ACa/3h0AGOTEWxEyjEtYI5VoN0bNgS9FVU3jeG9up7EykJPj93wDcxv4O6jliuG124JFXRdVUPdce2nFqbfuoNyeJuRSbGGrrSCcVw5cSM=", "ansible_ssh_host_key_ecdsa_public": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBKu9zqdW4N/G6gXCDwqLwc6vvh0CPWhn5+VRT4HcLfVh4so3tKDfNnVOp8I+ICAJ9ZguTiyg46qiiZadLP0Ium8=", "ansible_ssh_host_key_ed25519_public": "AAAAC3NzaC1lZDI1NTE5AAAAIM0A7YVO7zftRbtob4BN1RJAft4SBFKgojL8xL116WK+", "ansible_python": {"version": {"major": 3, "minor": 8, "micro": 10, "releaselevel": "final", "serial": 0}, "version_info": [3, 8, 10, "final", 0], "executable": "/usr/bin/python3", "has_sslcontext": true, "type": "cpython"}, "ansible_is_chroot": false, "ansible_hostnqn": "", "ansible_pkg_mgr": "apt", "ansible_local": {}, "ansible_date_time": {"year": "2022", "month": "07", "weekday": "Thursday", "weekday_number": "4", "weeknumber": "29", "day": "21", "hour": "01", "minute": "33", "second": "42", "epoch": "1658367222", "date": "2022-07-21", "time": "01:33:42", "iso8601_micro": "2022-07-21T01:33:42.898976Z", "iso8601": "2022-07-21T01:33:42Z", "iso8601_basic": "20220721T013342898887", "iso8601_basic_short": "20220721T013342", "tz": "UTC", "tz_offset": "+0000"}, "ansible_apparmor": {"status": "enabled"}, "ansible_virtualization_type": "xen", "ansible_virtualization_role": "guest", "ansible_fips": false, "ansible_lsb": {"id": "Ubuntu", "description": "Ubuntu 20.04.4 LTS", "release": "20.04", "codename": "focal", "major_release": "20"}, "ansible_dns": {"nameservers": ["127.0.0.53"], "options": {"edns0": true, "trust-ad": true}, "search": ["ec2.internal"]}, "ansible_interfaces": ["eth0", "lo"], "ansible_eth0": {"device": "eth0", "macaddress": "0a:42:d6:42:40:2b", "mtu": 9001, "active": true, "module": "xen_netfront", "type": "ether", "pciid": "vif-0", "promisc": false, "ipv4": {"address": "172.31.18.80", "broadcast": "172.31.31.255", "netmask": "255.255.240.0", "network": "172.31.16.0"}, "ipv6": [{"address": "fe80::842:d6ff:fe42:402b", "prefix": "64", "scope": "link"}], "features": {"rx_checksumming": "on [fixed]", "tx_checksumming": "on", "tx_checksum_ipv4": "on [fixed]", "tx_checksum_ip_generic": "off [fixed]", "tx_checksum_ipv6": "on", "tx_checksum_fcoe_crc": "off [fixed]", "tx_checksum_sctp": "off [fixed]", "scatter_gather": "on", "tx_scatter_gather": "on", "tx_scatter_gather_fraglist": "off [fixed]", "tcp_segmentation_offload": "on", "tx_tcp_segmentation": "on", "tx_tcp_ecn_segmentation": "off [fixed]", "tx_tcp_mangleid_segmentation": "off", "tx_tcp6_segmentation": "on", "generic_segmentation_offload": "on", "generic_receive_offload": "on", "large_receive_offload": "off [fixed]", "rx_vlan_offload": "off [fixed]", "tx_vlan_offload": "off [fixed]", "ntuple_filters": "off [fixed]", "receive_hashing": "off [fixed]", "highdma": "off [fixed]", "rx_vlan_filter": "off [fixed]", "vlan_challenged": "off [fixed]", "tx_lockless": "off [fixed]", "netns_local": "off [fixed]", "tx_gso_robust": "on [fixed]", "tx_fcoe_segmentation": "off [fixed]", "tx_gre_segmentation": "off [fixed]", "tx_gre_csum_segmentation": "off [fixed]", "tx_ipxip4_segmentation": "off [fixed]", "tx_ipxip6_segmentation": "off [fixed]", "tx_udp_tnl_segmentation": "off [fixed]", "tx_udp_tnl_csum_segmentation": "off [fixed]", "tx_gso_partial": "off [fixed]", "tx_tunnel_remcsum_segmentation": "off [fixed]", "tx_sctp_segmentation": "off [fixed]", "tx_esp_segmentation": "off [fixed]", "tx_udp_segmentation": "off [fixed]", "tx_gso_list": "off [fixed]", "fcoe_mtu": "off [fixed]", "tx_nocache_copy": "off", "loopback": "off [fixed]", "rx_fcs": "off [fixed]", "rx_all": "off [fixed]", "tx_vlan_stag_hw_insert": "off [fixed]", "rx_vlan_stag_hw_parse": "off [fixed]", "rx_vlan_stag_filter": "off [fixed]", "l2_fwd_offload": "off [fixed]", "hw_tc_offload": "off [fixed]", "esp_hw_offload": "off [fixed]", "esp_tx_csum_hw_offload": "off [fixed]", "rx_udp_tunnel_port_offload": "off [fixed]", "tls_hw_tx_offload": "off [fixed]", "tls_hw_rx_offload": "off [fixed]", "rx_gro_hw": "off [fixed]", "tls_hw_record": "off [fixed]", "rx_gro_list": "off", "macsec_hw_offload": "off [fixed]", "rx_udp_gro_forwarding": "off", "hsr_tag_ins_offload": "off [fixed]", "hsr_tag_rm_offload": "off [fixed]", "hsr_fwd_offload": "off [fixed]", "hsr_dup_offload": "off [fixed]"}, "timestamping": ["tx_software", "rx_software", "software"], "hw_timestamp_filters": []}, "ansible_lo": {"device": "lo", "mtu": 65536, "active": true, "type": "loopback", "promisc": false, "ipv4": {"address": "127.0.0.1", "broadcast": "host", "netmask": "255.0.0.0", "network": "127.0.0.0"}, "ipv6": [{"address": "::1", "prefix": "128", "scope": "host"}], "features": {"rx_checksumming": "on [fixed]", "tx_checksumming": "on", "tx_checksum_ipv4": "off [fixed]", "tx_checksum_ip_generic": "on [fixed]", "tx_checksum_ipv6": "off [fixed]", "tx_checksum_fcoe_crc": "off [fixed]", "tx_checksum_sctp": "on [fixed]", "scatter_gather": "on", "tx_scatter_gather": "on [fixed]", "tx_scatter_gather_fraglist": "on [fixed]", "tcp_segmentation_offload": "on", "tx_tcp_segmentation": "on", "tx_tcp_ecn_segmentation": "on", "tx_tcp_mangleid_segmentation": "on", "tx_tcp6_segmentation": "on", "generic_segmentation_offload": "on", "generic_receive_offload": "on", "large_receive_offload": "off [fixed]", "rx_vlan_offload": "off [fixed]", "tx_vlan_offload": "off [fixed]", "ntuple_filters": "off [fixed]", "receive_hashing": "off [fixed]", "highdma": "on [fixed]", "rx_vlan_filter": "off [fixed]", "vlan_challenged": "on [fixed]", "tx_lockless": "on [fixed]", "netns_local": "on [fixed]", "tx_gso_robust": "off [fixed]", "tx_fcoe_segmentation": "off [fixed]", "tx_gre_segmentation": "off [fixed]", "tx_gre_csum_segmentation": "off [fixed]", "tx_ipxip4_segmentation": "off [fixed]", "tx_ipxip6_segmentation": "off [fixed]", "tx_udp_tnl_segmentation": "off [fixed]", "tx_udp_tnl_csum_segmentation": "off [fixed]", "tx_gso_partial": "off [fixed]", "tx_tunnel_remcsum_segmentation": "off [fixed]", "tx_sctp_segmentation": "on", "tx_esp_segmentation": "off [fixed]", "tx_udp_segmentation": "on", "tx_gso_list": "on", "fcoe_mtu": "off [fixed]", "tx_nocache_copy": "off [fixed]", "loopback": "on [fixed]", "rx_fcs": "off [fixed]", "rx_all": "off [fixed]", "tx_vlan_stag_hw_insert": "off [fixed]", "rx_vlan_stag_hw_parse": "off [fixed]", "rx_vlan_stag_filter": "off [fixed]", "l2_fwd_offload": "off [fixed]", "hw_tc_offload": "off [fixed]", "esp_hw_offload": "off [fixed]", "esp_tx_csum_hw_offload": "off [fixed]", "rx_udp_tunnel_port_offload": "off [fixed]", "tls_hw_tx_offload": "off [fixed]", "tls_hw_rx_offload": "off [fixed]", "rx_gro_hw": "off [fixed]", "tls_hw_record": "off [fixed]", "rx_gro_list": "off", "macsec_hw_offload": "off [fixed]", "rx_udp_gro_forwarding": "off", "hsr_tag_ins_offload": "off [fixed]", "hsr_tag_rm_offload": "off [fixed]", "hsr_fwd_offload": "off [fixed]", "hsr_dup_offload": "off [fixed]"}, "timestamping": ["tx_software", "rx_software", "software"], "hw_timestamp_filters": []}, "ansible_default_ipv4": {"gateway": "172.31.16.1", "interface": "eth0", "address": "172.31.18.80", "broadcast": "172.31.31.255", "netmask": "255.255.240.0", "network": "172.31.16.0", "macaddress": "0a:42:d6:42:40:2b", "mtu": 9001, "type": "ether", "alias": "eth0"}, "ansible_default_ipv6": {}, "ansible_all_ipv4_addresses": ["172.31.18.80"], "ansible_all_ipv6_addresses": ["fe80::842:d6ff:fe42:402b"], "ansible_system_capabilities_enforced": "False", "ansible_system_capabilities": [], "ansible_env": {"SUDO_GID": "0", "MAIL": "/var/mail/root", "USER": "root", "HOME": "/root", "SUDO_UID": "0", "LOGNAME": "root", "TERM": "linux", "PATH": "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin", "LANG": "C.UTF-8", "SUDO_COMMAND": "/bin/sh -c echo BECOME-SUCCESS-bexkmnofotsosgdytkoqeaecfuonblzr ; /usr/bin/python3 /root/.ansible/tmp/ansible-tmp-1658367221.5165973-242100259394084/AnsiballZ_setup.py", "SHELL": "/bin/bash", "SUDO_USER": "root", "PWD": "/root"}, "ansible_selinux": {"status": "Missing selinux Python library"}, "ansible_selinux_python_present": false, "ansible_processor": ["0", "GenuineIntel", "Intel(R) Xeon(R) CPU E5-2676 v3 @ 2.40GHz"], "ansible_processor_count": 1, "ansible_processor_cores": 1, "ansible_processor_threads_per_core": 1, "ansible_processor_vcpus": 1, "ansible_memtotal_mb": 967, "ansible_memfree_mb": 68, "ansible_swaptotal_mb": 0, "ansible_swapfree_mb": 0, "ansible_memory_mb": {"real": {"total": 967, "used": 899, "free": 68}, "nocache": {"free": 367, "used": 600}, "swap": {"total": 0, "free": 0, "used": 0, "cached": 0}}, "ansible_bios_date": "08/24/2006", "ansible_bios_version": "4.11.amazon", "ansible_form_factor": "Other", "ansible_product_name": "HVM domU", "ansible_product_serial": "ec26fcc7-8f97-cc02-a07f-c13b2ddb0330", "ansible_product_uuid": "ec26fcc7-8f97-cc02-a07f-c13b2ddb0330", "ansible_product_version": "4.11.amazon", "ansible_system_vendor": "Xen", "ansible_devices": {"loop1": {"virtual": 1, "links": {"ids": [], "uuids": [], "labels": [], "masters": []}, "vendor": null, "model": null, "sas_address": null, "sas_device_handle": null, "removable": "0", "support_discard": "4096", "partitions": {}, "rotational": "0", "scheduler_mode": "none", "sectors": "113736", "sectorsize": "512", "size": "55.54 MB", "host": "", "holders": []}, "xvda": {"virtual": 1, "links": {"ids": [], "uuids": [], "labels": [], "masters": []}, "vendor": null, "model": null, "sas_address": null, "sas_device_handle": null, "removable": "0", "support_discard": "0", "partitions": {"xvda14": {"links": {"ids": [], "uuids": [], "labels": [], "masters": []}, "start": "2048", "sectors": "8192", "sectorsize": 512, "size": "4.00 MB", "uuid": null, "holders": []}, "xvda1": {"links": {"ids": [], "uuids": ["f145a462-f5b9-42f9-ac24-ea8a59facc58"], "labels": ["cloudimg-rootfs"], "masters": []}, "start": "227328", "sectors": "16549855", "sectorsize": 512, "size": "7.89 GB", "uuid": "f145a462-f5b9-42f9-ac24-ea8a59facc58", "holders": []}, "xvda15": {"links": {"ids": [], "uuids": ["15CB-2892"], "labels": ["UEFI"], "masters": []}, "start": "10240", "sectors": "217088", "sectorsize": 512, "size": "106.00 MB", "uuid": "15CB-2892", "holders": []}}, "rotational": "0", "scheduler_mode": "mq-deadline", "sectors": "16777216", "sectorsize": "512", "size": "8.00 GB", "host": "", "holders": []}, "loop6": {"virtual": 1, "links": {"ids": [], "uuids": [], "labels": [], "masters": []}, "vendor": null, "model": null, "sas_address": null, "sas_device_handle": null, "removable": "0", "support_discard": "4096", "partitions": {}, "rotational": "0", "scheduler_mode": "none", "sectors": "96176", "sectorsize": "512", "size": "46.96 MB", "host": "", "holders": []}, "loop4": {"virtual": 1, "links": {"ids": [], "uuids": [], "labels": [], "masters": []}, "vendor": null, "model": null, "sas_address": null, "sas_device_handle": null, "removable": "0", "support_discard": "4096", "partitions": {}, "rotational": "0", "scheduler_mode": "none", "sectors": "138880", "sectorsize": "512", "size": "67.81 MB", "host": "", "holders": []}, "loop2": {"virtual": 1, "links": {"ids": [], "uuids": [], "labels": [], "masters": []}, "vendor": null, "model": null, "sas_address": null, "sas_device_handle": null, "removable": "0", "support_discard": "4096", "partitions": {}, "rotational": "0", "scheduler_mode": "none", "sectors": "113792", "sectorsize": "512", "size": "55.56 MB", "host": "", "holders": []}, "loop0": {"virtual": 1, "links": {"ids": [], "uuids": [], "labels": [], "masters": []}, "vendor": null, "model": null, "sas_address": null, "sas_device_handle": null, "removable": "0", "support_discard": "4096", "partitions": {}, "rotational": "0", "scheduler_mode": "none", "sectors": "51416", "sectorsize": "512", "size": "25.11 MB", "host": "", "holders": []}, "loop7": {"virtual": 1, "links": {"ids": [], "uuids": [], "labels": [], "masters": []}, "vendor": null, "model": null, "sas_address": null, "sas_device_handle": null, "removable": "0", "support_discard": "4096", "partitions": {}, "rotational": "0", "scheduler_mode": "none", "sectors": "0", "sectorsize": "512", "size": "0.00 Bytes", "host": "", "holders": []}, "loop5": {"virtual": 1, "links": {"ids": [], "uuids": [], "labels": [], "masters": []}, "vendor": null, "model": null, "sas_address": null, "sas_device_handle": null, "removable": "0", "support_discard": "4096", "partitions": {}, "rotational": "0", "scheduler_mode": "none", "sectors": "96160", "sectorsize": "512", "size": "46.95 MB", "host": "", "holders": []}, "loop3": {"virtual": 1, "links": {"ids": [], "uuids": [], "labels": [], "masters": []}, "vendor": null, "model": null, "sas_address": null, "sas_device_handle": null, "removable": "0", "support_discard": "4096", "partitions": {}, "rotational": "0", "scheduler_mode": "none", "sectors": "126824", "sectorsize": "512", "size": "61.93 MB", "host": "", "holders": []}}, "ansible_device_links": {"ids": {}, "uuids": {"xvda15": ["15CB-2892"], "xvda1": ["f145a462-f5b9-42f9-ac24-ea8a59facc58"]}, "labels": {"xvda15": ["UEFI"], "xvda1": ["cloudimg-rootfs"]}, "masters": {}}, "ansible_uptime_seconds": 75286, "ansible_lvm": {"lvs": {}, "vgs": {}, "pvs": {}}, "ansible_mounts": [{"mount": "/", "device": "/dev/root", "fstype": "ext4", "options": "rw,relatime,discard", "size_total": 8132173824, "size_available": 5012561920, "block_size": 4096, "block_total": 1985394, "block_available": 1223770, "block_used": 761624, "inode_total": 1032192, "inode_available": 927901, "inode_used": 104291, "uuid": "f145a462-f5b9-42f9-ac24-ea8a59facc58"}, {"mount": "/snap/amazon-ssm-agent/5656", "device": "/dev/loop0", "fstype": "squashfs", "options": "ro,nodev,relatime,errors=continue", "size_total": 26345472, "size_available": 0, "block_size": 131072, "block_total": 201, "block_available": 0, "block_used": 201, "inode_total": 16, "inode_available": 0, "inode_used": 16, "uuid": "N/A"}, {"mount": "/snap/core18/2409", "device": "/dev/loop1", "fstype": "squashfs", "options": "ro,nodev,relatime,errors=continue", "size_total": 58327040, "size_available": 0, "block_size": 131072, "block_total": 445, "block_available": 0, "block_used": 445, "inode_total": 10857, "inode_available": 0, "inode_used": 10857, "uuid": "N/A"}, {"mount": "/snap/core18/2538", "device": "/dev/loop2", "fstype": "squashfs", "options": "ro,nodev,relatime,errors=continue", "size_total": 58327040, "size_available": 0, "block_size": 131072, "block_total": 445, "block_available": 0, "block_used": 445, "inode_total": 10858, "inode_available": 0, "inode_used": 10858, "uuid": "N/A"}, {"mount": "/snap/core20/1518", "device": "/dev/loop3", "fstype": "squashfs", "options": "ro,nodev,relatime,errors=continue", "size_total": 65011712, "size_available": 0, "block_size": 131072, "block_total": 496, "block_available": 0, "block_used": 496, "inode_total": 11789, "inode_available": 0, "inode_used": 11789, "uuid": "N/A"}, {"mount": "/snap/lxd/22753", "device": "/dev/loop4", "fstype": "squashfs", "options": "ro,nodev,relatime,errors=continue", "size_total": 71172096, "size_available": 0, "block_size": 131072, "block_total": 543, "block_available": 0, "block_used": 543, "inode_total": 802, "inode_available": 0, "inode_used": 802, "uuid": "N/A"}, {"mount": "/snap/snapd/16010", "device": "/dev/loop5", "fstype": "squashfs", "options": "ro,nodev,relatime,errors=continue", "size_total": 49283072, "size_available": 0, "block_size": 131072, "block_total": 376, "block_available": 0, "block_used": 376, "inode_total": 486, "inode_available": 0, "inode_used": 486, "uuid": "N/A"}, {"mount": "/snap/snapd/16292", "device": "/dev/loop6", "fstype": "squashfs", "options": "ro,nodev,relatime,errors=continue", "size_total": 49283072, "size_available": 0, "block_size": 131072, "block_total": 376, "block_available": 0, "block_used": 376, "inode_total": 486, "inode_available": 0, "inode_used": 486, "uuid": "N/A"}, {"mount": "/boot/efi", "device": "/dev/xvda15", "fstype": "vfat", "options": "rw,relatime,fmask=0077,dmask=0077,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro", "size_total": 109422592, "size_available": 103973888, "block_size": 512, "block_total": 213716, "block_available": 203074, "block_used": 10642, "inode_total": 0, "inode_available": 0, "inode_used": 0, "uuid": "15CB-2892"}], "ansible_service_mgr": "systemd", "ansible_cmdline": {"BOOT_IMAGE": "/boot/vmlinuz-5.15.0-1015-aws", "root": "PARTUUID=4986e35b-1bd5-45d3-b528-fa2edb861a38", "ro": true, "console": "ttyS0", "nvme_core.io_timeout": "4294967295", "panic": "-1"}, "ansible_proc_cmdline": {"BOOT_IMAGE": "/boot/vmlinuz-5.15.0-1015-aws", "root": "PARTUUID=4986e35b-1bd5-45d3-b528-fa2edb861a38", "ro": true, "console": ["tty1", "ttyS0"], "nvme_core.io_timeout": "4294967295", "panic": "-1"}, "ansible_iscsi_iqn": "", "gather_subset": ["all"], "module_setup": true}, "invocation": {"module_args": {"gather_subset": ["all"], "gather_timeout": 10, "filter": "*", "fact_path": "/etc/ansible/facts.d"}}}\r\n', b'Shared connection to 172.31.18.80 closed.\r\n')
+<172.31.24.164> (0, b'\r\n{"ansible_facts": {"ansible_ssh_host_key_dsa_public": "AAAAB3NzaC1kc3MAAACBALqnoFmichntqVIj0LzcUb954ETLADD6DmbU97fimgBpj2QgYgYO8tyHlMr41p4AiLsyrPsHLhYfM8LuBmiNte8awnsWKO+R/gPI5CaD1k0uzTbvgWIXewk0hjE0HsbkYeUSrJt/DNsc6mlD/Zdta4ldegojUq/Z55x/c/NdWkObAAAAFQDWaUN7WbzMy4K4VMciKkXEhSNyFQAAAIEAmx2eyNFZx9OdxFxQq5kI+y41eDxG2dz9KY2xrEUQvh+O6O6h2Ek0tl1TaNQzDr30iHL2Z6O9vvNw5HRf8bBbXfCHKTSrYmwUoBAETThEHu98WqdRhXkhqKP0DqtCjm+2ZbE4Chl0cCTnqAF46gzCG3d2yqqzMonbj0346Pa/8lkAAACAFbgT8VTfM3K0Zh5cteXhUCS2m0opm3YVP1M7uKYUY/qYpbJcOZ5cuhxv67G7BNFQdDfkzdHxmtwnKC7mLIxv2SpslXO2uc/v6BVHQgNqAkgUA+8zT42It1v81HXWMHsxRQQ4+dEkr0x7GoRLgmgHCc/sJ/yixrmlBLSZggMvK8s=", "ansible_ssh_host_key_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABgQDK8xTKeOQ7dobIFmKt4Zkwhh6ZVg7+qp4I38LfxDZ1ftgk16B8+wWgtZJZghPrx+hOtgiPMYP1UFdM0BGOWilsAEE5OHQiy9r4wAYZAghs5m8qSXY+RHy0K64lzWqhnLPSRjocnPUe9uqkEKnkvG5lf/1Wic4ELOaAcNL3NR03ggTZxRfFN9nD18Dye/g3PwqcSjZBwSEW/2tWo59WS+uN3tFmaNN0C6XcSgydqu1gJ2Abtv8OjSZHEmtBxMNP24AdcOHQ78CXH2qrnKwFhV45KbQmDyf322y60+2gO0NDbd8CVVfLtXOQ14Z+2wfzNV+inZID5ateCqgsJ0bZsI1RODhdJkVdEfCdyRJgzYbj2OgTtVTRng2tLnhSjIXX1L3Rm8iuEtobI0RSeL7wgznxK5rL425YGb6Zxo3rDt7Zt3zydY+ed+8HQ5TYy0uTDHzZh5Ko1zCvxXYZpR6xjj9Whqmqm+JRsirLqNYj9XMKxamQpNJzEQm1V2PYjOeZ7a0=", "ansible_ssh_host_key_ecdsa_public": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBG2q0YgIf0abtoPzRFgK3c9oFvsgAsdhwvCfU7NhR7FSfsb7kkw6kM/W9fpsMCbR3rjDdoNjsD+c92jFyktG/kk=", "ansible_ssh_host_key_ed25519_public": "AAAAC3NzaC1lZDI1NTE5AAAAIESAWMPcQY6ghUKfPtOajVUu3rClBBLt0WrG4RKXY+zX", "ansible_distribution": "Ubuntu", "ansible_distribution_release": "focal", "ansible_distribution_version": "20.04", "ansible_distribution_major_version": "20", "ansible_distribution_file_path": "/etc/os-release", "ansible_distribution_file_variety": "Debian", "ansible_distribution_file_parsed": true, "ansible_os_family": "Debian", "ansible_cmdline": {"BOOT_IMAGE": "/boot/vmlinuz-5.15.0-1015-aws", "root": "PARTUUID=4986e35b-1bd5-45d3-b528-fa2edb861a38", "ro": true, "console": "ttyS0", "nvme_core.io_timeout": "4294967295", "panic": "-1"}, "ansible_proc_cmdline": {"BOOT_IMAGE": "/boot/vmlinuz-5.15.0-1015-aws", "root": "PARTUUID=4986e35b-1bd5-45d3-b528-fa2edb861a38", "ro": true, "console": ["tty1", "ttyS0"], "nvme_core.io_timeout": "4294967295", "panic": "-1"}, "ansible_system": "Linux", "ansible_kernel": "5.15.0-1015-aws", "ansible_kernel_version": "#19~20.04.1-Ubuntu SMP Wed Jun 22 19:07:51 UTC 2022", "ansible_machine": "x86_64", "ansible_python_version": "3.8.10", "ansible_fqdn": "ip-172-31-24-164.ec2.internal", "ansible_hostname": "ip-172-31-24-164", "ansible_nodename": "ip-172-31-24-164", "ansible_domain": "ec2.internal", "ansible_userspace_bits": "64", "ansible_architecture": "x86_64", "ansible_userspace_architecture": "x86_64", "ansible_machine_id": "efc82e94e7f940cb9f3edddaff50cf8b", "ansible_iscsi_iqn": "", "ansible_env": {"SUDO_GID": "0", "MAIL": "/var/mail/root", "USER": "root", "HOME": "/root", "SUDO_UID": "0", "LOGNAME": "root", "TERM": "linux", "PATH": "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin", "LANG": "C.UTF-8", "SUDO_COMMAND": "/bin/sh -c echo BECOME-SUCCESS-oweyjwnicjxfrzzsbbxprogkwxhzjcsa ; /usr/bin/python3 /root/.ansible/tmp/ansible-tmp-1658367221.5088975-1772594028475/AnsiballZ_setup.py", "SHELL": "/bin/bash", "SUDO_USER": "root", "PWD": "/root"}, "ansible_system_capabilities_enforced": "False", "ansible_system_capabilities": [], "ansible_dns": {"nameservers": ["127.0.0.53"], "options": {"edns0": true, "trust-ad": true}, "search": ["ec2.internal"]}, "ansible_virtualization_type": "xen", "ansible_virtualization_role": "guest", "ansible_user_id": "root", "ansible_user_uid": 0, "ansible_user_gid": 0, "ansible_user_gecos": "root", "ansible_user_dir": "/root", "ansible_user_shell": "/bin/bash", "ansible_real_user_id": 0, "ansible_effective_user_id": 0, "ansible_real_group_id": 0, "ansible_effective_group_id": 0, "ansible_fibre_channel_wwn": [], "ansible_selinux": {"status": "Missing selinux Python library"}, "ansible_selinux_python_present": false, "ansible_python": {"version": {"major": 3, "minor": 8, "micro": 10, "releaselevel": "final", "serial": 0}, "version_info": [3, 8, 10, "final", 0], "executable": "/usr/bin/python3", "has_sslcontext": true, "type": "cpython"}, "ansible_apparmor": {"status": "enabled"}, "ansible_hostnqn": "", "ansible_pkg_mgr": "apt", "ansible_is_chroot": false, "ansible_local": {}, "ansible_fips": false, "ansible_interfaces": ["eth0", "lo"], "ansible_lo": {"device": "lo", "mtu": 65536, "active": true, "type": "loopback", "promisc": false, "ipv4": {"address": "127.0.0.1", "broadcast": "host", "netmask": "255.0.0.0", "network": "127.0.0.0"}, "ipv6": [{"address": "::1", "prefix": "128", "scope": "host"}], "features": {"rx_checksumming": "on [fixed]", "tx_checksumming": "on", "tx_checksum_ipv4": "off [fixed]", "tx_checksum_ip_generic": "on [fixed]", "tx_checksum_ipv6": "off [fixed]", "tx_checksum_fcoe_crc": "off [fixed]", "tx_checksum_sctp": "on [fixed]", "scatter_gather": "on", "tx_scatter_gather": "on [fixed]", "tx_scatter_gather_fraglist": "on [fixed]", "tcp_segmentation_offload": "on", "tx_tcp_segmentation": "on", "tx_tcp_ecn_segmentation": "on", "tx_tcp_mangleid_segmentation": "on", "tx_tcp6_segmentation": "on", "generic_segmentation_offload": "on", "generic_receive_offload": "on", "large_receive_offload": "off [fixed]", "rx_vlan_offload": "off [fixed]", "tx_vlan_offload": "off [fixed]", "ntuple_filters": "off [fixed]", "receive_hashing": "off [fixed]", "highdma": "on [fixed]", "rx_vlan_filter": "off [fixed]", "vlan_challenged": "on [fixed]", "tx_lockless": "on [fixed]", "netns_local": "on [fixed]", "tx_gso_robust": "off [fixed]", "tx_fcoe_segmentation": "off [fixed]", "tx_gre_segmentation": "off [fixed]", "tx_gre_csum_segmentation": "off [fixed]", "tx_ipxip4_segmentation": "off [fixed]", "tx_ipxip6_segmentation": "off [fixed]", "tx_udp_tnl_segmentation": "off [fixed]", "tx_udp_tnl_csum_segmentation": "off [fixed]", "tx_gso_partial": "off [fixed]", "tx_tunnel_remcsum_segmentation": "off [fixed]", "tx_sctp_segmentation": "on", "tx_esp_segmentation": "off [fixed]", "tx_udp_segmentation": "on", "tx_gso_list": "on", "fcoe_mtu": "off [fixed]", "tx_nocache_copy": "off [fixed]", "loopback": "on [fixed]", "rx_fcs": "off [fixed]", "rx_all": "off [fixed]", "tx_vlan_stag_hw_insert": "off [fixed]", "rx_vlan_stag_hw_parse": "off [fixed]", "rx_vlan_stag_filter": "off [fixed]", "l2_fwd_offload": "off [fixed]", "hw_tc_offload": "off [fixed]", "esp_hw_offload": "off [fixed]", "esp_tx_csum_hw_offload": "off [fixed]", "rx_udp_tunnel_port_offload": "off [fixed]", "tls_hw_tx_offload": "off [fixed]", "tls_hw_rx_offload": "off [fixed]", "rx_gro_hw": "off [fixed]", "tls_hw_record": "off [fixed]", "rx_gro_list": "off", "macsec_hw_offload": "off [fixed]", "rx_udp_gro_forwarding": "off", "hsr_tag_ins_offload": "off [fixed]", "hsr_tag_rm_offload": "off [fixed]", "hsr_fwd_offload": "off [fixed]", "hsr_dup_offload": "off [fixed]"}, "timestamping": ["tx_software", "rx_software", "software"], "hw_timestamp_filters": []}, "ansible_eth0": {"device": "eth0", "macaddress": "0a:77:a8:1f:bd:6d", "mtu": 9001, "active": true, "module": "xen_netfront", "type": "ether", "pciid": "vif-0", "promisc": false, "ipv4": {"address": "172.31.24.164", "broadcast": "172.31.31.255", "netmask": "255.255.240.0", "network": "172.31.16.0"}, "ipv6": [{"address": "fe80::877:a8ff:fe1f:bd6d", "prefix": "64", "scope": "link"}], "features": {"rx_checksumming": "on [fixed]", "tx_checksumming": "on", "tx_checksum_ipv4": "on [fixed]", "tx_checksum_ip_generic": "off [fixed]", "tx_checksum_ipv6": "on", "tx_checksum_fcoe_crc": "off [fixed]", "tx_checksum_sctp": "off [fixed]", "scatter_gather": "on", "tx_scatter_gather": "on", "tx_scatter_gather_fraglist": "off [fixed]", "tcp_segmentation_offload": "on", "tx_tcp_segmentation": "on", "tx_tcp_ecn_segmentation": "off [fixed]", "tx_tcp_mangleid_segmentation": "off", "tx_tcp6_segmentation": "on", "generic_segmentation_offload": "on", "generic_receive_offload": "on", "large_receive_offload": "off [fixed]", "rx_vlan_offload": "off [fixed]", "tx_vlan_offload": "off [fixed]", "ntuple_filters": "off [fixed]", "receive_hashing": "off [fixed]", "highdma": "off [fixed]", "rx_vlan_filter": "off [fixed]", "vlan_challenged": "off [fixed]", "tx_lockless": "off [fixed]", "netns_local": "off [fixed]", "tx_gso_robust": "on [fixed]", "tx_fcoe_segmentation": "off [fixed]", "tx_gre_segmentation": "off [fixed]", "tx_gre_csum_segmentation": "off [fixed]", "tx_ipxip4_segmentation": "off [fixed]", "tx_ipxip6_segmentation": "off [fixed]", "tx_udp_tnl_segmentation": "off [fixed]", "tx_udp_tnl_csum_segmentation": "off [fixed]", "tx_gso_partial": "off [fixed]", "tx_tunnel_remcsum_segmentation": "off [fixed]", "tx_sctp_segmentation": "off [fixed]", "tx_esp_segmentation": "off [fixed]", "tx_udp_segmentation": "off [fixed]", "tx_gso_list": "off [fixed]", "fcoe_mtu": "off [fixed]", "tx_nocache_copy": "off", "loopback": "off [fixed]", "rx_fcs": "off [fixed]", "rx_all": "off [fixed]", "tx_vlan_stag_hw_insert": "off [fixed]", "rx_vlan_stag_hw_parse": "off [fixed]", "rx_vlan_stag_filter": "off [fixed]", "l2_fwd_offload": "off [fixed]", "hw_tc_offload": "off [fixed]", "esp_hw_offload": "off [fixed]", "esp_tx_csum_hw_offload": "off [fixed]", "rx_udp_tunnel_port_offload": "off [fixed]", "tls_hw_tx_offload": "off [fixed]", "tls_hw_rx_offload": "off [fixed]", "rx_gro_hw": "off [fixed]", "tls_hw_record": "off [fixed]", "rx_gro_list": "off", "macsec_hw_offload": "off [fixed]", "rx_udp_gro_forwarding": "off", "hsr_tag_ins_offload": "off [fixed]", "hsr_tag_rm_offload": "off [fixed]", "hsr_fwd_offload": "off [fixed]", "hsr_dup_offload": "off [fixed]"}, "timestamping": ["tx_software", "rx_software", "software"], "hw_timestamp_filters": []}, "ansible_default_ipv4": {"gateway": "172.31.16.1", "interface": "eth0", "address": "172.31.24.164", "broadcast": "172.31.31.255", "netmask": "255.255.240.0", "network": "172.31.16.0", "macaddress": "0a:77:a8:1f:bd:6d", "mtu": 9001, "type": "ether", "alias": "eth0"}, "ansible_default_ipv6": {}, "ansible_all_ipv4_addresses": ["172.31.24.164"], "ansible_all_ipv6_addresses": ["fe80::877:a8ff:fe1f:bd6d"], "ansible_processor": ["0", "GenuineIntel", "Intel(R) Xeon(R) CPU E5-2676 v3 @ 2.40GHz"], "ansible_processor_count": 1, "ansible_processor_cores": 1, "ansible_processor_threads_per_core": 1, "ansible_processor_vcpus": 1, "ansible_memtotal_mb": 967, "ansible_memfree_mb": 63, "ansible_swaptotal_mb": 0, "ansible_swapfree_mb": 0, "ansible_memory_mb": {"real": {"total": 967, "used": 904, "free": 63}, "nocache": {"free": 380, "used": 587}, "swap": {"total": 0, "free": 0, "used": 0, "cached": 0}}, "ansible_bios_date": "08/24/2006", "ansible_bios_version": "4.11.amazon", "ansible_form_factor": "Other", "ansible_product_name": "HVM domU", "ansible_product_serial": "ec2f5586-61be-d027-8f39-22e31731f94b", "ansible_product_uuid": "ec2f5586-61be-d027-8f39-22e31731f94b", "ansible_product_version": "4.11.amazon", "ansible_system_vendor": "Xen", "ansible_devices": {"loop1": {"virtual": 1, "links": {"ids": [], "uuids": [], "labels": [], "masters": []}, "vendor": null, "model": null, "sas_address": null, "sas_device_handle": null, "removable": "0", "support_discard": "4096", "partitions": {}, "rotational": "0", "scheduler_mode": "none", "sectors": "113736", "sectorsize": "512", "size": "55.54 MB", "host": "", "holders": []}, "xvda": {"virtual": 1, "links": {"ids": [], "uuids": [], "labels": [], "masters": []}, "vendor": null, "model": null, "sas_address": null, "sas_device_handle": null, "removable": "0", "support_discard": "0", "partitions": {"xvda14": {"links": {"ids": [], "uuids": [], "labels": [], "masters": []}, "start": "2048", "sectors": "8192", "sectorsize": 512, "size": "4.00 MB", "uuid": null, "holders": []}, "xvda1": {"links": {"ids": [], "uuids": ["f145a462-f5b9-42f9-ac24-ea8a59facc58"], "labels": ["cloudimg-rootfs"], "masters": []}, "start": "227328", "sectors": "16549855", "sectorsize": 512, "size": "7.89 GB", "uuid": "f145a462-f5b9-42f9-ac24-ea8a59facc58", "holders": []}, "xvda15": {"links": {"ids": [], "uuids": ["15CB-2892"], "labels": ["UEFI"], "masters": []}, "start": "10240", "sectors": "217088", "sectorsize": 512, "size": "106.00 MB", "uuid": "15CB-2892", "holders": []}}, "rotational": "0", "scheduler_mode": "mq-deadline", "sectors": "16777216", "sectorsize": "512", "size": "8.00 GB", "host": "", "holders": []}, "loop6": {"virtual": 1, "links": {"ids": [], "uuids": [], "labels": [], "masters": []}, "vendor": null, "model": null, "sas_address": null, "sas_device_handle": null, "removable": "0", "support_discard": "4096", "partitions": {}, "rotational": "0", "scheduler_mode": "none", "sectors": "96176", "sectorsize": "512", "size": "46.96 MB", "host": "", "holders": []}, "loop4": {"virtual": 1, "links": {"ids": [], "uuids": [], "labels": [], "masters": []}, "vendor": null, "model": null, "sas_address": null, "sas_device_handle": null, "removable": "0", "support_discard": "4096", "partitions": {}, "rotational": "0", "scheduler_mode": "none", "sectors": "138880", "sectorsize": "512", "size": "67.81 MB", "host": "", "holders": []}, "loop2": {"virtual": 1, "links": {"ids": [], "uuids": [], "labels": [], "masters": []}, "vendor": null, "model": null, "sas_address": null, "sas_device_handle": null, "removable": "0", "support_discard": "4096", "partitions": {}, "rotational": "0", "scheduler_mode": "none", "sectors": "113792", "sectorsize": "512", "size": "55.56 MB", "host": "", "holders": []}, "loop0": {"virtual": 1, "links": {"ids": [], "uuids": [], "labels": [], "masters": []}, "vendor": null, "model": null, "sas_address": null, "sas_device_handle": null, "removable": "0", "support_discard": "4096", "partitions": {}, "rotational": "0", "scheduler_mode": "none", "sectors": "51416", "sectorsize": "512", "size": "25.11 MB", "host": "", "holders": []}, "loop7": {"virtual": 1, "links": {"ids": [], "uuids": [], "labels": [], "masters": []}, "vendor": null, "model": null, "sas_address": null, "sas_device_handle": null, "removable": "0", "support_discard": "4096", "partitions": {}, "rotational": "0", "scheduler_mode": "none", "sectors": "0", "sectorsize": "512", "size": "0.00 Bytes", "host": "", "holders": []}, "loop5": {"virtual": 1, "links": {"ids": [], "uuids": [], "labels": [], "masters": []}, "vendor": null, "model": null, "sas_address": null, "sas_device_handle": null, "removable": "0", "support_discard": "4096", "partitions": {}, "rotational": "0", "scheduler_mode": "none", "sectors": "96160", "sectorsize": "512", "size": "46.95 MB", "host": "", "holders": []}, "loop3": {"virtual": 1, "links": {"ids": [], "uuids": [], "labels": [], "masters": []}, "vendor": null, "model": null, "sas_address": null, "sas_device_handle": null, "removable": "0", "support_discard": "4096", "partitions": {}, "rotational": "0", "scheduler_mode": "none", "sectors": "126824", "sectorsize": "512", "size": "61.93 MB", "host": "", "holders": []}}, "ansible_device_links": {"ids": {}, "uuids": {"xvda15": ["15CB-2892"], "xvda1": ["f145a462-f5b9-42f9-ac24-ea8a59facc58"]}, "labels": {"xvda15": ["UEFI"], "xvda1": ["cloudimg-rootfs"]}, "masters": {}}, "ansible_uptime_seconds": 75285, "ansible_lvm": {"lvs": {}, "vgs": {}, "pvs": {}}, "ansible_mounts": [{"mount": "/", "device": "/dev/root", "fstype": "ext4", "options": "rw,relatime,discard", "size_total": 8132173824, "size_available": 5012500480, "block_size": 4096, "block_total": 1985394, "block_available": 1223755, "block_used": 761639, "inode_total": 1032192, "inode_available": 927899, "inode_used": 104293, "uuid": "f145a462-f5b9-42f9-ac24-ea8a59facc58"}, {"mount": "/snap/amazon-ssm-agent/5656", "device": "/dev/loop0", "fstype": "squashfs", "options": "ro,nodev,relatime,errors=continue", "size_total": 26345472, "size_available": 0, "block_size": 131072, "block_total": 201, "block_available": 0, "block_used": 201, "inode_total": 16, "inode_available": 0, "inode_used": 16, "uuid": "N/A"}, {"mount": "/snap/core18/2538", "device": "/dev/loop2", "fstype": "squashfs", "options": "ro,nodev,relatime,errors=continue", "size_total": 58327040, "size_available": 0, "block_size": 131072, "block_total": 445, "block_available": 0, "block_used": 445, "inode_total": 10858, "inode_available": 0, "inode_used": 10858, "uuid": "N/A"}, {"mount": "/snap/core18/2409", "device": "/dev/loop1", "fstype": "squashfs", "options": "ro,nodev,relatime,errors=continue", "size_total": 58327040, "size_available": 0, "block_size": 131072, "block_total": 445, "block_available": 0, "block_used": 445, "inode_total": 10857, "inode_available": 0, "inode_used": 10857, "uuid": "N/A"}, {"mount": "/snap/lxd/22753", "device": "/dev/loop4", "fstype": "squashfs", "options": "ro,nodev,relatime,errors=continue", "size_total": 71172096, "size_available": 0, "block_size": 131072, "block_total": 543, "block_available": 0, "block_used": 543, "inode_total": 802, "inode_available": 0, "inode_used": 802, "uuid": "N/A"}, {"mount": "/snap/core20/1518", "device": "/dev/loop3", "fstype": "squashfs", "options": "ro,nodev,relatime,errors=continue", "size_total": 65011712, "size_available": 0, "block_size": 131072, "block_total": 496, "block_available": 0, "block_used": 496, "inode_total": 11789, "inode_available": 0, "inode_used": 11789, "uuid": "N/A"}, {"mount": "/snap/snapd/16010", "device": "/dev/loop5", "fstype": "squashfs", "options": "ro,nodev,relatime,errors=continue", "size_total": 49283072, "size_available": 0, "block_size": 131072, "block_total": 376, "block_available": 0, "block_used": 376, "inode_total": 486, "inode_available": 0, "inode_used": 486, "uuid": "N/A"}, {"mount": "/snap/snapd/16292", "device": "/dev/loop6", "fstype": "squashfs", "options": "ro,nodev,relatime,errors=continue", "size_total": 49283072, "size_available": 0, "block_size": 131072, "block_total": 376, "block_available": 0, "block_used": 376, "inode_total": 486, "inode_available": 0, "inode_used": 486, "uuid": "N/A"}, {"mount": "/boot/efi", "device": "/dev/xvda15", "fstype": "vfat", "options": "rw,relatime,fmask=0077,dmask=0077,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro", "size_total": 109422592, "size_available": 103973888, "block_size": 512, "block_total": 213716, "block_available": 203074, "block_used": 10642, "inode_total": 0, "inode_available": 0, "inode_used": 0, "uuid": "15CB-2892"}], "ansible_lsb": {"id": "Ubuntu", "description": "Ubuntu 20.04.4 LTS", "release": "20.04", "codename": "focal", "major_release": "20"}, "ansible_date_time": {"year": "2022", "month": "07", "weekday": "Thursday", "weekday_number": "4", "weeknumber": "29", "day": "21", "hour": "01", "minute": "33", "second": "43", "epoch": "1658367223", "date": "2022-07-21", "time": "01:33:43", "iso8601_micro": "2022-07-21T01:33:43.260011Z", "iso8601": "2022-07-21T01:33:43Z", "iso8601_basic": "20220721T013343259906", "iso8601_basic_short": "20220721T013343", "tz": "UTC", "tz_offset": "+0000"}, "ansible_service_mgr": "systemd", "gather_subset": ["all"], "module_setup": true}, "invocation": {"module_args": {"gather_subset": ["all"], "gather_timeout": 10, "filter": "*", "fact_path": "/etc/ansible/facts.d"}}}\r\n', b'Shared connection to 172.31.24.164 closed.\r\n')
+<172.31.24.164> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.18.80> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.18.80> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 172.31.18.80 '/bin/sh -c '"'"'rm -f -r /root/.ansible/tmp/ansible-tmp-1658367221.5165973-242100259394084/ > /dev/null 2>&1 && sleep 0'"'"''
+<172.31.24.164> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 172.31.24.164 '/bin/sh -c '"'"'rm -f -r /root/.ansible/tmp/ansible-tmp-1658367221.5088975-1772594028475/ > /dev/null 2>&1 && sleep 0'"'"''
+<172.31.24.164> (0, b'', b'')
+<172.31.18.80> (0, b'', b'')
+ok: [ip-172-31-24-164]
+ok: [ip-172-31-18-80]
+META: ran handlers
+
+TASK [creating a folder] *************************************************************************************************
+task path: /root/moduletest.yaml:7
+<172.31.24.164> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.24.164> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 172.31.24.164 '/bin/sh -c '"'"'echo ~ && sleep 0'"'"''
+<172.31.18.80> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.18.80> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 172.31.18.80 '/bin/sh -c '"'"'echo ~ && sleep 0'"'"''
+<172.31.24.164> (0, b'/root\n', b'')
+<172.31.24.164> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.24.164> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 172.31.24.164 '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-tmp-1658367223.3696387-74091035177662 `" && echo ansible-tmp-1658367223.3696387-74091035177662="` echo /root/.ansible/tmp/ansible-tmp-1658367223.3696387-74091035177662 `" ) && sleep 0'"'"''
+<172.31.18.80> (0, b'/root\n', b'')
+<172.31.18.80> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.18.80> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 172.31.18.80 '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-tmp-1658367223.3879166-44622597742812 `" && echo ansible-tmp-1658367223.3879166-44622597742812="` echo /root/.ansible/tmp/ansible-tmp-1658367223.3879166-44622597742812 `" ) && sleep 0'"'"''
+<172.31.24.164> (0, b'ansible-tmp-1658367223.3696387-74091035177662=/root/.ansible/tmp/ansible-tmp-1658367223.3696387-74091035177662\n', b'')
+<172.31.18.80> (0, b'ansible-tmp-1658367223.3879166-44622597742812=/root/.ansible/tmp/ansible-tmp-1658367223.3879166-44622597742812\n', b'')
+Using module file /usr/lib/python3/dist-packages/ansible/modules/files/file.py
+<172.31.18.80> PUT /root/.ansible/tmp/ansible-local-178993leeng6n/tmpfpt63sj0 TO /root/.ansible/tmp/ansible-tmp-1658367223.3879166-44622597742812/AnsiballZ_file.py
+<172.31.18.80> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 '[172.31.18.80]'
+Using module file /usr/lib/python3/dist-packages/ansible/modules/files/file.py
+<172.31.24.164> PUT /root/.ansible/tmp/ansible-local-178993leeng6n/tmp7t60k18y TO /root/.ansible/tmp/ansible-tmp-1658367223.3696387-74091035177662/AnsiballZ_file.py
+<172.31.24.164> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 '[172.31.24.164]'
+<172.31.18.80> (0, b'sftp> put /root/.ansible/tmp/ansible-local-178993leeng6n/tmpfpt63sj0 /root/.ansible/tmp/ansible-tmp-1658367223.3879166-44622597742812/AnsiballZ_file.py\n', b'')
+<172.31.18.80> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.18.80> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 172.31.18.80 '/bin/sh -c '"'"'chmod u+x /root/.ansible/tmp/ansible-tmp-1658367223.3879166-44622597742812/ /root/.ansible/tmp/ansible-tmp-1658367223.3879166-44622597742812/AnsiballZ_file.py && sleep 0'"'"''
+<172.31.24.164> (0, b'sftp> put /root/.ansible/tmp/ansible-local-178993leeng6n/tmp7t60k18y /root/.ansible/tmp/ansible-tmp-1658367223.3696387-74091035177662/AnsiballZ_file.py\n', b'')
+<172.31.24.164> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.24.164> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 172.31.24.164 '/bin/sh -c '"'"'chmod u+x /root/.ansible/tmp/ansible-tmp-1658367223.3696387-74091035177662/ /root/.ansible/tmp/ansible-tmp-1658367223.3696387-74091035177662/AnsiballZ_file.py && sleep 0'"'"''
+<172.31.18.80> (0, b'', b'')
+<172.31.18.80> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.18.80> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 -tt 172.31.18.80 '/bin/sh -c '"'"'sudo -H -S -n  -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-rqtebktpyfvctftoaqbwgmyjxujeiziy ; /usr/bin/python3 /root/.ansible/tmp/ansible-tmp-1658367223.3879166-44622597742812/AnsiballZ_file.py'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+<172.31.24.164> (0, b'', b'')
+<172.31.24.164> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.24.164> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 -tt 172.31.24.164 '/bin/sh -c '"'"'sudo -H -S -n  -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-dzatpaiothlqjxdlqezoaroitlvuogjw ; /usr/bin/python3 /root/.ansible/tmp/ansible-tmp-1658367223.3696387-74091035177662/AnsiballZ_file.py'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+Escalation succeeded
+Escalation succeeded
+<172.31.18.80> (0, b'\r\n{"path": "ansitest", "changed": false, "diff": {"before": {"path": "ansitest"}, "after": {"path": "ansitest"}}, "uid": 0, "gid": 0, "owner": "root", "group": "root", "mode": "0777", "state": "directory", "size": 4096, "invocation": {"module_args": {"name": "ansitest", "path": "ansitest", "state": "directory", "mode": "0777", "recurse": false, "force": false, "follow": true, "modification_time_format": "%Y%m%d%H%M.%S", "access_time_format": "%Y%m%d%H%M.%S", "_original_basename": null, "_diff_peek": null, "src": null, "modification_time": null, "access_time": null, "owner": null, "group": null, "seuser": null, "serole": null, "selevel": null, "setype": null, "attributes": null, "content": null, "backup": null, "remote_src": null, "regexp": null, "delimiter": null, "directory_mode": null, "unsafe_writes": null}}, "warnings": ["Both option path and its alias name are set."]}\r\n', b'Shared connection to 172.31.18.80 closed.\r\n')
+<172.31.18.80> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.18.80> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 172.31.18.80 '/bin/sh -c '"'"'rm -f -r /root/.ansible/tmp/ansible-tmp-1658367223.3879166-44622597742812/ > /dev/null 2>&1 && sleep 0'"'"''
+<172.31.24.164> (0, b'\r\n{"path": "ansitest", "changed": false, "diff": {"before": {"path": "ansitest"}, "after": {"path": "ansitest"}}, "uid": 0, "gid": 0, "owner": "root", "group": "root", "mode": "0777", "state": "directory", "size": 4096, "invocation": {"module_args": {"name": "ansitest", "path": "ansitest", "state": "directory", "mode": "0777", "recurse": false, "force": false, "follow": true, "modification_time_format": "%Y%m%d%H%M.%S", "access_time_format": "%Y%m%d%H%M.%S", "_original_basename": null, "_diff_peek": null, "src": null, "modification_time": null, "access_time": null, "owner": null, "group": null, "seuser": null, "serole": null, "selevel": null, "setype": null, "attributes": null, "content": null, "backup": null, "remote_src": null, "regexp": null, "delimiter": null, "directory_mode": null, "unsafe_writes": null}}, "warnings": ["Both option path and its alias name are set."]}\r\n', b'Shared connection to 172.31.24.164 closed.\r\n')
+<172.31.24.164> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.24.164> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 172.31.24.164 '/bin/sh -c '"'"'rm -f -r /root/.ansible/tmp/ansible-tmp-1658367223.3696387-74091035177662/ > /dev/null 2>&1 && sleep 0'"'"''
+<172.31.18.80> (0, b'', b'')
+<172.31.24.164> (0, b'', b'')
+ok: [ip-172-31-18-80] => {
+    "changed": false,
+    "diff": {
+        "after": {
+            "path": "ansitest"
+        },
+        "before": {
+            "path": "ansitest"
+        }
+    },
+    "gid": 0,
+    "group": "root",
+    "invocation": {
+        "module_args": {
+            "_diff_peek": null,
+            "_original_basename": null,
+            "access_time": null,
+            "access_time_format": "%Y%m%d%H%M.%S",
+            "attributes": null,
+            "backup": null,
+            "content": null,
+            "delimiter": null,
+            "directory_mode": null,
+            "follow": true,
+            "force": false,
+            "group": null,
+            "mode": "0777",
+            "modification_time": null,
+            "modification_time_format": "%Y%m%d%H%M.%S",
+            "name": "ansitest",
+            "owner": null,
+            "path": "ansitest",
+            "recurse": false,
+            "regexp": null,
+            "remote_src": null,
+            "selevel": null,
+            "serole": null,
+            "setype": null,
+            "seuser": null,
+            "src": null,
+            "state": "directory",
+            "unsafe_writes": null
+        }
+    },
+    "mode": "0777",
+    "owner": "root",
+    "path": "ansitest",
+    "size": 4096,
+    "state": "directory",
+    "uid": 0
+}
+ok: [ip-172-31-24-164] => {
+    "changed": false,
+    "diff": {
+        "after": {
+            "path": "ansitest"
+        },
+        "before": {
+            "path": "ansitest"
+        }
+    },
+    "gid": 0,
+    "group": "root",
+    "invocation": {
+        "module_args": {
+            "_diff_peek": null,
+            "_original_basename": null,
+            "access_time": null,
+            "access_time_format": "%Y%m%d%H%M.%S",
+            "attributes": null,
+            "backup": null,
+            "content": null,
+            "delimiter": null,
+            "directory_mode": null,
+            "follow": true,
+            "force": false,
+            "group": null,
+            "mode": "0777",
+            "modification_time": null,
+            "modification_time_format": "%Y%m%d%H%M.%S",
+            "name": "ansitest",
+            "owner": null,
+            "path": "ansitest",
+            "recurse": false,
+            "regexp": null,
+            "remote_src": null,
+            "selevel": null,
+            "serole": null,
+            "setype": null,
+            "seuser": null,
+            "src": null,
+            "state": "directory",
+            "unsafe_writes": null
+        }
+    },
+    "mode": "0777",
+    "owner": "root",
+    "path": "ansitest",
+    "size": 4096,
+    "state": "directory",
+    "uid": 0
+}
+
+TASK [creating a file srikanth] ******************************************************************************************
+task path: /root/moduletest.yaml:14
+<172.31.24.164> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.24.164> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 172.31.24.164 '/bin/sh -c '"'"'echo ~ && sleep 0'"'"''
+<172.31.18.80> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.18.80> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 172.31.18.80 '/bin/sh -c '"'"'echo ~ && sleep 0'"'"''
+<172.31.24.164> (0, b'/root\n', b'')
+<172.31.24.164> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.24.164> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 172.31.24.164 '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-tmp-1658367223.843655-249828070307543 `" && echo ansible-tmp-1658367223.843655-249828070307543="` echo /root/.ansible/tmp/ansible-tmp-1658367223.843655-249828070307543 `" ) && sleep 0'"'"''
+<172.31.18.80> (0, b'/root\n', b'')
+<172.31.18.80> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.18.80> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 172.31.18.80 '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-tmp-1658367223.8628159-175267351531681 `" && echo ansible-tmp-1658367223.8628159-175267351531681="` echo /root/.ansible/tmp/ansible-tmp-1658367223.8628159-175267351531681 `" ) && sleep 0'"'"''
+<172.31.24.164> (0, b'ansible-tmp-1658367223.843655-249828070307543=/root/.ansible/tmp/ansible-tmp-1658367223.843655-249828070307543\n', b'')
+Using module file /usr/lib/python3/dist-packages/ansible/modules/files/file.py
+<172.31.24.164> PUT /root/.ansible/tmp/ansible-local-178993leeng6n/tmpm09kcsps TO /root/.ansible/tmp/ansible-tmp-1658367223.843655-249828070307543/AnsiballZ_file.py
+<172.31.24.164> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 '[172.31.24.164]'
+<172.31.18.80> (0, b'ansible-tmp-1658367223.8628159-175267351531681=/root/.ansible/tmp/ansible-tmp-1658367223.8628159-175267351531681\n', b'')
+Using module file /usr/lib/python3/dist-packages/ansible/modules/files/file.py
+<172.31.18.80> PUT /root/.ansible/tmp/ansible-local-178993leeng6n/tmpi6s6ookk TO /root/.ansible/tmp/ansible-tmp-1658367223.8628159-175267351531681/AnsiballZ_file.py
+<172.31.18.80> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 '[172.31.18.80]'
+<172.31.24.164> (0, b'sftp> put /root/.ansible/tmp/ansible-local-178993leeng6n/tmpm09kcsps /root/.ansible/tmp/ansible-tmp-1658367223.843655-249828070307543/AnsiballZ_file.py\n', b'')
+<172.31.24.164> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.24.164> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 172.31.24.164 '/bin/sh -c '"'"'chmod u+x /root/.ansible/tmp/ansible-tmp-1658367223.843655-249828070307543/ /root/.ansible/tmp/ansible-tmp-1658367223.843655-249828070307543/AnsiballZ_file.py && sleep 0'"'"''
+<172.31.24.164> (0, b'', b'')
+<172.31.24.164> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.24.164> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 -tt 172.31.24.164 '/bin/sh -c '"'"'sudo -H -S -n  -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-tqlvyprqrebutknpzapyvzxfimifyvrk ; /usr/bin/python3 /root/.ansible/tmp/ansible-tmp-1658367223.843655-249828070307543/AnsiballZ_file.py'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+<172.31.18.80> (0, b'sftp> put /root/.ansible/tmp/ansible-local-178993leeng6n/tmpi6s6ookk /root/.ansible/tmp/ansible-tmp-1658367223.8628159-175267351531681/AnsiballZ_file.py\n', b'')
+<172.31.18.80> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.18.80> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 172.31.18.80 '/bin/sh -c '"'"'chmod u+x /root/.ansible/tmp/ansible-tmp-1658367223.8628159-175267351531681/ /root/.ansible/tmp/ansible-tmp-1658367223.8628159-175267351531681/AnsiballZ_file.py && sleep 0'"'"''
+<172.31.18.80> (0, b'', b'')
+<172.31.18.80> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.18.80> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 -tt 172.31.18.80 '/bin/sh -c '"'"'sudo -H -S -n  -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-hszlvfrxgciebuvgkpdnanndbswvlnwu ; /usr/bin/python3 /root/.ansible/tmp/ansible-tmp-1658367223.8628159-175267351531681/AnsiballZ_file.py'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+Escalation succeeded
+Escalation succeeded
+<172.31.24.164> (0, b'\r\n{"dest": "/root/ansitest/sample2", "changed": true, "diff": {"before": {"path": "/root/ansitest/sample2", "state": "absent", "mode": "0644", "mtime": 1658367224.1167698, "atime": 1658367224.1167698}, "after": {"path": "/root/ansitest/sample2", "state": "touch", "mode": "0777", "mtime": 1658367224.117583, "atime": 1658367224.117583}}, "uid": 0, "gid": 0, "owner": "root", "group": "root", "mode": "0777", "state": "file", "size": 0, "invocation": {"module_args": {"path": "/root/ansitest/sample2", "state": "touch", "mode": "0777", "recurse": false, "force": false, "follow": true, "modification_time_format": "%Y%m%d%H%M.%S", "access_time_format": "%Y%m%d%H%M.%S", "_original_basename": null, "_diff_peek": null, "src": null, "modification_time": null, "access_time": null, "owner": null, "group": null, "seuser": null, "serole": null, "selevel": null, "setype": null, "attributes": null, "content": null, "backup": null, "remote_src": null, "regexp": null, "delimiter": null, "directory_mode": null, "unsafe_writes": null}}}\r\n', b'Shared connection to 172.31.24.164 closed.\r\n')
+<172.31.24.164> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.24.164> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 172.31.24.164 '/bin/sh -c '"'"'rm -f -r /root/.ansible/tmp/ansible-tmp-1658367223.843655-249828070307543/ > /dev/null 2>&1 && sleep 0'"'"''
+<172.31.18.80> (0, b'\r\n\r\n{"dest": "/root/ansitest/sample2", "changed": true, "diff": {"before": {"path": "/root/ansitest/sample2", "state": "absent", "mode": "0644", "mtime": 1658367224.1291907, "atime": 1658367224.1291907}, "after": {"path": "/root/ansitest/sample2", "state": "touch", "mode": "0777", "mtime": 1658367224.1341321, "atime": 1658367224.1341321}}, "uid": 0, "gid": 0, "owner": "root", "group": "root", "mode": "0777", "state": "file", "size": 0, "invocation": {"module_args": {"path": "/root/ansitest/sample2", "state": "touch", "mode": "0777", "recurse": false, "force": false, "follow": true, "modification_time_format": "%Y%m%d%H%M.%S", "access_time_format": "%Y%m%d%H%M.%S", "_original_basename": null, "_diff_peek": null, "src": null, "modification_time": null, "access_time": null, "owner": null, "group": null, "seuser": null, "serole": null, "selevel": null, "setype": null, "attributes": null, "content": null, "backup": null, "remote_src": null, "regexp": null, "delimiter": null, "directory_mode": null, "unsafe_writes": null}}}\r\n', b'Shared connection to 172.31.18.80 closed.\r\n')
+<172.31.18.80> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.18.80> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 172.31.18.80 '/bin/sh -c '"'"'rm -f -r /root/.ansible/tmp/ansible-tmp-1658367223.8628159-175267351531681/ > /dev/null 2>&1 && sleep 0'"'"''
+<172.31.24.164> (0, b'', b'')
+changed: [ip-172-31-24-164] => {
+    "changed": true,
+    "dest": "/root/ansitest/sample2",
+    "diff": {
+        "after": {
+            "atime": 1658367224.117583,
+            "mode": "0777",
+            "mtime": 1658367224.117583,
+            "path": "/root/ansitest/sample2",
+            "state": "touch"
+        },
+        "before": {
+            "atime": 1658367224.1167698,
+            "mode": "0644",
+            "mtime": 1658367224.1167698,
+            "path": "/root/ansitest/sample2",
+            "state": "absent"
+        }
+    },
+    "gid": 0,
+    "group": "root",
+    "invocation": {
+        "module_args": {
+            "_diff_peek": null,
+            "_original_basename": null,
+            "access_time": null,
+            "access_time_format": "%Y%m%d%H%M.%S",
+            "attributes": null,
+            "backup": null,
+            "content": null,
+            "delimiter": null,
+            "directory_mode": null,
+            "follow": true,
+            "force": false,
+            "group": null,
+            "mode": "0777",
+            "modification_time": null,
+            "modification_time_format": "%Y%m%d%H%M.%S",
+            "owner": null,
+            "path": "/root/ansitest/sample2",
+            "recurse": false,
+            "regexp": null,
+            "remote_src": null,
+            "selevel": null,
+            "serole": null,
+            "setype": null,
+            "seuser": null,
+            "src": null,
+            "state": "touch",
+            "unsafe_writes": null
+        }
+    },
+    "mode": "0777",
+    "owner": "root",
+    "size": 0,
+    "state": "file",
+    "uid": 0
+}
+<172.31.18.80> (0, b'', b'')
+changed: [ip-172-31-18-80] => {
+    "changed": true,
+    "dest": "/root/ansitest/sample2",
+    "diff": {
+        "after": {
+            "atime": 1658367224.1341321,
+            "mode": "0777",
+            "mtime": 1658367224.1341321,
+            "path": "/root/ansitest/sample2",
+            "state": "touch"
+        },
+        "before": {
+            "atime": 1658367224.1291907,
+            "mode": "0644",
+            "mtime": 1658367224.1291907,
+            "path": "/root/ansitest/sample2",
+            "state": "absent"
+        }
+    },
+    "gid": 0,
+    "group": "root",
+    "invocation": {
+        "module_args": {
+            "_diff_peek": null,
+            "_original_basename": null,
+            "access_time": null,
+            "access_time_format": "%Y%m%d%H%M.%S",
+            "attributes": null,
+            "backup": null,
+            "content": null,
+            "delimiter": null,
+            "directory_mode": null,
+            "follow": true,
+            "force": false,
+            "group": null,
+            "mode": "0777",
+            "modification_time": null,
+            "modification_time_format": "%Y%m%d%H%M.%S",
+            "owner": null,
+            "path": "/root/ansitest/sample2",
+            "recurse": false,
+            "regexp": null,
+            "remote_src": null,
+            "selevel": null,
+            "serole": null,
+            "setype": null,
+            "seuser": null,
+            "src": null,
+            "state": "touch",
+            "unsafe_writes": null
+        }
+    },
+    "mode": "0777",
+    "owner": "root",
+    "size": 0,
+    "state": "file",
+    "uid": 0
+}
+
+TASK [adding content to file] ********************************************************************************************
+task path: /root/moduletest.yaml:20
+<172.31.24.164> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.24.164> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 172.31.24.164 '/bin/sh -c '"'"'echo ~ && sleep 0'"'"''
+<172.31.18.80> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.18.80> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 172.31.18.80 '/bin/sh -c '"'"'echo ~ && sleep 0'"'"''
+<172.31.24.164> (0, b'/root\n', b'')
+<172.31.24.164> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.24.164> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 172.31.24.164 '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-tmp-1658367224.1991036-6699496875294 `" && echo ansible-tmp-1658367224.1991036-6699496875294="` echo /root/.ansible/tmp/ansible-tmp-1658367224.1991036-6699496875294 `" ) && sleep 0'"'"''
+<172.31.18.80> (0, b'/root\n', b'')
+<172.31.18.80> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.18.80> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 172.31.18.80 '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-tmp-1658367224.2190733-203100212322746 `" && echo ansible-tmp-1658367224.2190733-203100212322746="` echo /root/.ansible/tmp/ansible-tmp-1658367224.2190733-203100212322746 `" ) && sleep 0'"'"''
+<172.31.24.164> (0, b'ansible-tmp-1658367224.1991036-6699496875294=/root/.ansible/tmp/ansible-tmp-1658367224.1991036-6699496875294\n', b'')
+<172.31.18.80> (0, b'ansible-tmp-1658367224.2190733-203100212322746=/root/.ansible/tmp/ansible-tmp-1658367224.2190733-203100212322746\n', b'')
+Using module file /usr/lib/python3/dist-packages/ansible/modules/files/stat.py
+<172.31.18.80> PUT /root/.ansible/tmp/ansible-local-178993leeng6n/tmp6xdcvvja TO /root/.ansible/tmp/ansible-tmp-1658367224.2190733-203100212322746/AnsiballZ_stat.py
+<172.31.18.80> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 '[172.31.18.80]'
+Using module file /usr/lib/python3/dist-packages/ansible/modules/files/stat.py
+<172.31.24.164> PUT /root/.ansible/tmp/ansible-local-178993leeng6n/tmpbvbyv8qi TO /root/.ansible/tmp/ansible-tmp-1658367224.1991036-6699496875294/AnsiballZ_stat.py
+<172.31.24.164> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 '[172.31.24.164]'
+<172.31.18.80> (0, b'sftp> put /root/.ansible/tmp/ansible-local-178993leeng6n/tmp6xdcvvja /root/.ansible/tmp/ansible-tmp-1658367224.2190733-203100212322746/AnsiballZ_stat.py\n', b'')
+<172.31.18.80> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.18.80> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 172.31.18.80 '/bin/sh -c '"'"'chmod u+x /root/.ansible/tmp/ansible-tmp-1658367224.2190733-203100212322746/ /root/.ansible/tmp/ansible-tmp-1658367224.2190733-203100212322746/AnsiballZ_stat.py && sleep 0'"'"''
+<172.31.24.164> (0, b'sftp> put /root/.ansible/tmp/ansible-local-178993leeng6n/tmpbvbyv8qi /root/.ansible/tmp/ansible-tmp-1658367224.1991036-6699496875294/AnsiballZ_stat.py\n', b'')
+<172.31.24.164> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.24.164> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 172.31.24.164 '/bin/sh -c '"'"'chmod u+x /root/.ansible/tmp/ansible-tmp-1658367224.1991036-6699496875294/ /root/.ansible/tmp/ansible-tmp-1658367224.1991036-6699496875294/AnsiballZ_stat.py && sleep 0'"'"''
+<172.31.24.164> (0, b'', b'')
+<172.31.24.164> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.24.164> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 -tt 172.31.24.164 '/bin/sh -c '"'"'sudo -H -S -n  -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-jxvqjqiknltsufplitppjwklijqbgfia ; /usr/bin/python3 /root/.ansible/tmp/ansible-tmp-1658367224.1991036-6699496875294/AnsiballZ_stat.py'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+<172.31.18.80> (0, b'', b'')
+<172.31.18.80> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.18.80> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 -tt 172.31.18.80 '/bin/sh -c '"'"'sudo -H -S -n  -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-ukiqzipmtpouzpkftfixutlwksdsffaj ; /usr/bin/python3 /root/.ansible/tmp/ansible-tmp-1658367224.2190733-203100212322746/AnsiballZ_stat.py'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+Escalation succeeded
+Escalation succeeded
+<172.31.18.80> (0, b'\r\n{"changed": false, "stat": {"exists": true, "path": "/root/sample1", "mode": "0777", "isdir": false, "ischr": false, "isblk": false, "isreg": true, "isfifo": false, "islnk": false, "issock": false, "uid": 0, "gid": 0, "size": 43, "inode": 519820, "dev": 51713, "nlink": 1, "atime": 1658367063.495928, "mtime": 1658367063.027936, "ctime": 1658367063.027936, "wusr": true, "rusr": true, "xusr": true, "wgrp": true, "rgrp": true, "xgrp": true, "woth": true, "roth": true, "xoth": true, "isuid": false, "isgid": false, "blocks": 8, "block_size": 4096, "device_type": 0, "readable": true, "writeable": true, "executable": true, "pw_name": "root", "gr_name": "root", "checksum": "9709549377c04ed3fd4339589ca3afd326e074ab", "mimetype": "text/plain", "charset": "us-ascii", "version": "1140663915", "attributes": ["extents"], "attr_flags": "e"}, "invocation": {"module_args": {"path": "/root/sample1", "follow": false, "get_checksum": true, "checksum_algorithm": "sha1", "get_md5": false, "get_mime": true, "get_attributes": true}}}\r\n', b'Shared connection to 172.31.18.80 closed.\r\n')
+<172.31.24.164> (0, b'\r\n{"changed": false, "stat": {"exists": true, "path": "/root/sample1", "mode": "0777", "isdir": false, "ischr": false, "isblk": false, "isreg": true, "isfifo": false, "islnk": false, "issock": false, "uid": 0, "gid": 0, "size": 43, "inode": 519335, "dev": 51713, "nlink": 1, "atime": 1658367063.5012949, "mtime": 1658367063.0332847, "ctime": 1658367063.0332847, "wusr": true, "rusr": true, "xusr": true, "wgrp": true, "rgrp": true, "xgrp": true, "woth": true, "roth": true, "xoth": true, "isuid": false, "isgid": false, "blocks": 8, "block_size": 4096, "device_type": 0, "readable": true, "writeable": true, "executable": true, "pw_name": "root", "gr_name": "root", "checksum": "9709549377c04ed3fd4339589ca3afd326e074ab", "mimetype": "text/plain", "charset": "us-ascii", "version": "3900981521", "attributes": ["extents"], "attr_flags": "e"}, "invocation": {"module_args": {"path": "/root/sample1", "follow": false, "get_checksum": true, "checksum_algorithm": "sha1", "get_md5": false, "get_mime": true, "get_attributes": true}}}\r\n', b'Shared connection to 172.31.24.164 closed.\r\n')
+Using module file /usr/lib/python3/dist-packages/ansible/modules/files/file.py
+<172.31.24.164> PUT /root/.ansible/tmp/ansible-local-178993leeng6n/tmprrae213o TO /root/.ansible/tmp/ansible-tmp-1658367224.1991036-6699496875294/AnsiballZ_file.py
+<172.31.24.164> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 '[172.31.24.164]'
+Using module file /usr/lib/python3/dist-packages/ansible/modules/files/file.py
+<172.31.18.80> PUT /root/.ansible/tmp/ansible-local-178993leeng6n/tmp9stc4yb2 TO /root/.ansible/tmp/ansible-tmp-1658367224.2190733-203100212322746/AnsiballZ_file.py
+<172.31.18.80> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 '[172.31.18.80]'
+<172.31.24.164> (0, b'sftp> put /root/.ansible/tmp/ansible-local-178993leeng6n/tmprrae213o /root/.ansible/tmp/ansible-tmp-1658367224.1991036-6699496875294/AnsiballZ_file.py\n', b'')
+<172.31.24.164> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.24.164> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 172.31.24.164 '/bin/sh -c '"'"'chmod u+x /root/.ansible/tmp/ansible-tmp-1658367224.1991036-6699496875294/ /root/.ansible/tmp/ansible-tmp-1658367224.1991036-6699496875294/AnsiballZ_file.py && sleep 0'"'"''
+<172.31.18.80> (0, b'sftp> put /root/.ansible/tmp/ansible-local-178993leeng6n/tmp9stc4yb2 /root/.ansible/tmp/ansible-tmp-1658367224.2190733-203100212322746/AnsiballZ_file.py\n', b'')
+<172.31.18.80> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.18.80> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 172.31.18.80 '/bin/sh -c '"'"'chmod u+x /root/.ansible/tmp/ansible-tmp-1658367224.2190733-203100212322746/ /root/.ansible/tmp/ansible-tmp-1658367224.2190733-203100212322746/AnsiballZ_file.py && sleep 0'"'"''
+<172.31.24.164> (0, b'', b'')
+<172.31.24.164> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.24.164> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 -tt 172.31.24.164 '/bin/sh -c '"'"'sudo -H -S -n  -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-ygkjosfygbltmuhtiracvrdnbrdzvjyr ; /usr/bin/python3 /root/.ansible/tmp/ansible-tmp-1658367224.1991036-6699496875294/AnsiballZ_file.py'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+<172.31.18.80> (0, b'', b'')
+<172.31.18.80> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.18.80> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 -tt 172.31.18.80 '/bin/sh -c '"'"'sudo -H -S -n  -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-dmasjzaxqazoozpmkywxpqivwbpshkqq ; /usr/bin/python3 /root/.ansible/tmp/ansible-tmp-1658367224.2190733-203100212322746/AnsiballZ_file.py'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+Escalation succeeded
+Escalation succeeded
+<172.31.24.164> (0, b'\r\n\r\n{"path": "/root/sample1", "changed": false, "diff": {"before": {"path": "/root/sample1"}, "after": {"path": "/root/sample1"}}, "uid": 0, "gid": 0, "owner": "root", "group": "root", "mode": "0777", "state": "file", "size": 43, "invocation": {"module_args": {"dest": "/root/sample1", "_original_basename": "tmpz3cmbqwb", "recurse": false, "state": "file", "path": "/root/sample1", "force": false, "follow": true, "modification_time_format": "%Y%m%d%H%M.%S", "access_time_format": "%Y%m%d%H%M.%S", "_diff_peek": null, "src": null, "modification_time": null, "access_time": null, "mode": null, "owner": null, "group": null, "seuser": null, "serole": null, "selevel": null, "setype": null, "attributes": null, "content": null, "backup": null, "remote_src": null, "regexp": null, "delimiter": null, "directory_mode": null, "unsafe_writes": null}}}\r\n', b'Shared connection to 172.31.24.164 closed.\r\n')
+<172.31.24.164> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.24.164> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 172.31.24.164 '/bin/sh -c '"'"'rm -f -r /root/.ansible/tmp/ansible-tmp-1658367224.1991036-6699496875294/ > /dev/null 2>&1 && sleep 0'"'"''
+<172.31.18.80> (0, b'\r\n\r\n{"path": "/root/sample1", "changed": false, "diff": {"before": {"path": "/root/sample1"}, "after": {"path": "/root/sample1"}}, "uid": 0, "gid": 0, "owner": "root", "group": "root", "mode": "0777", "state": "file", "size": 43, "invocation": {"module_args": {"dest": "/root/sample1", "_original_basename": "tmp9m05inmp", "recurse": false, "state": "file", "path": "/root/sample1", "force": false, "follow": true, "modification_time_format": "%Y%m%d%H%M.%S", "access_time_format": "%Y%m%d%H%M.%S", "_diff_peek": null, "src": null, "modification_time": null, "access_time": null, "mode": null, "owner": null, "group": null, "seuser": null, "serole": null, "selevel": null, "setype": null, "attributes": null, "content": null, "backup": null, "remote_src": null, "regexp": null, "delimiter": null, "directory_mode": null, "unsafe_writes": null}}}\r\n', b'Shared connection to 172.31.18.80 closed.\r\n')
+<172.31.18.80> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.18.80> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 172.31.18.80 '/bin/sh -c '"'"'rm -f -r /root/.ansible/tmp/ansible-tmp-1658367224.2190733-203100212322746/ > /dev/null 2>&1 && sleep 0'"'"''
+<172.31.24.164> (0, b'', b'')
+<172.31.18.80> (0, b'', b'')
+ok: [ip-172-31-24-164] => {
+    "changed": false,
+    "checksum": "9709549377c04ed3fd4339589ca3afd326e074ab",
+    "dest": "/root/sample1",
+    "diff": {
+        "after": {
+            "path": "/root/sample1"
+        },
+        "before": {
+            "path": "/root/sample1"
+        }
+    },
+    "gid": 0,
+    "group": "root",
+    "invocation": {
+        "module_args": {
+            "_diff_peek": null,
+            "_original_basename": "tmpz3cmbqwb",
+            "access_time": null,
+            "access_time_format": "%Y%m%d%H%M.%S",
+            "attributes": null,
+            "backup": null,
+            "content": null,
+            "delimiter": null,
+            "dest": "/root/sample1",
+            "directory_mode": null,
+            "follow": true,
+            "force": false,
+            "group": null,
+            "mode": null,
+            "modification_time": null,
+            "modification_time_format": "%Y%m%d%H%M.%S",
+            "owner": null,
+            "path": "/root/sample1",
+            "recurse": false,
+            "regexp": null,
+            "remote_src": null,
+            "selevel": null,
+            "serole": null,
+            "setype": null,
+            "seuser": null,
+            "src": null,
+            "state": "file",
+            "unsafe_writes": null
+        }
+    },
+    "mode": "0777",
+    "owner": "root",
+    "path": "/root/sample1",
+    "size": 43,
+    "state": "file",
+    "uid": 0
+}
+ok: [ip-172-31-18-80] => {
+    "changed": false,
+    "checksum": "9709549377c04ed3fd4339589ca3afd326e074ab",
+    "dest": "/root/sample1",
+    "diff": {
+        "after": {
+            "path": "/root/sample1"
+        },
+        "before": {
+            "path": "/root/sample1"
+        }
+    },
+    "gid": 0,
+    "group": "root",
+    "invocation": {
+        "module_args": {
+            "_diff_peek": null,
+            "_original_basename": "tmp9m05inmp",
+            "access_time": null,
+            "access_time_format": "%Y%m%d%H%M.%S",
+            "attributes": null,
+            "backup": null,
+            "content": null,
+            "delimiter": null,
+            "dest": "/root/sample1",
+            "directory_mode": null,
+            "follow": true,
+            "force": false,
+            "group": null,
+            "mode": null,
+            "modification_time": null,
+            "modification_time_format": "%Y%m%d%H%M.%S",
+            "owner": null,
+            "path": "/root/sample1",
+            "recurse": false,
+            "regexp": null,
+            "remote_src": null,
+            "selevel": null,
+            "serole": null,
+            "setype": null,
+            "seuser": null,
+            "src": null,
+            "state": "file",
+            "unsafe_writes": null
+        }
+    },
+    "mode": "0777",
+    "owner": "root",
+    "path": "/root/sample1",
+    "size": 43,
+    "state": "file",
+    "uid": 0
+}
+
+TASK [copy file to folder] ***********************************************************************************************
+task path: /root/moduletest.yaml:27
+<172.31.24.164> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.24.164> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 172.31.24.164 '/bin/sh -c '"'"'echo ~ && sleep 0'"'"''
+<172.31.18.80> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.18.80> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 172.31.18.80 '/bin/sh -c '"'"'echo ~ && sleep 0'"'"''
+<172.31.24.164> (0, b'/root\n', b'')
+<172.31.24.164> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.24.164> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 172.31.24.164 '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-tmp-1658367224.9215386-207930504400066 `" && echo ansible-tmp-1658367224.9215386-207930504400066="` echo /root/.ansible/tmp/ansible-tmp-1658367224.9215386-207930504400066 `" ) && sleep 0'"'"''
+<172.31.18.80> (0, b'/root\n', b'')
+<172.31.18.80> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.18.80> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 172.31.18.80 '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-tmp-1658367224.9388857-137798541552909 `" && echo ansible-tmp-1658367224.9388857-137798541552909="` echo /root/.ansible/tmp/ansible-tmp-1658367224.9388857-137798541552909 `" ) && sleep 0'"'"''
+<172.31.24.164> (0, b'ansible-tmp-1658367224.9215386-207930504400066=/root/.ansible/tmp/ansible-tmp-1658367224.9215386-207930504400066\n', b'')
+<172.31.18.80> (0, b'ansible-tmp-1658367224.9388857-137798541552909=/root/.ansible/tmp/ansible-tmp-1658367224.9388857-137798541552909\n', b'')
+Using module file /usr/lib/python3/dist-packages/ansible/modules/files/copy.py
+<172.31.18.80> PUT /root/.ansible/tmp/ansible-local-178993leeng6n/tmp1vah_028 TO /root/.ansible/tmp/ansible-tmp-1658367224.9388857-137798541552909/AnsiballZ_copy.py
+<172.31.18.80> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 '[172.31.18.80]'
+Using module file /usr/lib/python3/dist-packages/ansible/modules/files/copy.py
+<172.31.24.164> PUT /root/.ansible/tmp/ansible-local-178993leeng6n/tmpldevj9io TO /root/.ansible/tmp/ansible-tmp-1658367224.9215386-207930504400066/AnsiballZ_copy.py
+<172.31.24.164> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 '[172.31.24.164]'
+<172.31.18.80> (0, b'sftp> put /root/.ansible/tmp/ansible-local-178993leeng6n/tmp1vah_028 /root/.ansible/tmp/ansible-tmp-1658367224.9388857-137798541552909/AnsiballZ_copy.py\n', b'')
+<172.31.18.80> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.18.80> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 172.31.18.80 '/bin/sh -c '"'"'chmod u+x /root/.ansible/tmp/ansible-tmp-1658367224.9388857-137798541552909/ /root/.ansible/tmp/ansible-tmp-1658367224.9388857-137798541552909/AnsiballZ_copy.py && sleep 0'"'"''
+<172.31.24.164> (0, b'sftp> put /root/.ansible/tmp/ansible-local-178993leeng6n/tmpldevj9io /root/.ansible/tmp/ansible-tmp-1658367224.9215386-207930504400066/AnsiballZ_copy.py\n', b'')
+<172.31.24.164> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.24.164> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 172.31.24.164 '/bin/sh -c '"'"'chmod u+x /root/.ansible/tmp/ansible-tmp-1658367224.9215386-207930504400066/ /root/.ansible/tmp/ansible-tmp-1658367224.9215386-207930504400066/AnsiballZ_copy.py && sleep 0'"'"''
+<172.31.24.164> (0, b'', b'')
+<172.31.24.164> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.24.164> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 -tt 172.31.24.164 '/bin/sh -c '"'"'sudo -H -S -n  -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-rexglttnglftsqrkyvzzsacxpppmyvqn ; /usr/bin/python3 /root/.ansible/tmp/ansible-tmp-1658367224.9215386-207930504400066/AnsiballZ_copy.py'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+<172.31.18.80> (0, b'', b'')
+<172.31.18.80> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.18.80> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 -tt 172.31.18.80 '/bin/sh -c '"'"'sudo -H -S -n  -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-xuhqfgydplfypiwrfnkaogbqzzmivcqh ; /usr/bin/python3 /root/.ansible/tmp/ansible-tmp-1658367224.9388857-137798541552909/AnsiballZ_copy.py'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+Escalation succeeded
+Escalation succeeded
+<172.31.18.80> (0, b'\r\n{"dest": "/root/ansitest/sample1", "src": "sample1", "md5sum": "16f19aacf92ae29e8b5cfe26c29c2ca5", "checksum": "9709549377c04ed3fd4339589ca3afd326e074ab", "changed": true, "uid": 0, "gid": 0, "owner": "root", "group": "root", "mode": "0777", "state": "file", "size": 43, "invocation": {"module_args": {"remote_src": true, "src": "sample1", "dest": "/root/ansitest/sample1", "owner": "root", "group": "root", "mode": "0777", "backup": false, "force": true, "follow": false, "_original_basename": null, "content": null, "validate": null, "directory_mode": null, "local_follow": null, "checksum": null, "seuser": null, "serole": null, "selevel": null, "setype": null, "attributes": null, "regexp": null, "delimiter": null, "unsafe_writes": null}}}\r\n', b'Shared connection to 172.31.18.80 closed.\r\n')
+<172.31.18.80> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.18.80> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 172.31.18.80 '/bin/sh -c '"'"'rm -f -r /root/.ansible/tmp/ansible-tmp-1658367224.9388857-137798541552909/ > /dev/null 2>&1 && sleep 0'"'"''
+<172.31.24.164> (0, b'\r\n{"dest": "/root/ansitest/sample1", "src": "sample1", "md5sum": "16f19aacf92ae29e8b5cfe26c29c2ca5", "checksum": "9709549377c04ed3fd4339589ca3afd326e074ab", "changed": true, "uid": 0, "gid": 0, "owner": "root", "group": "root", "mode": "0777", "state": "file", "size": 43, "invocation": {"module_args": {"remote_src": true, "src": "sample1", "dest": "/root/ansitest/sample1", "owner": "root", "group": "root", "mode": "0777", "backup": false, "force": true, "follow": false, "_original_basename": null, "content": null, "validate": null, "directory_mode": null, "local_follow": null, "checksum": null, "seuser": null, "serole": null, "selevel": null, "setype": null, "attributes": null, "regexp": null, "delimiter": null, "unsafe_writes": null}}}\r\n', b'Shared connection to 172.31.24.164 closed.\r\n')
+<172.31.24.164> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.24.164> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 172.31.24.164 '/bin/sh -c '"'"'rm -f -r /root/.ansible/tmp/ansible-tmp-1658367224.9215386-207930504400066/ > /dev/null 2>&1 && sleep 0'"'"''
+<172.31.24.164> (0, b'', b'')
+<172.31.18.80> (0, b'', b'')
+changed: [ip-172-31-24-164] => {
+    "changed": true,
+    "checksum": "9709549377c04ed3fd4339589ca3afd326e074ab",
+    "dest": "/root/ansitest/sample1",
+    "gid": 0,
+    "group": "root",
+    "invocation": {
+        "module_args": {
+            "_original_basename": null,
+            "attributes": null,
+            "backup": false,
+            "checksum": null,
+            "content": null,
+            "delimiter": null,
+            "dest": "/root/ansitest/sample1",
+            "directory_mode": null,
+            "follow": false,
+            "force": true,
+            "group": "root",
+            "local_follow": null,
+            "mode": "0777",
+            "owner": "root",
+            "regexp": null,
+            "remote_src": true,
+            "selevel": null,
+            "serole": null,
+            "setype": null,
+            "seuser": null,
+            "src": "sample1",
+            "unsafe_writes": null,
+            "validate": null
+        }
+    },
+    "md5sum": "16f19aacf92ae29e8b5cfe26c29c2ca5",
+    "mode": "0777",
+    "owner": "root",
+    "size": 43,
+    "src": "sample1",
+    "state": "file",
+    "uid": 0
+}
+changed: [ip-172-31-18-80] => {
+    "changed": true,
+    "checksum": "9709549377c04ed3fd4339589ca3afd326e074ab",
+    "dest": "/root/ansitest/sample1",
+    "gid": 0,
+    "group": "root",
+    "invocation": {
+        "module_args": {
+            "_original_basename": null,
+            "attributes": null,
+            "backup": false,
+            "checksum": null,
+            "content": null,
+            "delimiter": null,
+            "dest": "/root/ansitest/sample1",
+            "directory_mode": null,
+            "follow": false,
+            "force": true,
+            "group": "root",
+            "local_follow": null,
+            "mode": "0777",
+            "owner": "root",
+            "regexp": null,
+            "remote_src": true,
+            "selevel": null,
+            "serole": null,
+            "setype": null,
+            "seuser": null,
+            "src": "sample1",
+            "unsafe_writes": null,
+            "validate": null
+        }
+    },
+    "md5sum": "16f19aacf92ae29e8b5cfe26c29c2ca5",
+    "mode": "0777",
+    "owner": "root",
+    "size": 43,
+    "src": "sample1",
+    "state": "file",
+    "uid": 0
+}
+
+TASK [replacing a line in a file] ****************************************************************************************
+task path: /root/moduletest.yaml:36
+<172.31.24.164> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.24.164> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 172.31.24.164 '/bin/sh -c '"'"'echo ~ && sleep 0'"'"''
+<172.31.18.80> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.18.80> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 172.31.18.80 '/bin/sh -c '"'"'echo ~ && sleep 0'"'"''
+<172.31.24.164> (0, b'/root\n', b'')
+<172.31.24.164> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.24.164> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 172.31.24.164 '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-tmp-1658367225.4001973-162962252196161 `" && echo ansible-tmp-1658367225.4001973-162962252196161="` echo /root/.ansible/tmp/ansible-tmp-1658367225.4001973-162962252196161 `" ) && sleep 0'"'"''
+<172.31.18.80> (0, b'/root\n', b'')
+<172.31.18.80> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.18.80> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 172.31.18.80 '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-tmp-1658367225.4191885-141378418116428 `" && echo ansible-tmp-1658367225.4191885-141378418116428="` echo /root/.ansible/tmp/ansible-tmp-1658367225.4191885-141378418116428 `" ) && sleep 0'"'"''
+<172.31.24.164> (0, b'ansible-tmp-1658367225.4001973-162962252196161=/root/.ansible/tmp/ansible-tmp-1658367225.4001973-162962252196161\n', b'')
+<172.31.18.80> (0, b'ansible-tmp-1658367225.4191885-141378418116428=/root/.ansible/tmp/ansible-tmp-1658367225.4191885-141378418116428\n', b'')
+Using module file /usr/lib/python3/dist-packages/ansible/modules/files/lineinfile.py
+<172.31.18.80> PUT /root/.ansible/tmp/ansible-local-178993leeng6n/tmpntk0wjek TO /root/.ansible/tmp/ansible-tmp-1658367225.4191885-141378418116428/AnsiballZ_lineinfile.py
+<172.31.18.80> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 '[172.31.18.80]'
+Using module file /usr/lib/python3/dist-packages/ansible/modules/files/lineinfile.py
+<172.31.24.164> PUT /root/.ansible/tmp/ansible-local-178993leeng6n/tmpp4el2pm3 TO /root/.ansible/tmp/ansible-tmp-1658367225.4001973-162962252196161/AnsiballZ_lineinfile.py
+<172.31.24.164> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 '[172.31.24.164]'
+<172.31.18.80> (0, b'sftp> put /root/.ansible/tmp/ansible-local-178993leeng6n/tmpntk0wjek /root/.ansible/tmp/ansible-tmp-1658367225.4191885-141378418116428/AnsiballZ_lineinfile.py\n', b'')
+<172.31.18.80> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.18.80> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 172.31.18.80 '/bin/sh -c '"'"'chmod u+x /root/.ansible/tmp/ansible-tmp-1658367225.4191885-141378418116428/ /root/.ansible/tmp/ansible-tmp-1658367225.4191885-141378418116428/AnsiballZ_lineinfile.py && sleep 0'"'"''
+<172.31.24.164> (0, b'sftp> put /root/.ansible/tmp/ansible-local-178993leeng6n/tmpp4el2pm3 /root/.ansible/tmp/ansible-tmp-1658367225.4001973-162962252196161/AnsiballZ_lineinfile.py\n', b'')
+<172.31.24.164> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.24.164> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 172.31.24.164 '/bin/sh -c '"'"'chmod u+x /root/.ansible/tmp/ansible-tmp-1658367225.4001973-162962252196161/ /root/.ansible/tmp/ansible-tmp-1658367225.4001973-162962252196161/AnsiballZ_lineinfile.py && sleep 0'"'"''
+<172.31.18.80> (0, b'', b'')
+<172.31.18.80> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.18.80> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 -tt 172.31.18.80 '/bin/sh -c '"'"'sudo -H -S -n  -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-mwaybdtxfhoznrbzgrhbrawgfhkstwqc ; /usr/bin/python3 /root/.ansible/tmp/ansible-tmp-1658367225.4191885-141378418116428/AnsiballZ_lineinfile.py'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+<172.31.24.164> (0, b'', b'')
+<172.31.24.164> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.24.164> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 -tt 172.31.24.164 '/bin/sh -c '"'"'sudo -H -S -n  -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-mivkgltfsgclwjiquoupmxwnoxnhgfep ; /usr/bin/python3 /root/.ansible/tmp/ansible-tmp-1658367225.4001973-162962252196161/AnsiballZ_lineinfile.py'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+Escalation succeeded
+Escalation succeeded
+<172.31.18.80> (0, b'\r\n\r\n{"changed": true, "msg": "line added", "backup": "", "diff": [{"before": "", "after": "", "before_header": "/root/ansitest/sample1 (content)", "after_header": "/root/ansitest/sample1 (content)"}, {"before_header": "/root/ansitest/sample1 (file attributes)", "after_header": "/root/ansitest/sample1 (file attributes)"}], "invocation": {"module_args": {"path": "/root/ansitest/sample1", "regexp": "modules!", "line": "this is a teamwork", "state": "present", "backrefs": false, "create": false, "backup": false, "firstmatch": false, "follow": false, "insertafter": null, "insertbefore": null, "validate": null, "mode": null, "owner": null, "group": null, "seuser": null, "serole": null, "selevel": null, "setype": null, "attributes": null, "src": null, "force": null, "content": null, "remote_src": null, "delimiter": null, "directory_mode": null, "unsafe_writes": null}}}\r\n', b'Shared connection to 172.31.18.80 closed.\r\n')
+<172.31.18.80> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.24.164> (0, b'\r\n\r\n{"changed": true, "msg": "line added", "backup": "", "diff": [{"before": "", "after": "", "before_header": "/root/ansitest/sample1 (content)", "after_header": "/root/ansitest/sample1 (content)"}, {"before_header": "/root/ansitest/sample1 (file attributes)", "after_header": "/root/ansitest/sample1 (file attributes)"}], "invocation": {"module_args": {"path": "/root/ansitest/sample1", "regexp": "modules!", "line": "this is a teamwork", "state": "present", "backrefs": false, "create": false, "backup": false, "firstmatch": false, "follow": false, "insertafter": null, "insertbefore": null, "validate": null, "mode": null, "owner": null, "group": null, "seuser": null, "serole": null, "selevel": null, "setype": null, "attributes": null, "src": null, "force": null, "content": null, "remote_src": null, "delimiter": null, "directory_mode": null, "unsafe_writes": null}}}\r\n', b'Shared connection to 172.31.24.164 closed.\r\n')
+<172.31.24.164> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.24.164> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 172.31.24.164 '/bin/sh -c '"'"'rm -f -r /root/.ansible/tmp/ansible-tmp-1658367225.4001973-162962252196161/ > /dev/null 2>&1 && sleep 0'"'"''
+<172.31.18.80> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 172.31.18.80 '/bin/sh -c '"'"'rm -f -r /root/.ansible/tmp/ansible-tmp-1658367225.4191885-141378418116428/ > /dev/null 2>&1 && sleep 0'"'"''
+<172.31.24.164> (0, b'', b'')
+<172.31.18.80> (0, b'', b'')
+changed: [ip-172-31-24-164] => {
+    "backup": "",
+    "changed": true,
+    "diff": [
+        {
+            "after": "",
+            "after_header": "/root/ansitest/sample1 (content)",
+            "before": "",
+            "before_header": "/root/ansitest/sample1 (content)"
+        },
+        {
+            "after_header": "/root/ansitest/sample1 (file attributes)",
+            "before_header": "/root/ansitest/sample1 (file attributes)"
+        }
+    ],
+    "invocation": {
+        "module_args": {
+            "attributes": null,
+            "backrefs": false,
+            "backup": false,
+            "content": null,
+            "create": false,
+            "delimiter": null,
+            "directory_mode": null,
+            "firstmatch": false,
+            "follow": false,
+            "force": null,
+            "group": null,
+            "insertafter": null,
+            "insertbefore": null,
+            "line": "this is a teamwork",
+            "mode": null,
+            "owner": null,
+            "path": "/root/ansitest/sample1",
+            "regexp": "modules!",
+            "remote_src": null,
+            "selevel": null,
+            "serole": null,
+            "setype": null,
+            "seuser": null,
+            "src": null,
+            "state": "present",
+            "unsafe_writes": null,
+            "validate": null
+        }
+    },
+    "msg": "line added"
+}
+changed: [ip-172-31-18-80] => {
+    "backup": "",
+    "changed": true,
+    "diff": [
+        {
+            "after": "",
+            "after_header": "/root/ansitest/sample1 (content)",
+            "before": "",
+            "before_header": "/root/ansitest/sample1 (content)"
+        },
+        {
+            "after_header": "/root/ansitest/sample1 (file attributes)",
+            "before_header": "/root/ansitest/sample1 (file attributes)"
+        }
+    ],
+    "invocation": {
+        "module_args": {
+            "attributes": null,
+            "backrefs": false,
+            "backup": false,
+            "content": null,
+            "create": false,
+            "delimiter": null,
+            "directory_mode": null,
+            "firstmatch": false,
+            "follow": false,
+            "force": null,
+            "group": null,
+            "insertafter": null,
+            "insertbefore": null,
+            "line": "this is a teamwork",
+            "mode": null,
+            "owner": null,
+            "path": "/root/ansitest/sample1",
+            "regexp": "modules!",
+            "remote_src": null,
+            "selevel": null,
+            "serole": null,
+            "setype": null,
+            "seuser": null,
+            "src": null,
+            "state": "present",
+            "unsafe_writes": null,
+            "validate": null
+        }
+    },
+    "msg": "line added"
+}
+
+TASK [adding a new line] *************************************************************************************************
+task path: /root/moduletest.yaml:42
+<172.31.24.164> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.24.164> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 172.31.24.164 '/bin/sh -c '"'"'echo ~ && sleep 0'"'"''
+<172.31.18.80> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.18.80> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 172.31.18.80 '/bin/sh -c '"'"'echo ~ && sleep 0'"'"''
+<172.31.24.164> (0, b'/root\n', b'')
+<172.31.24.164> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.24.164> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 172.31.24.164 '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-tmp-1658367225.9031267-20616958749626 `" && echo ansible-tmp-1658367225.9031267-20616958749626="` echo /root/.ansible/tmp/ansible-tmp-1658367225.9031267-20616958749626 `" ) && sleep 0'"'"''
+<172.31.18.80> (0, b'/root\n', b'')
+<172.31.24.164> (0, b'ansible-tmp-1658367225.9031267-20616958749626=/root/.ansible/tmp/ansible-tmp-1658367225.9031267-20616958749626\n', b'')
+<172.31.18.80> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.18.80> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 172.31.18.80 '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-tmp-1658367225.921517-229499718827400 `" && echo ansible-tmp-1658367225.921517-229499718827400="` echo /root/.ansible/tmp/ansible-tmp-1658367225.921517-229499718827400 `" ) && sleep 0'"'"''
+Using module file /usr/lib/python3/dist-packages/ansible/modules/files/lineinfile.py
+<172.31.24.164> PUT /root/.ansible/tmp/ansible-local-178993leeng6n/tmp3cm9v48b TO /root/.ansible/tmp/ansible-tmp-1658367225.9031267-20616958749626/AnsiballZ_lineinfile.py
+<172.31.24.164> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 '[172.31.24.164]'
+<172.31.18.80> (0, b'ansible-tmp-1658367225.921517-229499718827400=/root/.ansible/tmp/ansible-tmp-1658367225.921517-229499718827400\n', b'')
+Using module file /usr/lib/python3/dist-packages/ansible/modules/files/lineinfile.py
+<172.31.18.80> PUT /root/.ansible/tmp/ansible-local-178993leeng6n/tmpp2li6h8s TO /root/.ansible/tmp/ansible-tmp-1658367225.921517-229499718827400/AnsiballZ_lineinfile.py
+<172.31.18.80> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 '[172.31.18.80]'
+<172.31.24.164> (0, b'sftp> put /root/.ansible/tmp/ansible-local-178993leeng6n/tmp3cm9v48b /root/.ansible/tmp/ansible-tmp-1658367225.9031267-20616958749626/AnsiballZ_lineinfile.py\n', b'')
+<172.31.24.164> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.24.164> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 172.31.24.164 '/bin/sh -c '"'"'chmod u+x /root/.ansible/tmp/ansible-tmp-1658367225.9031267-20616958749626/ /root/.ansible/tmp/ansible-tmp-1658367225.9031267-20616958749626/AnsiballZ_lineinfile.py && sleep 0'"'"''
+<172.31.24.164> (0, b'', b'')
+<172.31.24.164> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.24.164> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 -tt 172.31.24.164 '/bin/sh -c '"'"'sudo -H -S -n  -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-tozeanaixxsmnuuckthxkspnxbrcrfya ; /usr/bin/python3 /root/.ansible/tmp/ansible-tmp-1658367225.9031267-20616958749626/AnsiballZ_lineinfile.py'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+<172.31.18.80> (0, b'sftp> put /root/.ansible/tmp/ansible-local-178993leeng6n/tmpp2li6h8s /root/.ansible/tmp/ansible-tmp-1658367225.921517-229499718827400/AnsiballZ_lineinfile.py\n', b'')
+<172.31.18.80> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.18.80> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 172.31.18.80 '/bin/sh -c '"'"'chmod u+x /root/.ansible/tmp/ansible-tmp-1658367225.921517-229499718827400/ /root/.ansible/tmp/ansible-tmp-1658367225.921517-229499718827400/AnsiballZ_lineinfile.py && sleep 0'"'"''
+<172.31.18.80> (0, b'', b'')
+<172.31.18.80> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.18.80> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 -tt 172.31.18.80 '/bin/sh -c '"'"'sudo -H -S -n  -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-bmamyqxgvypqyzysodicfzhpnecqjmhe ; /usr/bin/python3 /root/.ansible/tmp/ansible-tmp-1658367225.921517-229499718827400/AnsiballZ_lineinfile.py'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+Escalation succeeded
+Escalation succeeded
+<172.31.24.164> (0, b'\r\n{"changed": true, "msg": "line added", "backup": "", "diff": [{"before": "", "after": "", "before_header": "/root/ansitest/sample1 (content)", "after_header": "/root/ansitest/sample1 (content)"}, {"before_header": "/root/ansitest/sample1 (file attributes)", "after_header": "/root/ansitest/sample1 (file attributes)"}], "invocation": {"module_args": {"path": "/root/ansitest/sample1", "line": "hi everybody", "create": true, "state": "present", "backrefs": false, "backup": false, "firstmatch": false, "follow": false, "regexp": null, "insertafter": null, "insertbefore": null, "validate": null, "mode": null, "owner": null, "group": null, "seuser": null, "serole": null, "selevel": null, "setype": null, "attributes": null, "src": null, "force": null, "content": null, "remote_src": null, "delimiter": null, "directory_mode": null, "unsafe_writes": null}}}\r\n', b'Shared connection to 172.31.24.164 closed.\r\n')
+<172.31.24.164> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.24.164> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 172.31.24.164 '/bin/sh -c '"'"'rm -f -r /root/.ansible/tmp/ansible-tmp-1658367225.9031267-20616958749626/ > /dev/null 2>&1 && sleep 0'"'"''
+<172.31.18.80> (0, b'\r\n{"changed": true, "msg": "line added", "backup": "", "diff": [{"before": "", "after": "", "before_header": "/root/ansitest/sample1 (content)", "after_header": "/root/ansitest/sample1 (content)"}, {"before_header": "/root/ansitest/sample1 (file attributes)", "after_header": "/root/ansitest/sample1 (file attributes)"}], "invocation": {"module_args": {"path": "/root/ansitest/sample1", "line": "hi everybody", "create": true, "state": "present", "backrefs": false, "backup": false, "firstmatch": false, "follow": false, "regexp": null, "insertafter": null, "insertbefore": null, "validate": null, "mode": null, "owner": null, "group": null, "seuser": null, "serole": null, "selevel": null, "setype": null, "attributes": null, "src": null, "force": null, "content": null, "remote_src": null, "delimiter": null, "directory_mode": null, "unsafe_writes": null}}}\r\n', b'Shared connection to 172.31.18.80 closed.\r\n')
+<172.31.18.80> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.18.80> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 172.31.18.80 '/bin/sh -c '"'"'rm -f -r /root/.ansible/tmp/ansible-tmp-1658367225.921517-229499718827400/ > /dev/null 2>&1 && sleep 0'"'"''
+<172.31.24.164> (0, b'', b'')
+changed: [ip-172-31-24-164] => {
+    "backup": "",
+    "changed": true,
+    "diff": [
+        {
+            "after": "",
+            "after_header": "/root/ansitest/sample1 (content)",
+            "before": "",
+            "before_header": "/root/ansitest/sample1 (content)"
+        },
+        {
+            "after_header": "/root/ansitest/sample1 (file attributes)",
+            "before_header": "/root/ansitest/sample1 (file attributes)"
+        }
+    ],
+    "invocation": {
+        "module_args": {
+            "attributes": null,
+            "backrefs": false,
+            "backup": false,
+            "content": null,
+            "create": true,
+            "delimiter": null,
+            "directory_mode": null,
+            "firstmatch": false,
+            "follow": false,
+            "force": null,
+            "group": null,
+            "insertafter": null,
+            "insertbefore": null,
+            "line": "hi everybody",
+            "mode": null,
+            "owner": null,
+            "path": "/root/ansitest/sample1",
+            "regexp": null,
+            "remote_src": null,
+            "selevel": null,
+            "serole": null,
+            "setype": null,
+            "seuser": null,
+            "src": null,
+            "state": "present",
+            "unsafe_writes": null,
+            "validate": null
+        }
+    },
+    "msg": "line added"
+}
+<172.31.18.80> (0, b'', b'')
+changed: [ip-172-31-18-80] => {
+    "backup": "",
+    "changed": true,
+    "diff": [
+        {
+            "after": "",
+            "after_header": "/root/ansitest/sample1 (content)",
+            "before": "",
+            "before_header": "/root/ansitest/sample1 (content)"
+        },
+        {
+            "after_header": "/root/ansitest/sample1 (file attributes)",
+            "before_header": "/root/ansitest/sample1 (file attributes)"
+        }
+    ],
+    "invocation": {
+        "module_args": {
+            "attributes": null,
+            "backrefs": false,
+            "backup": false,
+            "content": null,
+            "create": true,
+            "delimiter": null,
+            "directory_mode": null,
+            "firstmatch": false,
+            "follow": false,
+            "force": null,
+            "group": null,
+            "insertafter": null,
+            "insertbefore": null,
+            "line": "hi everybody",
+            "mode": null,
+            "owner": null,
+            "path": "/root/ansitest/sample1",
+            "regexp": null,
+            "remote_src": null,
+            "selevel": null,
+            "serole": null,
+            "setype": null,
+            "seuser": null,
+            "src": null,
+            "state": "present",
+            "unsafe_writes": null,
+            "validate": null
+        }
+    },
+    "msg": "line added"
+}
+
+TASK [replacing a line] **************************************************************************************************
+task path: /root/moduletest.yaml:48
+<172.31.24.164> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.24.164> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 172.31.24.164 '/bin/sh -c '"'"'echo ~ && sleep 0'"'"''
+<172.31.18.80> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.18.80> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 172.31.18.80 '/bin/sh -c '"'"'echo ~ && sleep 0'"'"''
+<172.31.24.164> (0, b'/root\n', b'')
+<172.31.24.164> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.24.164> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 172.31.24.164 '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-tmp-1658367226.2558434-64114041801160 `" && echo ansible-tmp-1658367226.2558434-64114041801160="` echo /root/.ansible/tmp/ansible-tmp-1658367226.2558434-64114041801160 `" ) && sleep 0'"'"''
+<172.31.18.80> (0, b'/root\n', b'')
+<172.31.18.80> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.18.80> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 172.31.18.80 '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-tmp-1658367226.275537-250017942495152 `" && echo ansible-tmp-1658367226.275537-250017942495152="` echo /root/.ansible/tmp/ansible-tmp-1658367226.275537-250017942495152 `" ) && sleep 0'"'"''
+<172.31.24.164> (0, b'ansible-tmp-1658367226.2558434-64114041801160=/root/.ansible/tmp/ansible-tmp-1658367226.2558434-64114041801160\n', b'')
+Using module file /usr/lib/python3/dist-packages/ansible/modules/files/lineinfile.py
+<172.31.24.164> PUT /root/.ansible/tmp/ansible-local-178993leeng6n/tmp1cmockdu TO /root/.ansible/tmp/ansible-tmp-1658367226.2558434-64114041801160/AnsiballZ_lineinfile.py
+<172.31.24.164> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 '[172.31.24.164]'
+<172.31.18.80> (0, b'ansible-tmp-1658367226.275537-250017942495152=/root/.ansible/tmp/ansible-tmp-1658367226.275537-250017942495152\n', b'')
+Using module file /usr/lib/python3/dist-packages/ansible/modules/files/lineinfile.py
+<172.31.18.80> PUT /root/.ansible/tmp/ansible-local-178993leeng6n/tmpxj1xtdxa TO /root/.ansible/tmp/ansible-tmp-1658367226.275537-250017942495152/AnsiballZ_lineinfile.py
+<172.31.18.80> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 '[172.31.18.80]'
+<172.31.24.164> (0, b'sftp> put /root/.ansible/tmp/ansible-local-178993leeng6n/tmp1cmockdu /root/.ansible/tmp/ansible-tmp-1658367226.2558434-64114041801160/AnsiballZ_lineinfile.py\n', b'')
+<172.31.24.164> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.24.164> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 172.31.24.164 '/bin/sh -c '"'"'chmod u+x /root/.ansible/tmp/ansible-tmp-1658367226.2558434-64114041801160/ /root/.ansible/tmp/ansible-tmp-1658367226.2558434-64114041801160/AnsiballZ_lineinfile.py && sleep 0'"'"''
+<172.31.24.164> (0, b'', b'')
+<172.31.24.164> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.24.164> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 -tt 172.31.24.164 '/bin/sh -c '"'"'sudo -H -S -n  -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-ekaiqcpdegxryxphuwevqqyxotpoobne ; /usr/bin/python3 /root/.ansible/tmp/ansible-tmp-1658367226.2558434-64114041801160/AnsiballZ_lineinfile.py'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+<172.31.18.80> (0, b'sftp> put /root/.ansible/tmp/ansible-local-178993leeng6n/tmpxj1xtdxa /root/.ansible/tmp/ansible-tmp-1658367226.275537-250017942495152/AnsiballZ_lineinfile.py\n', b'')
+<172.31.18.80> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.18.80> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 172.31.18.80 '/bin/sh -c '"'"'chmod u+x /root/.ansible/tmp/ansible-tmp-1658367226.275537-250017942495152/ /root/.ansible/tmp/ansible-tmp-1658367226.275537-250017942495152/AnsiballZ_lineinfile.py && sleep 0'"'"''
+<172.31.18.80> (0, b'', b'')
+<172.31.18.80> ESTABLISH SSH CONNECTION FOR USER: None
+Escalation succeeded
+<172.31.18.80> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 -tt 172.31.18.80 '/bin/sh -c '"'"'sudo -H -S -n  -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-bwrpldzzeomdcaepiuonwomgwswypzsy ; /usr/bin/python3 /root/.ansible/tmp/ansible-tmp-1658367226.275537-250017942495152/AnsiballZ_lineinfile.py'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+Escalation succeeded
+<172.31.24.164> (0, b'\r\n{"changed": true, "msg": "line replaced", "backup": "", "diff": [{"before": "", "after": "", "before_header": "/root/ansitest/sample1 (content)", "after_header": "/root/ansitest/sample1 (content)"}, {"before_header": "/root/ansitest/sample1 (file attributes)", "after_header": "/root/ansitest/sample1 (file attributes)"}], "invocation": {"module_args": {"path": "/root/ansitest/sample1", "regexp": "^hi", "line": "hey man", "state": "present", "backrefs": false, "create": false, "backup": false, "firstmatch": false, "follow": false, "insertafter": null, "insertbefore": null, "validate": null, "mode": null, "owner": null, "group": null, "seuser": null, "serole": null, "selevel": null, "setype": null, "attributes": null, "src": null, "force": null, "content": null, "remote_src": null, "delimiter": null, "directory_mode": null, "unsafe_writes": null}}}\r\n', b'Shared connection to 172.31.24.164 closed.\r\n')
+<172.31.24.164> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.24.164> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/2cce652928 172.31.24.164 '/bin/sh -c '"'"'rm -f -r /root/.ansible/tmp/ansible-tmp-1658367226.2558434-64114041801160/ > /dev/null 2>&1 && sleep 0'"'"''
+<172.31.24.164> (0, b'', b'')
+<172.31.18.80> (0, b'\r\n{"changed": true, "msg": "line replaced", "backup": "", "diff": [{"before": "", "after": "", "before_header": "/root/ansitest/sample1 (content)", "after_header": "/root/ansitest/sample1 (content)"}, {"before_header": "/root/ansitest/sample1 (file attributes)", "after_header": "/root/ansitest/sample1 (file attributes)"}], "invocation": {"module_args": {"path": "/root/ansitest/sample1", "regexp": "^hi", "line": "hey man", "state": "present", "backrefs": false, "create": false, "backup": false, "firstmatch": false, "follow": false, "insertafter": null, "insertbefore": null, "validate": null, "mode": null, "owner": null, "group": null, "seuser": null, "serole": null, "selevel": null, "setype": null, "attributes": null, "src": null, "force": null, "content": null, "remote_src": null, "delimiter": null, "directory_mode": null, "unsafe_writes": null}}}\r\n', b'Shared connection to 172.31.18.80 closed.\r\n')
+<172.31.18.80> ESTABLISH SSH CONNECTION FOR USER: None
+<172.31.18.80> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/830cf87736 172.31.18.80 '/bin/sh -c '"'"'rm -f -r /root/.ansible/tmp/ansible-tmp-1658367226.275537-250017942495152/ > /dev/null 2>&1 && sleep 0'"'"''
+changed: [ip-172-31-24-164] => {
+    "backup": "",
+    "changed": true,
+    "diff": [
+        {
+            "after": "",
+            "after_header": "/root/ansitest/sample1 (content)",
+            "before": "",
+            "before_header": "/root/ansitest/sample1 (content)"
+        },
+        {
+            "after_header": "/root/ansitest/sample1 (file attributes)",
+            "before_header": "/root/ansitest/sample1 (file attributes)"
+        }
+    ],
+    "invocation": {
+        "module_args": {
+            "attributes": null,
+            "backrefs": false,
+            "backup": false,
+            "content": null,
+            "create": false,
+            "delimiter": null,
+            "directory_mode": null,
+            "firstmatch": false,
+            "follow": false,
+            "force": null,
+            "group": null,
+            "insertafter": null,
+            "insertbefore": null,
+            "line": "hey man",
+            "mode": null,
+            "owner": null,
+            "path": "/root/ansitest/sample1",
+            "regexp": "^hi",
+            "remote_src": null,
+            "selevel": null,
+            "serole": null,
+            "setype": null,
+            "seuser": null,
+            "src": null,
+            "state": "present",
+            "unsafe_writes": null,
+            "validate": null
+        }
+    },
+    "msg": "line replaced"
+}
+<172.31.18.80> (0, b'', b'')
+changed: [ip-172-31-18-80] => {
+    "backup": "",
+    "changed": true,
+    "diff": [
+        {
+            "after": "",
+            "after_header": "/root/ansitest/sample1 (content)",
+            "before": "",
+            "before_header": "/root/ansitest/sample1 (content)"
+        },
+        {
+            "after_header": "/root/ansitest/sample1 (file attributes)",
+            "before_header": "/root/ansitest/sample1 (file attributes)"
+        }
+    ],
+    "invocation": {
+        "module_args": {
+            "attributes": null,
+            "backrefs": false,
+            "backup": false,
+            "content": null,
+            "create": false,
+            "delimiter": null,
+            "directory_mode": null,
+            "firstmatch": false,
+            "follow": false,
+            "force": null,
+            "group": null,
+            "insertafter": null,
+            "insertbefore": null,
+            "line": "hey man",
+            "mode": null,
+            "owner": null,
+            "path": "/root/ansitest/sample1",
+            "regexp": "^hi",
+            "remote_src": null,
+            "selevel": null,
+            "serole": null,
+            "setype": null,
+            "seuser": null,
+            "src": null,
+            "state": "present",
+            "unsafe_writes": null,
+            "validate": null
+        }
+    },
+    "msg": "line replaced"
+}
+META: ran handlers
+META: ran handlers
+
+PLAY RECAP ***************************************************************************************************************
+ip-172-31-18-80            : ok=8    changed=5    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+ip-172-31-24-164           : ok=8    changed=5    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+

@@ -1,0 +1,16 @@
+---
+
+- name: registry_test
+  hosts: web_server
+  become: true
+  tasks:
+    - name: registrytesting
+      shell: |
+        touch test1
+        ls > test1
+        cat test1
+      register: output_shell
+
+    - name: displaying the registry output
+      debug: 
+        var: output_shell.stdout_lines 

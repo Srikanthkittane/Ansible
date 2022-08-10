@@ -1,0 +1,6 @@
+---
+
+- name: installing-tomcat
+  hosts: deploy_server
+  roles:
+    - tomcat      

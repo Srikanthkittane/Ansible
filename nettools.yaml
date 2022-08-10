@@ -1,0 +1,15 @@
+---
+
+- name: installing net-tools
+  hosts: deploy_server
+  tasks:
+    - name: installing tree
+      apt:
+        name: tree
+        state: present
+      notify: handle this 
+       
+  handlers:
+    - name: handle this
+      debug:
+        msg: net-tools installed successfully      

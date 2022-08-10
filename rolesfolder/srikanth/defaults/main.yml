@@ -1,0 +1,4 @@
+---
+# defaults file for srikanth
+server: 'ubuntu'
+version_number: 2.7.98

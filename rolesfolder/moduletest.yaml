@@ -1,0 +1,11 @@
+---
+
+- name: playbook-for-a-role
+  hosts: web_server
+
+  roles:
+    - role: srikanth
+      server: test1
+      version_number: 5.6.7
+
+ 

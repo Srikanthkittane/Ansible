@@ -1,0 +1,25 @@
+---
+
+- name: my-first-playbook 
+  hosts: test_server
+  tasks: 
+    - name: install the curl latest version
+      apt: 
+        name:
+          - curl
+          - default-jre
+          - nginx  
+        state: present
+      notify: testing handler  
+    - name: copying file to all servers
+      copy:
+        src: samplefile
+        dest: /root/
+        owner: root
+        group: root
+        mode: '0777'
+  handlers:
+    - name: testing handler
+      debug: 
+        msg: this is to test handler      
+          

@@ -1,0 +1,5 @@
+---
+# defaults file for jenkins
+#
+server: kantha 
+version_number: 2.3.4

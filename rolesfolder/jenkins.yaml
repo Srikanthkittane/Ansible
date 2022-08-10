@@ -1,0 +1,8 @@
+---
+
+- name: installing-jenkins
+  hosts: deploy_server
+  roles:
+    - role: jenkins
+      server: deepika
+      version_number: 3.9.0

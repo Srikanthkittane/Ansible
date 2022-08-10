@@ -1,0 +1,7 @@
+---
+# tasks file for srikanth
+#
+- name: template module example
+  template:
+    src: templates/template.j2
+    dest: /root/ansitest/sample2 

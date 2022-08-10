@@ -1,0 +1,40 @@
+---
+
+- name: installing-jenkins
+  hosts: web_server
+  become: true
+  tasks:
+
+    - name: get the file from server
+      shell: |
+        wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key |sudo apt-key add -
+        sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'     
+
+    - name: update package
+      notify: jenkins notify
+      apt:
+        upgrade: yes
+        update_cache: yes
+      
+
+    - name: installing jenkins
+      apt:
+        name: jenkins
+        state: present
+
+    - name: starting jenkins
+      service:
+        name: jenkins
+        state: started
+      
+  
+    - name: jenkins status
+      service:
+        name: jenkins      
+        state: restarted  
+  
+  handlers:
+    - name: jenkins notify
+      debug:
+        msg: "update successfully" 
+

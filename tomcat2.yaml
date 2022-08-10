@@ -1,0 +1,26 @@
+---
+
+- name: installing-tomcat
+  hosts: test_server
+  tasks:
+    - name: update package
+      apt: 
+        upgrade: yes
+        update_cache: yes
+
+    - name: install java 
+      apt: 
+        name: default-jre
+
+    - name: get the file from server
+      command: "{{ item }}"
+      args:
+        chdir: "/opt/"
+      with_items:
+        - "wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.64/bin/apache-tomcat-9.0.64.tar.gz"
+        - "tar -xvvf apache-tomcat-9.0.64.tar.gz"
+        - "rm -rf apache-tomcat-9.0.64.tar.gz"
+        - "nohup sh apache-tomcat-9.0.64/bin/startup.sh &"  
+
+
+

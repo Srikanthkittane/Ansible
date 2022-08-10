@@ -1,0 +1,18 @@
+- name: testing-vault
+  hosts: web_server
+  vars:
+    mydata: "{{ lookup('file','pepper') }}"
+  tasks:
+          # - include_vars: pepper     
+    - name: printing the sensitive information
+      debug:
+        var: mydata 
+
+    - name: checking loop
+      command:
+        echo '{{ item.username }}' '{{ item.password}}'
+      loop:  
+        - username: "sri"
+          password: 1234
+        - username: "kantha"
+          password: 5678    

@@ -1,0 +1,10 @@
+[web_server]
+ip-172-31-24-164 ansible_host=172.31.24.164
+ip-172-31-18-80 ansible_host=172.31.18.80
+
+[test_server]
+ip-172-31-19-139 ansible_host=172.31.19.139
+ip-172-31-31-173 ansible_host=172.31.31.173
+
+[deploy_server]
+ip-172-31-84-174 ansible_host=172.31.84.174
